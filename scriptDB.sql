@@ -24,6 +24,19 @@ CREATE TABLE Autor (
     CONSTRAINT autor_pk PRIMARY KEY (id)
 );
 
+CREATE TABLE Editorial (
+    id NUMBER DEFAULT seq_editorial.NEXTVAL NOT NULL,
+    nombre VARCHAR2(50 char) NOT NULL,
+    origen VARCHAR2(20 char) NOT NULL,
+    CONSTRAINT editorial_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE Genero (
+    id NUMBER DEFAULT seq_genero.NEXTVAL NOT NULL,
+    nombre VARCHAR2(25 char) NOT NULL,
+    CONSTRAINT genero_pk PRIMARY KEY (id)
+);
+
 CREATE TABLE Libro (
     id NUMBER DEFAULT seq_libro.NEXTVAL NOT NULL,
     titulo VARCHAR2(55 char) NOT NULL,
@@ -39,18 +52,6 @@ CREATE TABLE Libro (
     CONSTRAINT libro_autor_fk FOREIGN KEY (autor_id) REFERENCES Autor(id)
 );
 
-CREATE TABLE Editorial (
-    id NUMBER DEFAULT seq_editorial.NEXTVAL NOT NULL,
-    nombre VARCHAR2(50 char) NOT NULL,
-    origen VARCHAR2(20 char) NOT NULL,
-    CONSTRAINT editorial_pk PRIMARY KEY (id)
-);
-
-CREATE TABLE Genero (
-    id NUMBER DEFAULT seq_genero.NEXTVAL NOT NULL,
-    nombre VARCHAR2(25 char) NOT NULL,
-    CONSTRAINT genero_pk PRIMARY KEY (id)
-);
 
 CREATE TABLE Prestamos (
     id NUMBER DEFAULT seq_prestamos.NEXTVAL NOT NULL,
@@ -77,9 +78,59 @@ CREATE TABLE Resena (
 -- cliente 
 
 CREATE OR REPLACE PACKAGE paquete_modificaciones AS 
-    FUNCTION nuevo_cliente (nombre_cliente cliente.nombre%TYPE, correo_cliente cliente.correo%TYPE,
+    FUNCTION insertar_cliente (nombre_cliente cliente.nombre%TYPE, correo_cliente cliente.correo%TYPE,
                             telefono_cliente cliente.telefono%TYPE) RETURN NUMBER;
-END paquete_consulta;
+    FUNCTION insertar_autor (nombre_autor autor.nombre%TYPE, apellido_autor autor.apellido%TYPE,
+                            nacionalidad_autor autor.nacionalidad%TYPE) RETURN NUMBER;
+    FUNCTION insertar_editorial(p_nombre editorial.nombre%TYPE, p_origen editorial.origen%TYPE) RETURN NUMBER;
+    FUNCTION insertar_genero(p_nombre genero.nombre%TYPE) RETURN NUMBER;
+END paquete_modificaciones;
+
+    
+CREATE OR REPLACE PACKAGE BODY paquete_modificciones AS 
+    FUNCTION insertar_cliente(nombre_cliente cliente.nombre%TYPE, correo_cliente cliente.correo%TYPE,
+                            telefono_cliente cliente.telefono%TYPE)
+    RETURN NUMBER IS 
+    n_cliente cliente.id%TYPE;
+    BEGIN
+        SELECT seq_clientes.NEXTVAL INTO n_cliente FROM dual;
+        INSERT INTO clientes VALUES (nombre_cliente, correo_cliente, telefono_cliente);
+        RETURN (n_cliente);
+    END nuevo_cliente;
+    
+    
+    FUNCTION insertar_autor(nombre_autor autor.nombre%TYPE, apellido_autor autor.apellido%TYPE,
+                            nacionalidad_autor autor.nacionalidad%TYPE) 
+    RETURN NUMBER IS
+    n_autor autor.id%TYPE;
+    BEGIN
+        SELECT seq_autor.NEXTVAL INTO n_autor FROM dual;
+        INSERT INTO autor VALUES (nombre_autor, apellido_autor, nacionalidad_autor);
+        RETURN (n_autor);
+    END nuevo_autor;
+    
+    
+    FUNCTION insertar_editorial(p_nombre editorial.nombre%TYPE, p_origen editorial.origen%TYPE)
+    RETURN NUMBER IS
+    n_editorial editorial.id%TYPE;
+    BEGIN
+        SELECT seq_editorial.NEXTVAL INTO n_editorial FROM dual;
+        INSERT INTO Editorial VALUES (p_nombre, p_origen);
+        RETURN n_editorial;
+    END;
+    
+    
+    FUNCTION insertar_genero(p_nombre genero.nombre%TYPE)
+    RETURN NUMBER IS
+    n_genero genero.id%TYPE;
+    BEGIN
+        SELECT seq_genero.NEXTVAL INTO n_genero FROM dual;
+        INSERT INTO genero VALUES (p_nombre);
+        RETURN n_genero;
+    END;
+    
+END paquete_modificaciones;
+
 
 drop table prestamos;
 drop table clientes;

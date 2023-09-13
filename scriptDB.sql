@@ -1,6 +1,7 @@
 
 -- Creacion de secuencias
 CREATE SEQUENCE seq_clientes START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE seq_contrasenna START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_autor START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_libro START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_editorial START WITH 1 INCREMENT BY 1;
@@ -15,6 +16,21 @@ CREATE TABLE Clientes_p1 (
     correo VARCHAR2(25 char) NOT NULL,
     telefono VARCHAR2(15) NOT NULL,
     CONSTRAINT clientes_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE Usuario_p1 (
+    nombre VARCHAR2(25 char) NOT NULL,
+    cliente_id NUMBER NOT NULL,
+    CONSTRAINT usuario_pk PRIMARY KEY (nombre),
+    CONSTRAINT usuario_cliente_fk FOREIGN KEY (cliente_id) REFERENCES Clientes_p1(id)
+);
+
+CREATE TABLE Contrasenna_p1 (
+    id NUMBER DEFAULT seq_contrasenna.NEXTVAL NOT NULL,
+    clave VARCHAR2(25 char) NOT NULL,
+    cliente_id NUMBER NOT NULL,
+    CONSTRAINT contrasenna_pk PRIMARY KEY (id),
+    CONSTRAINT contrasenna_cliente_fk FOREIGN KEY (cliente_id) REFERENCES Clientes_p1(id)
 );
 
 CREATE TABLE Autor_p1 (
@@ -410,7 +426,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error al eliminar reseña: ' || SQLERRM);
+                DBMS_OUTPUT.PUT_LINE('Error al eliminar reseÃ±a: ' || SQLERRM);
     END;
     
     -- PROCEDIMIENTO PARA BORRAR UN LIBRO
@@ -440,7 +456,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar libro: ' || SQLERRM);
     END;
     
-    -- PROCEDIMIENTO PARA BORRAR UNA RESEÑA
+    -- PROCEDIMIENTO PARA BORRAR UNA RESEÃ‘A
     PROCEDURE borrar_resena(p_id resena_p1.id%TYPE) IS
         r_cont NUMBER;
     BEGIN
@@ -449,22 +465,22 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
         WHERE r.id = p_id;
         
         IF r_cont = 1 THEN
-            -- Si ka reseña existe en la BD
+            -- Si ka reseÃ±a existe en la BD
             DELETE FROM resena_p1
             WHERE id = p_id;
             IF SQL%ROWCOUNT = 1 THEN
                 COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Reseña con ID ' || p_id || ' eliminado exitosamente');
+                DBMS_OUTPUT.PUT_LINE('ReseÃ±a con ID ' || p_id || ' eliminado exitosamente');
             ELSE
                 ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar reseña con ID: ' || p_id);
+                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar reseÃ±a con ID: ' || p_id);
             END IF;
         ELSE
-            DBMS_OUTPUT.PUT_LINE('Reseña con ID ' || p_id || ' no existe.');
+            DBMS_OUTPUT.PUT_LINE('ReseÃ±a con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error al eliminar reseña: ' || SQLERRM);
+                DBMS_OUTPUT.PUT_LINE('Error al eliminar reseÃ±a: ' || SQLERRM);
     END;
     
     

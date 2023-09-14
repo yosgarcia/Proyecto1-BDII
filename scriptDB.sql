@@ -1037,6 +1037,24 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
         ORDER BY p.fecha DESC
         FETCH FIRST p_num ROWS ONLY;
     END;
+
+    PROCEDURE mostrar_genero_popular AS
+    BEGIN
+        SELECT c.id, g.nombre from clientes_p1 c
+        LEFT JOIN prestamos_p1 p ON c.id = p.cliente_id
+        LEFT JOIN libro_p1 l ON p.libro_id = l.id
+        LEFT JOIN genero_p1 g ON l.genero_id = g.id
+        ORDER BY g.nombre, c.id;
+    END;
+
+    PROCEDURE mostrar_editorial_popular AS
+    BEGIN
+        SELECT c.id, e.nombre from clientes_p1 c
+        LEFT JOIN prestamos_p1 p ON c.id = p.cliente_id
+        LEFT JOIN libro_p1 l ON p.libro_id = l.id
+        LEFT JOIN editorial_p1 e ON l.editorial_id = e.id
+        ORDER BY g.nombre, c.id;
+    END;
     
 END paquete_consultas_p1;
 
@@ -1079,9 +1097,6 @@ BEGIN
 END;
 /
 
--- usuario
--- empleados
--- bitacora
 ALTER SEQUENCE seq_clientes RESTART;
 ALTER SEQUENCE seq_autor RESTART;
 ALTER SEQUENCE seq_editorial RESTART;
@@ -1098,4 +1113,7 @@ drop table genero_p1;
 drop table editorial_p1;
 drop table autor_p1;
 drop table clientes_p1;
+drop table usuario_p1;
+drop table empleados_p1;
+drop table bitacora_libro_p1;
 

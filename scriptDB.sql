@@ -1,6 +1,6 @@
 -- Creacion de secuencias
 CREATE SEQUENCE seq_clientes START WITH 1 INCREMENT BY 1;
-CREATE SEQUENCE seq_contrasenna START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE seq_empleado START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_autor START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_libro START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_editorial START WITH 1 INCREMENT BY 1;
@@ -17,19 +17,19 @@ CREATE TABLE Clientes_p1 (
     CONSTRAINT clientes_pk PRIMARY KEY (id)
 );
 
-CREATE TABLE Usuario_p1 (
+CREATE TABLE Empleado_p1 (
+    id NUMBER DEFAULT seq_empleado.NEXTVAL NOT NULL,
     nombre VARCHAR2(25 char) NOT NULL,
-    cliente_id NUMBER NOT NULL,
-    CONSTRAINT usuario_pk PRIMARY KEY (nombre),
-    CONSTRAINT usuario_cliente_fk FOREIGN KEY (cliente_id) REFERENCES Clientes_p1(id)
+    apellido VARCHAR(25 char) NOT NULL,
+    CONSTRAINT empleado_pk PRIMARY KEY (id)
 );
 
-CREATE TABLE Contrasenna_p1 (
-    id NUMBER DEFAULT seq_contrasenna.NEXTVAL NOT NULL,
-    clave VARCHAR2(25 char) NOT NULL,
-    cliente_id NUMBER NOT NULL,
-    CONSTRAINT contrasenna_pk PRIMARY KEY (id),
-    CONSTRAINT contrasenna_cliente_fk FOREIGN KEY (cliente_id) REFERENCES Clientes_p1(id)
+CREATE TABLE Usuario_p1 (
+    username VARCHAR2(25 char) NOT NULL,
+    contrasenna VARCHAR2(25 char) NOT NULL, 
+    empleado_id NUMBER NOT NULL,
+    CONSTRAINT usuario_pk PRIMARY KEY (username),
+    CONSTRAINT empleado_fk FOREIGN KEY (empleado_id) REFERENCES Empleado_p1(id)
 );
 
 CREATE TABLE Autor_p1 (

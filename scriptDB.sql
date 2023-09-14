@@ -26,7 +26,7 @@ CREATE TABLE Empleado_p1 (
 );
 
 CREATE TABLE Usuario_p1 (
-    username VARCHAR2(25 char) NOT NULL,
+    username VARCHAR2(50 char) NOT NULL,
     contrasenna VARCHAR2(25 char) NOT NULL, 
     empleado_id NUMBER NOT NULL,
     CONSTRAINT usuario_pk PRIMARY KEY (username),
@@ -94,9 +94,8 @@ CREATE TABLE Resena_p1 (
 
 CREATE TABLE Bitacora_libro_p1 (
     id NUMBER DEFAULT seq_bitacora.NEXTVAL NOT NULL,
-    fecha DATE NOT NULL,
-    hora DATETIME NOT NULL,
-    usuario VARCHAR2(25 char) NOT NULL,
+    fecha DATETIME NOT NULL,
+    usuario VARCHAR2(50 char) NOT NULL,
     descripcion VARCHAR2(25 char),
     CONSTRAINT bitacora_pk PRIMARY KEY (id),
     CONSTRAINT bitacora_usuario_fk FOREIGN KEY (usuario) REFERENCES Usuario_p1(username)

@@ -96,7 +96,7 @@ CREATE TABLE Bitacora_libro_p1 (
     id NUMBER DEFAULT seq_bitacora.NEXTVAL NOT NULL,
     fecha DATETIME NOT NULL,
     usuario VARCHAR2(50 char) NOT NULL,
-    descripcion VARCHAR2(25 char),
+    descripcion VARCHAR2(250 char),
     CONSTRAINT bitacora_pk PRIMARY KEY (id),
     CONSTRAINT bitacora_usuario_fk FOREIGN KEY (usuario) REFERENCES Usuario_p1(username)
 );
@@ -1040,6 +1040,44 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
     
 END paquete_consultas_p1;
 
+CREATE OR REPLACE TRIGGER cambio_libros
+    AFTER INSERT OR UPDATE OR DELETE
+    ON Libro_p1 FOR EACH ROW
+DECLARE
+    usuario VARCHAR2(50 char);
+BEGIN
+    usuario := ISERTEFUNCIONDEUSUARIO
+    IF INSERTING THEN
+        INSERT INTO Bitacora_libro_p1 (id, fecha, usuario, descripcion)
+        VALUES (:NEW.id, SYSDATE, usuario, 'Se insertó el libro: ' || :NEW.titulo);
+
+    ELSIF UPDATING THEN
+        DECLARE
+            accion VARCHAR2(250 char);
+        BEGIN
+            accion := 'Se modificó el libro: ' || :NEW.titulo;
+
+            IF :NEW.inventario != :OLD.inventario THEN
+                accion := accion || '. Inventario antes: ' || :OLD.inventario || ', Inventario actuak: ' || :NEW.inventario;
+            END IF;
+
+            IF :NEW.isbn != :OLD.isbn THEN
+                accion := accion || '. ISBN anterior: ' || :OLD.isbn || ', ISBN actual: ' || :NEW.isbn;
+            END IF;
+
+            INSERT INTO Bitacora_libro_p1 (id, fecha, usuario, descripcion)
+            VALUES (:NEW.id, SYSDATE, usuario, accion);
+        END;
+
+    ELSIF DELETING THEN
+        INSERT INTO Bitacora_libro_p1 (id, fecha, usuario, descripcion)
+        VALUES (:NEW.id, SYSDATE, usuario, 'Se eliminó el libro: ' || :OLD.titulo);
+
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Este codigo no es accesible.');
+    END IF;
+END;
+/
 
 -- usuario
 -- empleados

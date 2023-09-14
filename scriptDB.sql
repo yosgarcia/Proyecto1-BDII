@@ -21,7 +21,7 @@ CREATE TABLE Clientes_p1 (
 CREATE TABLE Empleado_p1 (
     id NUMBER DEFAULT seq_empleado.NEXTVAL NOT NULL,
     nombre VARCHAR2(25 char) NOT NULL,
-    apellido VARCHAR(25 char) NOT NULL,
+    apellido VARCHAR2(25 char) NOT NULL,
     CONSTRAINT empleado_pk PRIMARY KEY (id)
 );
 
@@ -309,6 +309,13 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
     FUNCTION insertar_resena(p_descripcion resena_p1.descripccion%TYPE, p_calificacion resena_p1.calificacion%TYPE,
                                 p_libro resena_p1.libro_id%TYPE, p_cliente resena_p1.cliente_id%TYPE) RETURN NUMBER;
     
+    FUNCTION insertar_empleado(p_nombre empleado_p1.nombre%TYPE,
+                                p_apellido empleado_p1.apellido%TYPE) RETURN NUMBER;
+    
+    FUNCTION insertar_usuario(p_usuario usuario_p1.username%TYPE,
+                                p_contrasenna usuario_p1.contrasenna%TYPE,
+                                p_empleado usuario_p1.empleado_id%TYPE) RETURN VARCHAR2;
+    
     PROCEDURE modificar_cliente(p_id clientes_p1.id%TYPE, p_nombre clientes_p1.nombre%TYPE, p_apellido clientes_p1.apellido%TYPE,
                                 p_correo clientes_p1.correo%TYPE, p_telefono clientes_p1.telefono%TYPE);
     
@@ -333,6 +340,12 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
                                 p_calificacion resena_p1.calificacion%TYPE, p_libro resena_p1.libro_id%TYPE,
                                 p_cliente resena_p1.cliente_id%TYPE);
     
+    PROCEDURE modificar_usuario(p_usuario usuario_p1.username%TYPE, p_contrasenna usuario_p1.contrasenna%TYPE,
+                                    p_empleado usuario_p1.empleado_id%TYPE);
+									
+    PROCEDURE modificar_empleado(p_id empleado_p1.id%TYPE, p_nombre empleado_p1.nombre%TYPE,
+                                    p_apellido empleado_p1.apellido%TYPE);
+    
     PROCEDURE borrar_cliente(p_id clientes_p1.id%TYPE);
     
     PROCEDURE borrar_autor(p_id autor_p1.id%TYPE);
@@ -346,6 +359,12 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
     PROCEDURE borrar_resena(p_id resena_p1.id%TYPE);
     
     PROCEDURE borrar_prestamos(p_id prestamos_p1.id%TYPE);
+    
+    PROCEDURE borrar_empleado(p_id empleado_p1.id%TYPE);
+    
+    PROCEDURE borrar_usuario(p_usuario usuario_p1.username%TYPE);
+    
+    PROCEDURE borrar_bitacora_libro(p_id bitacora_libro_p1.id%TYPE);
     
 END paquete_modificaciones_p1;
 
@@ -429,6 +448,30 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     END;
     
     
+    FUNCTION insertar_empleado(p_nombre empleado_p1.nombre%TYPE,
+                                p_apellido empleado_p1.apellido%TYPE)
+    RETURN NUMBER IS
+    n_empleado empleado_p1.id%TYPE;
+    BEGIN
+        SELECT seq_empleado.NEXTVAL INTO n_empleado FROM dual;
+        INSERT INTO empleado_p1 VALUES (p_nombre, p_apellido);
+        RETURN n_empleado;
+    END;
+	
+    
+    FUNCTION insertar_usuario(p_usuario usuario_p1.username%TYPE,
+                                p_contrasenna usuario_p1.contrasenna%TYPE,
+                                p_empleado usuario_p1.empleado_id%TYPE)
+    RETURN VARCHAR2 IS
+    n_usuario usuario_p1.username%TYPE;
+    BEGIN
+        SELECT username INTO n_usuario FROM dual;
+        INSERT INTO usuario_p1 VALUES (p_usuario, p_contrasenna, p_empleado);
+        RETURN n_usuario;
+    END;
+    
+    
+    
     PROCEDURE modificar_cliente(p_id clientes_p1.id%TYPE, p_nombre clientes_p1.nombre%TYPE, p_apellido clientes_p1.apellido%TYPE,
                                 p_correo clientes_p1.correo%TYPE, p_telefono clientes_p1.telefono%TYPE) IS
     BEGIN
@@ -439,6 +482,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
             WHEN OTHERS THEN
                 DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);       
     END;
+    
     
     PROCEDURE modificar_autor(p_id autor_p1.id%TYPE, p_nombre autor_p1.nombre%TYPE,
                                 p_apellido autor_p1.apellido%TYPE, p_nacionalidad autor_p1.nacionalidad%TYPE) IS
@@ -462,6 +506,8 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
             WHEN OTHERS THEN
                 DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
     END;
+    
+    
     
     PROCEDURE modificar_genero(p_id genero_p1.id%TYPE, p_nombre genero_p1.nombre%TYPE) IS
     BEGIN
@@ -516,6 +562,31 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
                 DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
     END;
     
+    
+    PROCEDURE modificar_empleado(p_id empleado_p1.id%TYPE, p_nombre empleado_p1.nombre%TYPE,
+                                    p_apellido empleado_p1.apellido%TYPE) AS
+    BEGIN
+        UPDATE empleado_p1
+        SET nombre = p_nombre, apellido = p_apellido
+        WHERE id = p_id;
+        EXCEPTION
+            WHEN OTHERS THEN
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+    END;
+	
+    
+    PROCEDURE modificar_usuario(p_usuario usuario_p1.username%TYPE, p_contrasenna usuario_p1.contrasenna%TYPE,
+                                    p_empleado usuario_p1.empleado_id%TYPE) AS
+    BEGIN
+        UPDATE usuario_p1
+        SET username = p_usuario, contrasenna = p_contrasenna, empleado_id = p_empleado
+        WHERE username = p_usuario;
+        EXCEPTION
+            WHEN OTHERS THEN
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+    END;
+    
+    
     -- PROCEDIMIENTO PARA BORRAR CLIENTE
     PROCEDURE borrar_cliente(p_id cliente_p1.id%TYPE) IS
     c_cont NUMBER;
@@ -543,6 +614,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar cliente: ' || SQLERRM);
     END;
     
+    
     -- PROCEDIMIENTO PARA BORRAR AUTOR
     PROCEDURE borrar_autor(p_id autor_p1.id%TYPE) IS
     a_cont NUMBER;
@@ -569,6 +641,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
             WHEN OTHERS THEN
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar autor: ' || SQLERRM);
     END;
+    
     
     -- PROCEDIMIENTO PARA BORRAR UNA EDITORIAL
     PROCEDURE borrar_editorial(p_id editorial_p1.id%TYPE) IS
@@ -625,6 +698,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar reseña: ' || SQLERRM);
     END;
     
+    
     -- PROCEDIMIENTO PARA BORRAR UN LIBRO
     PROCEDURE borrar_libro(p_id libro_p1.id%TYPE) IS
         l_cont NUMBER;
@@ -651,6 +725,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
             WHEN OTHERS THEN
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar libro: ' || SQLERRM);
     END;
+    
     
     -- PROCEDIMIENTO PARA BORRAR UNA RESEÑA
     PROCEDURE borrar_resena(p_id resena_p1.id%TYPE) IS
@@ -707,6 +782,89 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar prestamo: ' || SQLERRM);
     END;
     
+
+
+    PROCEDURE borrar_empleado(p_id empleado_p1.id%TYPE) IS
+        p_cont NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO p_cont
+        FROM empleado_p1 p
+        WHERE p.id = p_id;
+        
+        IF p_cont = 1 THEN
+            -- Si el empleado existe en la BD
+            DELETE FROM empleado_p1
+            WHERE id = p_id;
+            IF SQL%ROWCOUNT = 1 THEN
+                COMMIT;
+                DBMS_OUTPUT.PUT_LINE('Empleado con ID ' || p_id || ' eliminado exitosamente');
+            ELSE
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar empleado con ID: ' || p_id);
+            END IF;
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Empleado con ID ' || p_id || ' no existe.');
+        END IF;
+        EXCEPTION
+            WHEN OTHERS THEN
+                DBMS_OUTPUT.PUT_LINE('Error al eliminar empleado: ' || SQLERRM);
+    END;
+    
+    
+    
+    PROCEDURE borrar_usuario(p_usuario usuario_p1.username%TYPE) IS
+        p_cont NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO p_cont
+        FROM usuario_p1 u
+        WHERE u.username = p_usuario;
+        
+        IF p_cont = 1 THEN
+            -- Si el usuario existe en la BD
+            DELETE FROM usuario_p1
+            WHERE username = p_usuario;
+            IF SQL%ROWCOUNT = 1 THEN
+                COMMIT;
+                DBMS_OUTPUT.PUT_LINE('Usuario con ID ' || p_id || ' eliminado exitosamente');
+            ELSE
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar usuario con ID: ' || p_id);
+            END IF;
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Usuario con ID ' || p_id || ' no existe.');
+        END IF;
+        EXCEPTION
+            WHEN OTHERS THEN
+                DBMS_OUTPUT.PUT_LINE('Error al eliminar usuario: ' || SQLERRM);
+    END;
+    
+    
+    PROCEDURE borrar_bitacora_libro(p_id bitacora_libro_p1.id%TYPE) IS
+        p_cont NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO p_cont
+        FROM bitacora_libro_p1 b
+        WHERE b.id = p_id;
+        
+        IF p_cont = 1 THEN
+            -- Si la bitacora existe en la BD
+            DELETE FROM bitacora_libro_p1
+            WHERE b.id = p_id;
+            IF SQL%ROWCOUNT = 1 THEN
+                COMMIT;
+                DBMS_OUTPUT.PUT_LINE('Bitacora con ID ' || p_id || ' eliminado exitosamente');
+            ELSE
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar bitacora con ID: ' || p_id);
+            END IF;
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Bitacora con ID ' || p_id || ' no existe.');
+        END IF;
+        EXCEPTION
+            WHEN OTHERS THEN
+                DBMS_OUTPUT.PUT_LINE('Error al eliminar bitacora: ' || SQLERRM);
+    END;
+    
 END paquete_modificaciones_p1;
 
 
@@ -739,6 +897,19 @@ CREATE OR REPLACE PACKAGE paquete_consultas_p1 AS
     PROCEDURE mostrar_todos_prestamos;
     
     PROCEDURE mostrar_prestamos_id (p_id prestamos_p1.id%TYPE);
+    
+    PROCEDURE mostrar_ultimas_nbitacoras(p_num NUMBER);
+
+    PROCEDURE mostrar_bitacoras;
+ 
+    PROCEDURE mostrar_usuario_nombre(p_usuario usuario_p1.username%TYPE);
+ 
+    PROCEDURE mostrar_usuarios;
+ 
+    PROCEDURE mostrar_empleados_id (p_id empleados_p1.id%TYPE);
+ 
+    PROCEDURE mostrar_todos_empleados;
+    
 END paquete_consultas_p1;
 
 
@@ -828,9 +999,51 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
         WHERE p.id = p_id;
     END;
     
+    
+    PROCEDURE mostrar_todos_empleados AS
+    BEGIN
+        SELECT * FROM empleados_p1;
+    END;
+    
+    PROCEDURE mostrar_empleados_id (p_id empleados_p1.id%TYPE)AS
+    BEGIN
+        SELECT *
+        FROM empleados_p1 p
+        WHERE p.id = p_id;
+    END;
+    
+    PROCEDURE mostrar_usuarios AS
+    BEGIN 
+        SELECT * FROM usuario_p1;
+    END;
+    
+    
+    PROCEDURE mostrar_usuario_nombre(p_usuario usuario_p1.username%TYPE) AS
+    BEGIN
+        SELECT * 
+        FROM usuario_p1 u
+        WHERE u.username = p_usuario;
+    END;
+    
+    PROCEDURE mostrar_bitacoras AS
+    BEGIN
+        SELECT * FROM bitacora_libro_p1;
+    END;
+    
+    PROCEDURE mostrar_ultimas_nbitacoras(p_num NUMBER) AS
+    BEGIN
+        SELECT *
+        FROM bitacora_libro_p1 p
+        ORDER BY p.fecha DESC
+        FETCH FIRST p_num ROWS ONLY;
+    END;
+    
 END paquete_consultas_p1;
 
 
+-- usuario
+-- empleados
+-- bitacora
 ALTER SEQUENCE seq_clientes RESTART;
 ALTER SEQUENCE seq_autor RESTART;
 ALTER SEQUENCE seq_editorial RESTART;
@@ -838,6 +1051,8 @@ ALTER SEQUENCE seq_libro RESTART;
 ALTER SEQUENCE seq_genero RESTART;
 ALTER SEQUENCE seq_prestamos RESTART;
 ALTER SEQUENCE seq_resena RESTART;
+ALTER SEQUENCE seq_empleado RESTART;
+ALTER SEQUENCE seq_bitacora RESTART;
 drop table prestamos_p1;
 drop table resena_p1;
 drop table libro_p1;

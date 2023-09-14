@@ -287,6 +287,11 @@ INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacio
 
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('El cuervo', 23, 1, 30, TO_DATE('1845-01-01', 'YYYY-MM-DD'), '978-0523873805', 40);
 
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (primero, segundo, tercero, cuarto);
+
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (uno, dos, tres, cuatro);
+
+INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion) VALUES (uno, dos, tres);
 
 select * from Autor_p1;
 select apellido from Autor_p1;
@@ -1064,7 +1069,7 @@ CREATE OR REPLACE TRIGGER cambio_libros
 DECLARE
     usuario VARCHAR2(50 char);
 BEGIN
-    usuario := ISERTEFUNCIONDEUSUARIO
+    usuario := SELECT USER FROM DUAL;
     IF INSERTING THEN
         INSERT INTO Bitacora_libro_p1 (id, fecha, usuario, descripcion)
         VALUES (:NEW.id, SYSDATE, usuario, 'Se insertó el libro: ' || :NEW.titulo);

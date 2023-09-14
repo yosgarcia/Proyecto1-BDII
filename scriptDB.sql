@@ -1,4 +1,3 @@
-
 -- Creacion de secuencias
 CREATE SEQUENCE seq_clientes START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_contrasenna START WITH 1 INCREMENT BY 1;
@@ -13,7 +12,7 @@ CREATE TABLE Clientes_p1 (
     id NUMBER DEFAULT seq_clientes.NEXTVAL NOT NULL,
     nombre VARCHAR2(25 char) NOT NULL,
     apellido VARCHAR2(25 char) NOT NULL,
-    correo VARCHAR2(25 char) NOT NULL,
+    correo VARCHAR2(35 char) NOT NULL,
     telefono VARCHAR2(15) NOT NULL,
     CONSTRAINT clientes_pk PRIMARY KEY (id)
 );
@@ -87,13 +86,200 @@ CREATE TABLE Resena_p1 (
     calificacion NUMBER NOT NULL,
     libro_id NUMBER NOT NULL,
     cliente_id NUMBER NOT NULL,
-    CONSTRAINT resena_pk PRIMARY KEY,
+    CONSTRAINT resena_pk PRIMARY KEY (ID),
     CONSTRAINT resena_libro_fk FOREIGN KEY (libro_id) REFERENCES Libro_p1(id),
     CONSTRAINT resena_cliente_fk FOREIGN KEY (cliente_id) REFERENCES Clientes_p1(id)
 );
 
 
+--INSERTS TABLA CLIENTE 
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Juan', 'Pérez', 'jjuanperez@ejemplo.com', '88563245');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lola', 'Hernandez', 'lolahernandez@ejemplo.com', '85648953');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yosward', 'Garcia', 'yoswigarcia@ejemplo.com', '88468995');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yurgen', 'Cambronero', 'yurgencitoelcabro@ejemplo.com', '87777953');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'González', 'carlosgonzalez@ejemplo.com', '74691238');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'Martínez', 'anamartinez@ejemplo.com', '76582349');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'Rodríguez', 'pedrorodriguez@ejemplo.com', '68743219');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('María', 'López', 'marialopez@ejemplo.com', '78654321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Diego', 'Sánchez', 'diegosanchez@ejemplo.com', '64758932');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Laura', 'Ramírez', 'lauraramirez@ejemplo.com', '79865432');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Javier', 'Pérez', 'javierperez@ejemplo.com', '68743125');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentina', 'Gutiérrez', 'valentinagutierrez@ejemplo.com', '78564321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Santiago', 'Hernández', 'santiagohernandez@ejemplo.com', '74561289');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isabella', 'González', 'isabellagonzalez@ejemplo.com', '86423579');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Leo', 'Mora', 'leoelpelos@ejemplo.com', '63547891');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucía', 'Rodríguez', 'luciarodriguez@ejemplo.com', '78693245');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Matías', 'López', 'matiaslopez@ejemplo.com', '67459823');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mariana', 'Sánchez', 'marianasanchez@ejemplo.com', '76584932');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emilio', 'Ramírez', 'emilioramirez@ejemplo.com', '87654321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valeria', 'Pérez', 'valeriaperez@ejemplo.com', '68743215');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Felipe', 'Gutiérrez', 'felipegutierrez@ejemplo.com', '74563129');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Catalina', 'Hernández', 'catalinahernandez@ejemplo.com', '86451279');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Facundo', 'González', 'facundogonzalez@ejemplo.com', '63547892');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Antonella', 'Martínez', 'antonellamartinez@ejemplo.com', '76549832');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucas', 'Rodríguez', 'lucasrodriguez@ejemplo.com', '78643921');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isidora', 'López', 'isidoralopez@ejemplo.com', '67459832');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Benjamín', 'Sánchez', 'benjaminsanchez@ejemplo.com', '74563128');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Renata', 'Ramírez', 'renataramirez@ejemplo.com', '87654931');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emiliano', 'Pérez', 'emilianoperez@ejemplo.com', '68743216');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentino', 'Gutiérrez', 'valentinogutierrez@ejemplo.com', '74563127');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carmen', 'Hernández', 'carmenhernandez@ejemplo.com', '86451278');
 
+select * from Clientes_p1;
+
+--INSERTS TABLA AUTOR
+
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.K', 'Rowling', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gabriel', 'García Márquez', 'Colombiana');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Mario', 'Vargas Llosa', 'Peruana');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Pablo', 'Neruda', 'Chilena');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Isabel', 'Allende', 'Chilena');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gustavo', 'Adolfo Bécquer', 'Española');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Octavio', 'Paz', 'Mexicana');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Federico', 'García Lorca', 'Española');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jorge', 'Borges', 'Argentina');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('José', 'Saramago', 'Portuguesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Virginia', 'Woolf', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Alejandro', 'Dumas', 'Francesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('León', 'Tolstói', 'Rusa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('George', 'Orwell', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jane', 'Austen', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Haruki', 'Murakami', 'Japonesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Agatha', 'Christie', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Mark', 'Twain', 'Estadounidense');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Charles', 'Dickens', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Hermann', 'Hesse', 'Alemana');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gabriela', 'Mistral', 'Chilena');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Albert', 'Camus', 'Francesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.R.R', 'Tolkien', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Hans', 'Christian Andersen', 'Danesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Leo', 'Tolstoy', 'Rusa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Anton', 'Chekhov', 'Rusa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jules', 'Verne', 'Francesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Rabindranath', 'Tagore', 'India');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Honoré', 'de Balzac', 'Francesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Edgar', 'Allan Poe', 'Estadounidense');
+select * from Autor_p1;
+
+--Inserts tabla editorial
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Editorial ABC', 'España');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Penguin Random House', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('HarperCollins Publishers', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Hachette Livre', 'Francia');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Simon and Schuster', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Macmillan Publishers', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Scholastic Corporation', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Springer Nature', 'Alemania');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Pearson PLC', 'Reino Unido');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Wiley', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Oxford University Press', 'Reino Unido');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Cambridge University Press', 'Reino Unido');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Elsevier', 'Países Bajos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Houghton Mifflin Harcourt', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Random House', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Penguin Books', 'Reino Unido');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Harvard University Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Yale University Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('MIT Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Taylor and Francis', 'Reino Unido');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('McGraw-Hill', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('W.W. Norton and Company', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Harvard Business Review Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Bloomsbury Publishing', 'Reino Unido');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Harvard University Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Columbia University Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Princeton University Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('University of Chicago Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Johns Hopkins University Press', 'Estados Unidos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Stanford University Press', 'Estados Unidos');
+
+select * from Editorial_p1;
+
+--Inserts TABLA GENERO
+INSERT INTO Genero_p1 (nombre) VALUES ('Ficción');
+INSERT INTO Genero_p1 (nombre) VALUES ('Realismo');
+INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia Ficción');
+INSERT INTO Genero_p1 (nombre) VALUES ('Fantasía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Misterio');
+INSERT INTO Genero_p1 (nombre) VALUES ('Terror');
+INSERT INTO Genero_p1 (nombre) VALUES ('Aventura');
+INSERT INTO Genero_p1 (nombre) VALUES ('Romance');
+INSERT INTO Genero_p1 (nombre) VALUES ('Drama');
+INSERT INTO Genero_p1 (nombre) VALUES ('Poesía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Biografía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Autobiografía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Historia');
+INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia');
+INSERT INTO Genero_p1 (nombre) VALUES ('Economía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Política');
+INSERT INTO Genero_p1 (nombre) VALUES ('Religión');
+INSERT INTO Genero_p1 (nombre) VALUES ('Autoayuda');
+INSERT INTO Genero_p1 (nombre) VALUES ('Aventuras Gráficas');
+INSERT INTO Genero_p1 (nombre) VALUES ('Cómics');
+INSERT INTO Genero_p1 (nombre) VALUES ('Novela Gráfica');
+INSERT INTO Genero_p1 (nombre) VALUES ('Historieta');
+INSERT INTO Genero_p1 (nombre) VALUES ('Ensayo');
+INSERT INTO Genero_p1 (nombre) VALUES ('Filosofía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Viajes');
+INSERT INTO Genero_p1 (nombre) VALUES ('Crimen');
+INSERT INTO Genero_p1 (nombre) VALUES ('Humor');
+INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia y Naturaleza');
+INSERT INTO Genero_p1 (nombre) VALUES ('Tecnología');
+INSERT INTO Genero_p1 (nombre) VALUES ('Cocina');
+
+select * from Genero_P1;
+
+--Inserts tabla libro 
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Harry Potter y la Piedra Filosofal', 1, 4, 1, TO_DATE('1997-06-26', 'YYYY-MM-DD'), '978-0590353427', 50);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('100 años de soledad', 2, 1, 2, TO_DATE('1982-05-30', 'YYYY-MM-DD'), '978-9871234567', 45);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('La ciudad y los perros', 3, 1, 3, TO_DATE('1962-04-10', 'YYYY-MM-DD'), '978-1234567890', 55);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Canto General', 4, 1, 4, TO_DATE('1950-05-30', 'YYYY-MM-DD'), '978-0307389732', 60);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('La casa de los espiritus', 5, 9, 5, TO_DATE('1982-08-14', 'YYYY-MM-DD'), '978-0143039969', 70);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Rimas', 6, 9, 6, TO_DATE('1871-07-03', 'YYYY-MM-DD'), '978-8437600772', 40);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Cronica de una muerte anunciada', 7, 1, 2, TO_DATE('1981-09-21', 'YYYY-MM-DD'), '978-0385541382', 55);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Yerma', 8, 1, 8, TO_DATE('1934-06-30', 'YYYY-MM-DD'), '978-9871138124', 48);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Ficciones', 9, 1, 9, TO_DATE('1945-08-01', 'YYYY-MM-DD'), '978-0156007757', 42);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Los 3 mosqueteros', 10, 8, 12, TO_DATE('1844-05-14', 'YYYY-MM-DD'), '978-0156628709', 37);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('1984', 11, 1, 14, TO_DATE('1947-08-28', 'YYYY-MM-DD'), '978-0140449266', 65);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Biblioteca de Babel', 12, 1, 9, TO_DATE('1941-01-01', 'YYYY-MM-DD'), '978-0199232765', 48);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Del amor y otros demonios', 13, 3, 2, TO_DATE('1994-06-08', 'YYYY-MM-DD'), '978-0451524935', 38);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Orgullo y prejuicio', 14, 1, 15, TO_DATE('1813-10-15', 'YYYY-MM-DD'), '978-0553213690', 42);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Muerte en el Nilo', 15, 1, 17, TO_DATE('1937-08-04', 'YYYY-MM-DD'), '978-0375704024', 50);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Las Manzanas', 16, 5, 17, TO_DATE('1969-01-01', 'YYYY-MM-DD'), '978-0062073501', 35);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Las aventuras de Tom Sawyer', 17, 1, 18, TO_DATE('1876-12-01', 'YYYY-MM-DD'), '978-0486260035', 48);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Historia de dos ciudades', 18, 1, 19, TO_DATE('1859-08-01', 'YYYY-MM-DD'), '978-0141439563', 42);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Desolación', 19, 1, 21, TO_DATE('1922-01-01', 'YYYY-MM-DD'), '978-0142437186', 60);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Tala', 20, 1, 21, TO_DATE('1938-01-01', 'YYYY-MM-DD'), '978-0553383805', 40);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Guerra y Paz', 21, 1, 25, TO_DATE('1869-01-01', 'YYYY-MM-DD'), '978-0565953805', 30);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('El gato negro', 22, 1, 30, TO_DATE('1938-01-01', 'YYYY-MM-DD'), '978-0523873805', 40);
+
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('El cuervo', 23, 1, 30, TO_DATE('1845-01-01', 'YYYY-MM-DD'), '978-0523873805', 40);
+
+
+select * from Autor_p1;
+select apellido from Autor_p1;
 CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS 
     FUNCTION insertar_cliente (p_nombre clientes_p1.nombre%TYPE, p_apellido clientes_p1.apellido%TYPE, p_correo clientes_p1.correo%TYPE,
                             p_telefono clientes_p1.telefono%TYPE) RETURN NUMBER;
@@ -634,6 +820,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
     
 END paquete_consultas_p1;
 
+
+ALTER SEQUENCE seq_clientes RESTART;
+ALTER SEQUENCE seq_autor RESTART;
+ALTER SEQUENCE seq_editorial RESTART;
+ALTER SEQUENCE seq_libro RESTART;
+ALTER SEQUENCE seq_genero RESTART;
+ALTER SEQUENCE seq_prestamos RESTART;
+ALTER SEQUENCE seq_resena RESTART;
 drop table prestamos_p1;
 drop table resena_p1;
 drop table libro_p1;

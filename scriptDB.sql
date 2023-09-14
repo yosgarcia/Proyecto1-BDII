@@ -7,6 +7,7 @@ CREATE SEQUENCE seq_editorial START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_genero START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_prestamos START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_resena START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE seq_bitacora START WITH 1 INCREMENT BY 1;
 
 CREATE TABLE Clientes_p1 (
     id NUMBER DEFAULT seq_clientes.NEXTVAL NOT NULL,
@@ -89,6 +90,16 @@ CREATE TABLE Resena_p1 (
     CONSTRAINT resena_pk PRIMARY KEY (ID),
     CONSTRAINT resena_libro_fk FOREIGN KEY (libro_id) REFERENCES Libro_p1(id),
     CONSTRAINT resena_cliente_fk FOREIGN KEY (cliente_id) REFERENCES Clientes_p1(id)
+);
+
+CREATE TABLE Bitacora_libro_p1 (
+    id NUMBER DEFAULT seq_bitacora.NEXTVAL NOT NULL,
+    fecha DATE NOT NULL,
+    hora DATETIME NOT NULL,
+    usuario VARCHAR2(25 char) NOT NULL,
+    descripcion VARCHAR2(25 char),
+    CONSTRAINT bitacora_pk PRIMARY KEY (id),
+    CONSTRAINT bitacora_usuario_fk FOREIGN KEY (usuario) REFERENCES Usuario_p1(username)
 );
 
 

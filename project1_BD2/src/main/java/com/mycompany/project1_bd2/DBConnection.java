@@ -18,8 +18,7 @@ public class DBConnection {
     
     public DBConnection() {
 
-        DB_URL = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:\\Users\\yaira\\OneDrive\\Documentos\\Yosward Ale\\Wallet_siuadb1";
-        //String jdbcUrl = "jdbc:oracle:thin:@siuadb2_high?TNS_ADMIN=C:/Users/camiu/OneDrive/Documents/2023/IV Semestre/WalletBd2";
+        DB_URL = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:/Wallet";
         DB_USER = "YGARCIA"; // Reemplaza con tu nombre de usuario
         DB_PASSWORD = "bdAlajuela2023s2"; // Reemplaza con tu contraseña
 

@@ -337,7 +337,7 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
                                 p_anno_publicacion libro_p1.anno_publicacion%TYPE, p_isbn libro_p1.isbn%TYPE,
                                 p_inventario libro_p1.inventario%TYPE);
 
-    PROCEDURE modificar_prestamos(p_id prestamos_p1.id%TYPE, p_fecha_prestamo prestamos_p1.fecha_prestamo%TYPE,
+    PROCEDURE modificar_prestamo(p_id prestamos_p1.id%TYPE, p_fecha_prestamo prestamos_p1.fecha_prestamo%TYPE,
                                     p_fecha_devolucion prestamos_p1.fecha_devolucion%TYPE, p_libro prestamos_p1.libro_id%TYPE,
                                     p_cliente prestamos_p1.cliente_id%TYPE);
 
@@ -363,7 +363,7 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
     
     PROCEDURE borrar_resena(p_id resena_p1.id%TYPE);
     
-    PROCEDURE borrar_prestamos(p_id prestamos_p1.id%TYPE);
+    PROCEDURE borrar_prestamo(p_id prestamos_p1.id%TYPE);
     
     PROCEDURE borrar_empleado(p_id empleado_p1.id%TYPE);
     
@@ -540,7 +540,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     END;
     
     
-    PROCEDURE modificar_prestamos(p_id prestamos_p1.id%TYPE, p_fecha_prestamo prestamos_p1.fecha_prestamo%TYPE,
+    PROCEDURE modificar_prestamo(p_id prestamos_p1.id%TYPE, p_fecha_prestamo prestamos_p1.fecha_prestamo%TYPE,
                                     p_fecha_devolucion prestamos_p1.fecha_devolucion%TYPE, p_libro prestamos_p1.libro_id%TYPE,
                                     p_cliente prestamos_p1.cliente_id%TYPE) IS
     BEGIN
@@ -761,7 +761,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     
     
     -- PROCEDIMIENTO PARA BORRAR UN PRESTAMO
-    PROCEDURE borrar_prestamos(p_id prestamos_p1.id%TYPE) IS
+    PROCEDURE borrar_prestamo(p_id prestamos_p1.id%TYPE) IS
         p_cont NUMBER;
     BEGIN
         SELECT COUNT(*) INTO p_cont

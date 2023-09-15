@@ -1045,7 +1045,8 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
 
     PROCEDURE mostrar_genero_popular AS
     BEGIN
-        SELECT c.id, c.nombre, c.apellido, g.nombre from clientes_p1 c
+        SELECT c.id, c.nombre, c.apellido, g.nombre 
+        FROM clientes_p1 c
         LEFT JOIN prestamos_p1 p ON c.id = p.cliente_id
         LEFT JOIN libro_p1 l ON p.libro_id = l.id
         LEFT JOIN genero_p1 g ON l.genero_id = g.id
@@ -1054,10 +1055,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
 
     PROCEDURE mostrar_editorial_popular AS
     BEGIN
-        SELECT c.id, c.nombre, c.apellido, e.nombre from clientes_p1 c
-        RIGHT JOIN prestamos_p1 p ON c.id = p.cliente_id
-        RIGHT JOIN libro_p1 l ON p.libro_id = l.id
-        RIGHT JOIN editorial_p1 e ON l.editorial_id = e.id
+        SELECT c.id, c.nombre, c.apellido, e.nombre 
+        FROM clientes_p1 c
+        INNER JOIN prestamos_p1 p ON c.id = p.cliente_id
+        INNER JOIN libro_p1 l ON p.libro_id = l.id
+        INNER JOIN editorial_p1 e ON l.editorial_id = e.id
         ORDER BY g.nombre, c.id;
     END;
     

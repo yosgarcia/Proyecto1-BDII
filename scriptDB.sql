@@ -915,6 +915,10 @@ CREATE OR REPLACE PACKAGE paquete_consultas_p1 AS
  
     PROCEDURE mostrar_todos_empleados;
     
+    PROCEDURE mostrar_genero_popular;
+    
+    PROCEDURE mostrar_editorial_popular;
+    
 END paquete_consultas_p1;
 
 
@@ -1120,7 +1124,8 @@ drop table genero_p1;
 drop table editorial_p1;
 drop table autor_p1;
 drop table clientes_p1;
+drop table bitacora_libro_p1;
 drop table usuario_p1;
 drop table empleados_p1;
-drop table bitacora_libro_p1;
+
 

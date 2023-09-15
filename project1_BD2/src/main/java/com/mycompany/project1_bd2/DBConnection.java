@@ -4,17 +4,17 @@
  */
 package com.mycompany.project1_bd2;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import oracle.jdbc.driver.OracleConnection;
 
 
 public class DBConnection {
     private final String DB_URL;
     private final String DB_USER;
     private final String DB_PASSWORD;
-    private Connection connection;
+    private OracleConnection connection;
     
     public DBConnection() {
 
@@ -32,7 +32,8 @@ public class DBConnection {
             Class.forName("oracle.jdbc.OracleDriver");
 
             // Establecer la conexión
-            connection = DriverManager.getConnection(DB_URL, props);
+            connection = (OracleConnection) DriverManager.getConnection(DB_URL, props);
+            
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
@@ -56,6 +57,12 @@ public class DBConnection {
         DBConnection dBConnection = new DBConnection();
         if (dBConnection.isConnected()) {
             System.out.println("Conexión exitosa a la base de datos Oracle.");
+            try {
+                System.out.println("Database Username is: " + dBConnection.connection.getUserName());
+            } catch(SQLException e){
+                
+            }
+            
             // Puedes realizar operaciones en la base de datos aquí
         } else {
             System.err.println("Error al conectar a la base de datos Oracle.");

@@ -91,10 +91,9 @@ CREATE TABLE Resena_p1 (
     CONSTRAINT resena_libro_fk FOREIGN KEY (libro_id) REFERENCES Libro_p1(id),
     CONSTRAINT resena_cliente_fk FOREIGN KEY (cliente_id) REFERENCES Clientes_p1(id)
 );
-
 CREATE TABLE Bitacora_libro_p1 (
     id NUMBER DEFAULT seq_bitacora.NEXTVAL NOT NULL,
-    fecha DATETIME NOT NULL,
+    fecha DATE NOT NULL,
     usuario VARCHAR2(50 char) NOT NULL,
     descripcion VARCHAR2(250 char),
     CONSTRAINT bitacora_pk PRIMARY KEY (id),
@@ -102,77 +101,77 @@ CREATE TABLE Bitacora_libro_p1 (
 );
 
 
+
 --INSERTS TABLA CLIENTE 
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Juan', 'P√©rez', 'jjuanperez@ejemplo.com', '88563245');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Juan', 'Perez', 'jjuanperez@ejemplo.com', '88563245');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lola', 'Hernandez', 'lolahernandez@ejemplo.com', '85648953');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yosward', 'Garcia', 'yoswigarcia@ejemplo.com', '88468995');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yurgen', 'Cambronero', 'yurgencitoelcabro@ejemplo.com', '87777953');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'Gonz√°lez', 'carlosgonzalez@ejemplo.com', '74691238');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'Mart√≠nez', 'anamartinez@ejemplo.com', '76582349');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'Rodr√≠guez', 'pedrorodriguez@ejemplo.com', '68743219');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mar√≠a', 'L√≥pez', 'marialopez@ejemplo.com', '78654321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Diego', 'S√°nchez', 'diegosanchez@ejemplo.com', '64758932');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Laura', 'Ram√≠rez', 'lauraramirez@ejemplo.com', '79865432');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Javier', 'P√©rez', 'javierperez@ejemplo.com', '68743125');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentina', 'Guti√©rrez', 'valentinagutierrez@ejemplo.com', '78564321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Santiago', 'Hern√°ndez', 'santiagohernandez@ejemplo.com', '74561289');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isabella', 'Gonz√°lez', 'isabellagonzalez@ejemplo.com', '86423579');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'Gonz·lez', 'carlosgonzalez@ejemplo.com', '74691238');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'MartÌnez', 'anamartinez@ejemplo.com', '76582349');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'RodrÌguez', 'pedrorodriguez@ejemplo.com', '68743219');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mar√≠a', 'LÛpez', 'marialopez@ejemplo.com', '78654321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Diego', 'S·nchez', 'diegosanchez@ejemplo.com', '64758932');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Laura', 'RamÌrez', 'lauraramirez@ejemplo.com', '79865432');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Javier', 'Perez', 'javierperez@ejemplo.com', '68743125');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentina', 'Gutierrez', 'valentinagutierrez@ejemplo.com', '78564321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Santiago', 'Hern·ndez', 'santiagohernandez@ejemplo.com', '74561289');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isabella', 'Gonz·lez', 'isabellagonzalez@ejemplo.com', '86423579');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Leo', 'Mora', 'leoelpelos@ejemplo.com', '63547891');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Luc√≠a', 'Rodr√≠guez', 'luciarodriguez@ejemplo.com', '78693245');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mat√≠as', 'L√≥pez', 'matiaslopez@ejemplo.com', '67459823');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mariana', 'S√°nchez', 'marianasanchez@ejemplo.com', '76584932');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emilio', 'Ram√≠rez', 'emilioramirez@ejemplo.com', '87654321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valeria', 'P√©rez', 'valeriaperez@ejemplo.com', '68743215');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Felipe', 'Guti√©rrez', 'felipegutierrez@ejemplo.com', '74563129');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Catalina', 'Hern√°ndez', 'catalinahernandez@ejemplo.com', '86451279');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Facundo', 'Gonz√°lez', 'facundogonzalez@ejemplo.com', '63547892');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Antonella', 'Mart√≠nez', 'antonellamartinez@ejemplo.com', '76549832');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucas', 'Rodr√≠guez', 'lucasrodriguez@ejemplo.com', '78643921');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isidora', 'L√≥pez', 'isidoralopez@ejemplo.com', '67459832');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Benjam√≠n', 'S√°nchez', 'benjaminsanchez@ejemplo.com', '74563128');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Renata', 'Ram√≠rez', 'renataramirez@ejemplo.com', '87654931');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emiliano', 'P√©rez', 'emilianoperez@ejemplo.com', '68743216');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentino', 'Guti√©rrez', 'valentinogutierrez@ejemplo.com', '74563127');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carmen', 'Hern√°ndez', 'carmenhernandez@ejemplo.com', '86451278');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('LucÌa', 'RodrÌguez', 'luciarodriguez@ejemplo.com', '78693245');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Matias', 'Lopez', 'matiaslopez@ejemplo.com', '67459823');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mariana', 'S·nchez', 'marianasanchez@ejemplo.com', '76584932');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emilio', 'Ramirez', 'emilioramirez@ejemplo.com', '87654321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valeria', 'PÈrez', 'valeriaperez@ejemplo.com', '68743215');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Felipe', 'GutiÈrrez', 'felipegutierrez@ejemplo.com', '74563129');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Catalina', 'Hern·ndez', 'catalinahernandez@ejemplo.com', '86451279');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Facundo', 'Gonzalez', 'facundogonzalez@ejemplo.com', '63547892');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Antonella', 'Martinez', 'antonellamartinez@ejemplo.com', '76549832');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucas', 'Rodriguez', 'lucasrodriguez@ejemplo.com', '78643921');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isidora', 'Lopez', 'isidoralopez@ejemplo.com', '67459832');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('BenjamÌn', 'S·nchez', 'benjaminsanchez@ejemplo.com', '74563128');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Renata', 'RamÌrez', 'renataramirez@ejemplo.com', '87654931');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emiliano', 'PÈrez', 'emilianoperez@ejemplo.com', '68743216');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentino', 'GutiÈrrez', 'valentinogutierrez@ejemplo.com', '74563127');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carmen', 'Hern·ndez', 'carmenhernandez@ejemplo.com', '86451278');
 
-select * from Clientes_p1;
+
 
 --INSERTS TABLA AUTOR
 
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.K', 'Rowling', 'Brit√°nica');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gabriel', 'Garc√≠a M√°rquez', 'Colombiana');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.K', 'Rowling', 'Brit·nica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gabriel', 'GarcÌa M·rquez', 'Colombiana');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Mario', 'Vargas Llosa', 'Peruana');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Pablo', 'Neruda', 'Chilena');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Isabel', 'Allende', 'Chilena');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gustavo', 'Adolfo B√©cquer', 'Espa√±ola');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gustavo', 'Adolfo BÈcquer', 'EspaÒola');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Octavio', 'Paz', 'Mexicana');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Federico', 'Garc√≠a Lorca', 'Espa√±ola');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Federico', 'GarcÌa Lorca', 'EspaÒola');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jorge', 'Borges', 'Argentina');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jos√©', 'Saramago', 'Portuguesa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Virginia', 'Woolf', 'Brit√°nica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('JosÈ', 'Saramago', 'Portuguesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Virginia', 'Woolf', 'Brit·nica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Alejandro', 'Dumas', 'Francesa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Le√≥n', 'Tolst√≥i', 'Rusa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('George', 'Orwell', 'Brit√°nica');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jane', 'Austen', 'Brit√°nica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('LeÛn', 'TolstÛi', 'Rusa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('George', 'Orwell', 'Brit·nica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jane', 'Austen', 'Brit·nica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Haruki', 'Murakami', 'Japonesa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Agatha', 'Christie', 'Brit√°nica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Agatha', 'Christie', 'Brit·nica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Mark', 'Twain', 'Estadounidense');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Charles', 'Dickens', 'Brit√°nica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Charles', 'Dickens', 'Brit·nica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Hermann', 'Hesse', 'Alemana');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gabriela', 'Mistral', 'Chilena');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Albert', 'Camus', 'Francesa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.R.R', 'Tolkien', 'Brit√°nica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.R.R', 'Tolkien', 'Brit·nica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Hans', 'Christian Andersen', 'Danesa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Leo', 'Tolstoy', 'Rusa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Anton', 'Chekhov', 'Rusa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jules', 'Verne', 'Francesa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Rabindranath', 'Tagore', 'India');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Honor√©', 'de Balzac', 'Francesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('HonorÈ', 'de Balzac', 'Francesa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Edgar', 'Allan Poe', 'Estadounidense');
-select * from Autor_p1;
 
 --Inserts tabla editorial
-INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Editorial ABC', 'Espa√±a');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Editorial ABC', 'EspaÒa');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Penguin Random House', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('HarperCollins Publishers', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Hachette Livre', 'Francia');
@@ -184,7 +183,7 @@ INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Pearson PLC', 'Reino Unido');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Wiley', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Oxford University Press', 'Reino Unido');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Cambridge University Press', 'Reino Unido');
-INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Elsevier', 'Pa√≠ses Bajos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Elsevier', 'PaÌses Bajos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Houghton Mifflin Harcourt', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Random House', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Penguin Books', 'Reino Unido');
@@ -206,35 +205,35 @@ INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Stanford University Press', '
 select * from Editorial_p1;
 
 --Inserts TABLA GENERO
-INSERT INTO Genero_p1 (nombre) VALUES ('Ficci√≥n');
+INSERT INTO Genero_p1 (nombre) VALUES ('FicciÛn');
 INSERT INTO Genero_p1 (nombre) VALUES ('Realismo');
-INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia Ficci√≥n');
-INSERT INTO Genero_p1 (nombre) VALUES ('Fantas√≠a');
+INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia FicciÛn');
+INSERT INTO Genero_p1 (nombre) VALUES ('FantasÌa');
 INSERT INTO Genero_p1 (nombre) VALUES ('Misterio');
 INSERT INTO Genero_p1 (nombre) VALUES ('Terror');
 INSERT INTO Genero_p1 (nombre) VALUES ('Aventura');
 INSERT INTO Genero_p1 (nombre) VALUES ('Romance');
 INSERT INTO Genero_p1 (nombre) VALUES ('Drama');
-INSERT INTO Genero_p1 (nombre) VALUES ('Poes√≠a');
-INSERT INTO Genero_p1 (nombre) VALUES ('Biograf√≠a');
-INSERT INTO Genero_p1 (nombre) VALUES ('Autobiograf√≠a');
+INSERT INTO Genero_p1 (nombre) VALUES ('PoesÌa');
+INSERT INTO Genero_p1 (nombre) VALUES ('BiografÌa');
+INSERT INTO Genero_p1 (nombre) VALUES ('AutobiografÌa');
 INSERT INTO Genero_p1 (nombre) VALUES ('Historia');
 INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia');
-INSERT INTO Genero_p1 (nombre) VALUES ('Econom√≠a');
-INSERT INTO Genero_p1 (nombre) VALUES ('Pol√≠tica');
-INSERT INTO Genero_p1 (nombre) VALUES ('Religi√≥n');
+INSERT INTO Genero_p1 (nombre) VALUES ('EconomÌa');
+INSERT INTO Genero_p1 (nombre) VALUES ('PolÌtica');
+INSERT INTO Genero_p1 (nombre) VALUES ('ReligiÛn');
 INSERT INTO Genero_p1 (nombre) VALUES ('Autoayuda');
-INSERT INTO Genero_p1 (nombre) VALUES ('Aventuras Gr√°ficas');
-INSERT INTO Genero_p1 (nombre) VALUES ('C√≥mics');
-INSERT INTO Genero_p1 (nombre) VALUES ('Novela Gr√°fica');
+INSERT INTO Genero_p1 (nombre) VALUES ('Aventuras Gr·ficas');
+INSERT INTO Genero_p1 (nombre) VALUES ('CÛmics');
+INSERT INTO Genero_p1 (nombre) VALUES ('Novela Gr·fica');
 INSERT INTO Genero_p1 (nombre) VALUES ('Historieta');
 INSERT INTO Genero_p1 (nombre) VALUES ('Ensayo');
-INSERT INTO Genero_p1 (nombre) VALUES ('Filosof√≠a');
+INSERT INTO Genero_p1 (nombre) VALUES ('FilosofÌa');
 INSERT INTO Genero_p1 (nombre) VALUES ('Viajes');
 INSERT INTO Genero_p1 (nombre) VALUES ('Crimen');
 INSERT INTO Genero_p1 (nombre) VALUES ('Humor');
 INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia y Naturaleza');
-INSERT INTO Genero_p1 (nombre) VALUES ('Tecnolog√≠a');
+INSERT INTO Genero_p1 (nombre) VALUES ('TecnologÌa');
 INSERT INTO Genero_p1 (nombre) VALUES ('Cocina');
 
 select * from Genero_P1;
@@ -243,7 +242,7 @@ select * from Genero_P1;
 
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Harry Potter y la Piedra Filosofal', 1, 4, 1, TO_DATE('1997-06-26', 'YYYY-MM-DD'), '978-0590353427', 50);
 
-INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('100 a√±os de soledad', 2, 1, 2, TO_DATE('1982-05-30', 'YYYY-MM-DD'), '978-9871234567', 45);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('100 aÒos de soledad', 2, 1, 2, TO_DATE('1982-05-30', 'YYYY-MM-DD'), '978-9871234567', 45);
 
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('La ciudad y los perros', 3, 1, 3, TO_DATE('1962-04-10', 'YYYY-MM-DD'), '978-1234567890', 55);
 
@@ -277,7 +276,7 @@ INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacio
 
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Historia de dos ciudades', 18, 1, 19, TO_DATE('1859-08-01', 'YYYY-MM-DD'), '978-0141439563', 42);
 
-INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Desolaci√≥n', 19, 1, 21, TO_DATE('1922-01-01', 'YYYY-MM-DD'), '978-0142437186', 60);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('DesolaciÛn', 19, 1, 21, TO_DATE('1922-01-01', 'YYYY-MM-DD'), '978-0142437186', 60);
 
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Tala', 20, 1, 21, TO_DATE('1938-01-01', 'YYYY-MM-DD'), '978-0553383805', 40);
 
@@ -287,14 +286,8 @@ INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacio
 
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('El cuervo', 23, 1, 30, TO_DATE('1845-01-01', 'YYYY-MM-DD'), '978-0523873805', 40);
 
-INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (primero, segundo, tercero, cuarto);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (uno, dos, tres, cuatro);
 
-INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion) VALUES (uno, dos, tres);
-
-select * from Autor_p1;
-select apellido from Autor_p1;
 CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS 
     FUNCTION insertar_cliente (p_nombre clientes_p1.nombre%TYPE, p_apellido clientes_p1.apellido%TYPE, p_correo clientes_p1.correo%TYPE,
                             p_telefono clientes_p1.telefono%TYPE) RETURN NUMBER;
@@ -307,11 +300,12 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
                             p_genero libro_p1.genero_id%TYPE, p_autor libro_p1.autor_id%TYPE,
                             p_anno libro_p1.anno_publicacion%TYPE, p_isbn libro_p1.isbn%TYPE,
                             p_inventario libro_p1.inventario%TYPE) RETURN NUMBER;
+                            
     FUNCTION insertar_prestamo(p_fecha_prestamo prestamos_p1.fecha_prestamo%TYPE, 
                                 p_fecha_devolucion prestamos_p1.fecha_devolucion%TYPE,
                                 p_libro prestamos_p1.libro_id%TYPE, p_cliente prestamos_p1.cliente_id%TYPE) RETURN NUMBER;
     
-    FUNCTION insertar_resena(p_descripcion resena_p1.descripccion%TYPE, p_calificacion resena_p1.calificacion%TYPE,
+    FUNCTION insertar_resena(p_descripcion resena_p1.descripcion%TYPE, p_calificacion resena_p1.calificacion%TYPE,
                                 p_libro resena_p1.libro_id%TYPE, p_cliente resena_p1.cliente_id%TYPE) RETURN NUMBER;
     
     FUNCTION insertar_empleado(p_nombre empleado_p1.nombre%TYPE,
@@ -332,7 +326,7 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
 
     PROCEDURE modificar_genero(p_id genero_p1.id%TYPE, p_nombre genero_p1.nombre%TYPE);
 
-    PROCEDURE modificar_libro(p_id libro_p1.id%TYPE, p_titulo libro_p1.titutlo%TYPE, p_editorial libro_p1.editorial_id%TYPE,
+    PROCEDURE modificar_libro(p_id libro_p1.id%TYPE, p_titulo libro_p1.titulo%TYPE, p_editorial libro_p1.editorial_id%TYPE,
                                 p_genero libro_p1.genero_id%TYPE, p_autor libro_p1.autor_id%TYPE,
                                 p_anno_publicacion libro_p1.anno_publicacion%TYPE, p_isbn libro_p1.isbn%TYPE,
                                 p_inventario libro_p1.inventario%TYPE);
@@ -372,18 +366,18 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
     PROCEDURE borrar_bitacora_libro(p_id bitacora_libro_p1.id%TYPE);
     
 END paquete_modificaciones_p1;
-
+/
     
-CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS 
-    FUNCTION insertar_cliente(p_nombre cliente_p1.nombre%TYPE, p_apellido cliente_p1.apellido%TYPE, p_correo cliente_p1.correo%TYPE,
-                            p_telefono cliente_p1.telefono%TYPE)
+CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS 
+    FUNCTION insertar_cliente(p_nombre clientes_p1.nombre%TYPE, p_apellido clientes_p1.apellido%TYPE, p_correo clientes_p1.correo%TYPE,
+                            p_telefono clientes_p1.telefono%TYPE)
     RETURN NUMBER IS 
-    n_cliente cliente_p1.id%TYPE;
+    n_cliente clientes_p1.id%TYPE;
     BEGIN
         SELECT seq_clientes.NEXTVAL INTO n_cliente FROM dual;
-        INSERT INTO cliente_p1 VALUES (nombre_cliente, correo_cliente, telefono_cliente);
-        RETURN (n_cliente);
-    END nuevo_cliente;
+        INSERT INTO clientes_p1 (nombre, apellido, correo, telefono) VALUES (p_nombre, p_apellido, p_correo, p_telefono);
+        RETURN n_cliente;
+    END;
     
     
     FUNCTION insertar_autor(p_nombre autor_p1.nombre%TYPE, p_apellido autor_p1.apellido%TYPE,
@@ -392,9 +386,9 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     n_autor autor_p1.id%TYPE;
     BEGIN
         SELECT seq_autor.NEXTVAL INTO n_autor FROM dual;
-        INSERT INTO autor_p1 VALUES (nombre_autor, apellido_autor, nacionalidad_autor);
-        RETURN (n_autor);
-    END nuevo_autor;
+        INSERT INTO autor_p1 (nombre, apellido, nacionalidad) VALUES (p_nombre, p_apellido, p_nacionalidad);
+        RETURN n_autor;
+    END;
     
     
     FUNCTION insertar_editorial(p_nombre editorial_p1.nombre%TYPE, p_origen editorial_p1.origen%TYPE)
@@ -402,7 +396,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     n_editorial editorial_p1.id%TYPE;
     BEGIN
         SELECT seq_editorial.NEXTVAL INTO n_editorial FROM dual;
-        INSERT INTO editorial_p1 VALUES (p_nombre, p_origen);
+        INSERT INTO editorial_p1(nombre, origen) VALUES (p_nombre, p_origen);
         RETURN n_editorial;
     END;
     
@@ -412,7 +406,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     n_genero genero_p1.id%TYPE;
     BEGIN
         SELECT seq_genero.NEXTVAL INTO n_genero FROM dual;
-        INSERT INTO genero_p1 VALUES (p_nombre);
+        INSERT INTO genero_p1(nombre) VALUES (p_nombre);
         RETURN n_genero;
     END;
     
@@ -425,7 +419,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     n_libro libro_p1.id%TYPE;
     BEGIN
         SELECT seq_libro.NEXTVAL INTO n_libro FROM dual;
-        INSERT INTO libro_p1 VALUES (p_titulo, p_editorial, p_genero, p_autor,
+        INSERT INTO libro_p1(titulo, editorial_id, genero_id, autor_id,anno_publicacion, isbn, inventario) VALUES (p_titulo, p_editorial, p_genero, p_autor,
                                     p_anno, p_isbn, p_inventario);
         RETURN n_libro;
     END;
@@ -437,18 +431,18 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     n_prestamos prestamos_p1.id%TYPE;
     BEGIN
         SELECT seq_prestamos.NEXTVAL INTO n_prestamos FROM dual;
-        INSERT INTO prestamos_p1 VALUES (p_fecha_prestamo, p_fecha_devolucion, p_libro, p_ccliente);
+        INSERT INTO prestamos_p1(fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (p_fecha_prestamo, p_fecha_devolucion, p_libro, p_cliente);
         RETURN n_prestamos;
     END;
     
     
-    FUNCTION insertar_resena(p_descripcion resena_p1.descripccion%TYPE, p_calificacion resena_p1.calificacion%TYPE,
+    FUNCTION insertar_resena(p_descripcion resena_p1.descripcion%TYPE, p_calificacion resena_p1.calificacion%TYPE,
                                 p_libro resena_p1.libro_id%TYPE, p_cliente resena_p1.cliente_id%TYPE)
     RETURN NUMBER IS
     n_resena resena_p1.id%TYPE;
     BEGIN
         SELECT seq_resena.NEXTVAL INTO n_resena FROM dual;
-        INSERT INTO resena_p1 VALUES (p_descripcion, p_calificacion, p_libro, p_cliente);
+        INSERT INTO resena_p1(descripcion, calificacion, libro_id, cliente_id) VALUES (p_descripcion, p_calificacion, p_libro, p_cliente);
         RETURN n_resena;
     END;
     
@@ -459,7 +453,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     n_empleado empleado_p1.id%TYPE;
     BEGIN
         SELECT seq_empleado.NEXTVAL INTO n_empleado FROM dual;
-        INSERT INTO empleado_p1 VALUES (p_nombre, p_apellido);
+        INSERT INTO empleado_p1(nombre, apellido) VALUES (p_nombre, p_apellido);
         RETURN n_empleado;
     END;
 	
@@ -470,8 +464,8 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     RETURN VARCHAR2 IS
     n_usuario usuario_p1.username%TYPE;
     BEGIN
-        SELECT username INTO n_usuario FROM dual;
-        INSERT INTO usuario_p1 VALUES (p_usuario, p_contrasenna, p_empleado);
+        SELECT p_usuario INTO n_usuario FROM dual;
+        INSERT INTO usuario_p1(username, contrasenna, empleado_id) VALUES (p_usuario, p_contrasenna, p_empleado);
         RETURN n_usuario;
     END;
     
@@ -505,7 +499,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
                                     p_origen editorial_p1.origen%TYPE) IS
     BEGIN
         UPDATE editorial_p1
-        SET nombre = p_nombre, p_origen = origen
+        SET nombre = p_nombre, origen = p_origen
         WHERE id = p_id;
         EXCEPTION
             WHEN OTHERS THEN
@@ -525,7 +519,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     END;
     
     
-    PROCEDURE modificar_libro(p_id libro_p1.id%TYPE, p_titulo libro_p1.titutlo%TYPE, p_editorial libro_p1.editorial_id%TYPE,
+    PROCEDURE modificar_libro(p_id libro_p1.id%TYPE, p_titulo libro_p1.titulo%TYPE, p_editorial libro_p1.editorial_id%TYPE,
                                 p_genero libro_p1.genero_id%TYPE, p_autor libro_p1.autor_id%TYPE,
                                 p_anno_publicacion libro_p1.anno_publicacion%TYPE, p_isbn libro_p1.isbn%TYPE,
                                 p_inventario libro_p1.inventario%TYPE) IS
@@ -593,16 +587,16 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
     
     
     -- PROCEDIMIENTO PARA BORRAR CLIENTE
-    PROCEDURE borrar_cliente(p_id cliente_p1.id%TYPE) IS
+    PROCEDURE borrar_cliente(p_id clientes_p1.id%TYPE) IS
     c_cont NUMBER;
     BEGIN
         SELECT COUNT(*) INTO c_cont
-        FROM cliente_p1 c
+        FROM clientes_p1 c
         WHERE c.id = p_id;
         
         IF c_cont = 1 THEN
             -- Si el cliente existe en la BD
-            DELETE FROM cliente_p1
+            DELETE FROM clientes_p1
             WHERE id = p_id;
             IF SQL%ROWCOUNT = 1 THEN
                 COMMIT;
@@ -830,13 +824,13 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
             WHERE username = p_usuario;
             IF SQL%ROWCOUNT = 1 THEN
                 COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Usuario con ID ' || p_id || ' eliminado exitosamente');
+                DBMS_OUTPUT.PUT_LINE('Usuario ' || p_usuario || ' eliminado exitosamente');
             ELSE
                 ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar usuario con ID: ' || p_id);
+                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar usuario: ' || p_usuario);
             END IF;
         ELSE
-            DBMS_OUTPUT.PUT_LINE('Usuario con ID ' || p_id || ' no existe.');
+            DBMS_OUTPUT.PUT_LINE('Usuario ' || p_usuario || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
@@ -854,7 +848,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificciones_p1 AS
         IF p_cont = 1 THEN
             -- Si la bitacora existe en la BD
             DELETE FROM bitacora_libro_p1
-            WHERE b.id = p_id;
+            WHERE id = p_id;
             IF SQL%ROWCOUNT = 1 THEN
                 COMMIT;
                 DBMS_OUTPUT.PUT_LINE('Bitacora con ID ' || p_id || ' eliminado exitosamente');
@@ -875,199 +869,223 @@ END paquete_modificaciones_p1;
 
 
 CREATE OR REPLACE PACKAGE paquete_consultas_p1 AS
-    PROCEDURE mostrar_todos_clientes;
+    PROCEDURE mostrar_todos_clientes (p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_cliente_id (p_id clientes_p1.id%TYPE);
+    PROCEDURE mostrar_cliente_id (p_id clientes_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_todos_autores;
+    PROCEDURE mostrar_todos_autores (p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_autor_id (p_id autor_p1.id%TYPE);
+    PROCEDURE mostrar_autor_id (p_id autor_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_todos_editoriales;
+    PROCEDURE mostrar_todos_editoriales (p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_editorial_id (p_id editorial_p1.id%TYPE);
+    PROCEDURE mostrar_editorial_id (p_id editorial_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_todos_generos;
+    PROCEDURE mostrar_todos_generos(p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_genero_id (p_id genero_p1.id%TYPE);
+    PROCEDURE mostrar_genero_id (p_id genero_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_todos_libros;
+    PROCEDURE mostrar_todos_libros(p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_libro_id (p_id libro_p1.id%TYPE);
+    PROCEDURE mostrar_libro_id (p_id libro_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_todos_resena;
+    PROCEDURE mostrar_todos_resena(p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_resena_id (p_id resena_p1.id%TYPE);
+    PROCEDURE mostrar_resena_id (p_id resena_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_todos_prestamos;
+    PROCEDURE mostrar_todos_prestamos(p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_prestamos_id (p_id prestamos_p1.id%TYPE);
+    PROCEDURE mostrar_prestamos_id (p_id prestamos_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_ultimas_nbitacoras(p_num NUMBER);
+    PROCEDURE mostrar_ultimas_nbitacoras(p_num NUMBER, p_cursor OUT SYS_REFCURSOR);
 
-    PROCEDURE mostrar_bitacoras;
+    PROCEDURE mostrar_bitacoras(p_cursor OUT SYS_REFCURSOR);
  
-    PROCEDURE mostrar_usuario_nombre(p_usuario usuario_p1.username%TYPE);
+    PROCEDURE mostrar_usuario_nombre(p_usuario usuario_p1.username%TYPE, p_cursor OUT SYS_REFCURSOR);
  
-    PROCEDURE mostrar_usuarios;
+    PROCEDURE mostrar_usuarios(p_cursor OUT SYS_REFCURSOR);
  
-    PROCEDURE mostrar_empleados_id (p_id empleados_p1.id%TYPE);
+    PROCEDURE mostrar_empleados_id (p_id empleado_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR);
  
-    PROCEDURE mostrar_todos_empleados;
+    PROCEDURE mostrar_todos_empleados(p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_genero_popular;
+    PROCEDURE mostrar_genero_popular(p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_editorial_popular;
+    PROCEDURE mostrar_editorial_popular(p_cursor OUT SYS_REFCURSOR);
     
 END paquete_consultas_p1;
-
+/
 
 CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
-    PROCEDURE mostrar_todos_clientes AS
+    PROCEDURE mostrar_todos_clientes (p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
-        SELECT * FROM clientes_p1;
+        OPEN p_cursor FOR
+            SELECT * FROM clientes_p1;
     END;
     
-    PROCEDURE mostrar_cliente_id (p_id clientes_p1.id%TYPE)AS
+    PROCEDURE mostrar_cliente_id (p_id clientes_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR)AS
     BEGIN
-        SELECT *
-        FROM clientes_p1 c
-        WHERE c.id = p_id;
+        OPEN p_cursor FOR
+            SELECT *
+            FROM clientes_p1 c
+            WHERE c.id = p_id;
     END;
     
-    PROCEDURE mostrar_todos_autores AS
+    PROCEDURE mostrar_todos_autores (p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
-        SELECT * FROM autor_p1;
+        OPEN p_cursor FOR
+            SELECT * FROM autor_p1;
     END;
     
-    PROCEDURE mostrar_autor_id (p_id autor_p1.id%TYPE)AS
+    PROCEDURE mostrar_autor_id (p_id autor_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR)AS
     BEGIN
-        SELECT *
-        FROM autor_p1 a
-        WHERE a.id = p_id;
-    END;
-    
-    
-    PROCEDURE mostrar_todos_editoriales AS
-    BEGIN
-        SELECT * FROM editorial_p1;
-    END;
-    
-    PROCEDURE mostrar_editorial_id (p_id editorial_p1.id%TYPE)AS
-    BEGIN
-        SELECT *
-        FROM editorial_p1 e
-        WHERE e.id = p_id;
-    END;
-    
-    PROCEDURE mostrar_todos_generos AS
-    BEGIN
-        SELECT * FROM genero_p1;
-    END;
-    
-    PROCEDURE mostrar_genero_id (p_id genero_p1.id%TYPE)AS
-    BEGIN
-        SELECT *
-        FROM genero_p1 g
-        WHERE g.id = p_id;
-    END;
-    
-    PROCEDURE mostrar_todos_libros AS
-    BEGIN
-        SELECT * FROM libro_p1;
-    END;
-    
-    PROCEDURE mostrar_libro_id (p_id libro_p1.id%TYPE)AS
-    BEGIN
-        SELECT *
-        FROM libro_p1 l
-        WHERE l.id = p_id;
-    END;
-    
-    PROCEDURE mostrar_todos_resena AS
-    BEGIN
-        SELECT * FROM resena_p1;
-    END;
-    
-    PROCEDURE mostrar_resena_id (p_id resena_p1.id%TYPE)AS
-    BEGIN
-        SELECT *
-        FROM resena_p1 r
-        WHERE r.id = p_id;
-    END;
-    
-    PROCEDURE mostrar_todos_prestamos AS
-    BEGIN
-        SELECT * FROM prestamos_p1;
-    END;
-    
-    PROCEDURE mostrar_prestamos_id (p_id prestamos_p1.id%TYPE)AS
-    BEGIN
-        SELECT *
-        FROM prestamos_p1 p
-        WHERE p.id = p_id;
+        OPEN p_cursor FOR
+            SELECT *
+            FROM autor_p1 a
+            WHERE a.id = p_id;
     END;
     
     
-    PROCEDURE mostrar_todos_empleados AS
+    PROCEDURE mostrar_todos_editoriales (p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
-        SELECT * FROM empleados_p1;
+        OPEN p_cursor FOR
+            SELECT * FROM editorial_p1;
     END;
     
-    PROCEDURE mostrar_empleados_id (p_id empleados_p1.id%TYPE)AS
+    PROCEDURE mostrar_editorial_id (p_id editorial_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR)AS
     BEGIN
-        SELECT *
-        FROM empleados_p1 p
-        WHERE p.id = p_id;
+        OPEN p_cursor FOR                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+            SELECT *
+            FROM editorial_p1 e
+            WHERE e.id = p_id;
     END;
     
-    PROCEDURE mostrar_usuarios AS
+    PROCEDURE mostrar_todos_generos(p_cursor OUT SYS_REFCURSOR) AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT * FROM genero_p1;
+    END;
+    
+    PROCEDURE mostrar_genero_id (p_id genero_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR)AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT *
+            FROM genero_p1 g
+            WHERE g.id = p_id;
+    END;
+    
+    PROCEDURE mostrar_todos_libros(p_cursor OUT SYS_REFCURSOR) AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT * FROM libro_p1;
+    END;
+    
+    PROCEDURE mostrar_libro_id (p_id libro_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR)AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT *
+            FROM libro_p1 l
+            WHERE l.id = p_id;
+    END;
+    
+    PROCEDURE mostrar_todos_resena(p_cursor OUT SYS_REFCURSOR) AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT * FROM resena_p1;
+    END;
+    
+    PROCEDURE mostrar_resena_id (p_id resena_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR)AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT *
+            FROM resena_p1 r
+            WHERE r.id = p_id;
+    END;
+    
+    PROCEDURE mostrar_todos_prestamos(p_cursor OUT SYS_REFCURSOR) AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT * FROM prestamos_p1;
+    END;
+    
+    PROCEDURE mostrar_prestamos_id (p_id prestamos_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR)AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT *
+            FROM prestamos_p1 p
+            WHERE p.id = p_id;
+    END;
+    
+    
+    PROCEDURE mostrar_todos_empleados(p_cursor OUT SYS_REFCURSOR) AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT * FROM empleado_p1;
+    END;
+    
+    PROCEDURE mostrar_empleados_id (p_id empleado_p1.id%TYPE, p_cursor OUT SYS_REFCURSOR)AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT *
+            FROM empleado_p1 p
+            WHERE p.id = p_id;
+    END;
+    
+    PROCEDURE mostrar_usuarios(p_cursor OUT SYS_REFCURSOR) AS
     BEGIN 
-        SELECT * FROM usuario_p1;
+        OPEN p_cursor FOR
+            SELECT * FROM usuario_p1;
     END;
     
     
-    PROCEDURE mostrar_usuario_nombre(p_usuario usuario_p1.username%TYPE) AS
+    PROCEDURE mostrar_usuario_nombre(p_usuario usuario_p1.username%TYPE, p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
-        SELECT * 
-        FROM usuario_p1 u
-        WHERE u.username = p_usuario;
+        OPEN p_cursor FOR
+            SELECT * 
+            FROM usuario_p1 u
+            WHERE u.username = p_usuario;
     END;
     
-    PROCEDURE mostrar_bitacoras AS
+    PROCEDURE mostrar_bitacoras(p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
-        SELECT * FROM bitacora_libro_p1;
+        OPEN p_cursor FOR
+            SELECT * FROM bitacora_libro_p1;
     END;
     
-    PROCEDURE mostrar_ultimas_nbitacoras(p_num NUMBER) AS
+    PROCEDURE mostrar_ultimas_nbitacoras(p_num NUMBER, p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
-        SELECT *
-        FROM bitacora_libro_p1 p
-        ORDER BY p.fecha DESC
-        FETCH FIRST p_num ROWS ONLY;
+        OPEN p_cursor FOR
+            SELECT *
+            FROM bitacora_libro_p1 p
+            ORDER BY p.fecha DESC
+            FETCH FIRST p_num ROWS ONLY;
     END;
 
-    PROCEDURE mostrar_genero_popular AS
+    PROCEDURE mostrar_genero_popular(p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
-        SELECT c.id, c.nombre, c.apellido, g.nombre 
-        FROM clientes_p1 c
-        LEFT JOIN prestamos_p1 p ON c.id = p.cliente_id
-        LEFT JOIN libro_p1 l ON p.libro_id = l.id
-        LEFT JOIN genero_p1 g ON l.genero_id = g.id
-        ORDER BY g.nombre, c.id;
+        OPEN p_cursor FOR
+            SELECT c.id, c.nombre, c.apellido, g.nombre 
+            FROM clientes_p1 c
+            LEFT JOIN prestamos_p1 p ON c.id = p.cliente_id
+            LEFT JOIN libro_p1 l ON p.libro_id = l.id
+            LEFT JOIN genero_p1 g ON l.genero_id = g.id
+            ORDER BY g.nombre, c.id;
     END;
 
-    PROCEDURE mostrar_editorial_popular AS
+    PROCEDURE mostrar_editorial_popular(p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
-        SELECT c.id, c.nombre, c.apellido, e.nombre 
-        FROM clientes_p1 c
-        INNER JOIN prestamos_p1 p ON c.id = p.cliente_id
-        INNER JOIN libro_p1 l ON p.libro_id = l.id
-        INNER JOIN editorial_p1 e ON l.editorial_id = e.id
-        ORDER BY g.nombre, c.id;
+        OPEN p_cursor FOR
+            SELECT c.id, c.nombre, c.apellido, e.nombre 
+            FROM clientes_p1 c
+            INNER JOIN prestamos_p1 p ON c.id = p.cliente_id
+            INNER JOIN libro_p1 l ON p.libro_id = l.id
+            INNER JOIN editorial_p1 e ON l.editorial_id = e.id
+            ORDER BY e.nombre, c.id;
     END;
     
 END paquete_consultas_p1;
+
+Select user from dual;
 
 CREATE OR REPLACE TRIGGER cambio_libros
     AFTER INSERT OR UPDATE OR DELETE
@@ -1075,16 +1093,16 @@ CREATE OR REPLACE TRIGGER cambio_libros
 DECLARE
     usuario VARCHAR2(50 char);
 BEGIN
-    usuario := SELECT USER FROM DUAL;
+    SELECT USER INTO usuario FROM DUAL;
     IF INSERTING THEN
-        INSERT INTO Bitacora_libro_p1 (id, fecha, usuario, descripcion)
-        VALUES (:NEW.id, SYSDATE, usuario, 'Se insert√≥ el libro: ' || :NEW.titulo);
+        INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
+        VALUES (SYSDATE, usuario, 'Se insertÛ el libro: ' || :NEW.titulo);
 
     ELSIF UPDATING THEN
         DECLARE
             accion VARCHAR2(250 char);
         BEGIN
-            accion := 'Se modific√≥ el libro: ' || :NEW.titulo;
+            accion := 'Se modificÛ el libro: ' || :NEW.id;
 
             IF :NEW.inventario != :OLD.inventario THEN
                 accion := accion || '. Inventario antes: ' || :OLD.inventario || ', Inventario actuak: ' || :NEW.inventario;
@@ -1093,20 +1111,41 @@ BEGIN
             IF :NEW.isbn != :OLD.isbn THEN
                 accion := accion || '. ISBN anterior: ' || :OLD.isbn || ', ISBN actual: ' || :NEW.isbn;
             END IF;
+            
+            IF :NEW.titulo != :OLD.titulo THEN
+                accion := accion || '. titulo anterior: ' || :OLD.titulo || ', titulo actual: ' || :NEW.titulo;
+            END IF;
+            
+            IF :NEW.editorial_id != :OLD.editorial_id THEN
+                accion := accion || '. editorial anterior: ' || :OLD.editorial_id || ', editorial actual: ' || :NEW.editorial_id;
+            END IF;
+            
+            IF :NEW.genero_id != :OLD.genero_id THEN
+                accion := accion || '. genero anterior: ' || :OLD.genero_id || ', genero actual: ' || :NEW.genero_id;
+            END IF;
+            
+            IF :NEW.autor_id != :OLD.autor_id THEN
+                accion := accion || '. autor anterior: ' || :OLD.autor_id || ', autor actual: ' || :NEW.autor_id;
+            END IF;
+            
+            IF :NEW.anno_publicacion != :OLD.anno_publicacion THEN
+                accion := accion || '. aÒo publicacion anterior: ' || :OLD.anno_publicacion || ', aÒo publicacion actual: ' || :NEW.anno_publicacion;
+            END IF;
 
-            INSERT INTO Bitacora_libro_p1 (id, fecha, usuario, descripcion)
-            VALUES (:NEW.id, SYSDATE, usuario, accion);
+            INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
+            VALUES (SYSDATE, usuario, accion);
         END;
 
     ELSIF DELETING THEN
-        INSERT INTO Bitacora_libro_p1 (id, fecha, usuario, descripcion)
-        VALUES (:NEW.id, SYSDATE, usuario, 'Se elimin√≥ el libro: ' || :OLD.titulo);
+        INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
+        VALUES (SYSDATE, usuario, 'Se eliminÛ el libro: ' || :OLD.titulo);
 
     ELSE
         DBMS_OUTPUT.PUT_LINE('Este codigo no es accesible.');
     END IF;
 END;
-/
+
+
 
 ALTER SEQUENCE seq_clientes RESTART;
 ALTER SEQUENCE seq_autor RESTART;
@@ -1117,15 +1156,19 @@ ALTER SEQUENCE seq_prestamos RESTART;
 ALTER SEQUENCE seq_resena RESTART;
 ALTER SEQUENCE seq_empleado RESTART;
 ALTER SEQUENCE seq_bitacora RESTART;
-drop table prestamos_p1;
-drop table resena_p1;
-drop table libro_p1;
-drop table genero_p1;
-drop table editorial_p1;
-drop table autor_p1;
-drop table clientes_p1;
-drop table bitacora_libro_p1;
-drop table usuario_p1;
-drop table empleados_p1;
+
+DROP PACKAGE paquete_modificaciones_p1; 
+DROP PACKAGE paquete_consultas_p1;
+
+DROP TABLE prestamos_p1;
+DROP TABLE resena_p1;
+DROP TABLE libro_p1;
+DROP TABLE genero_p1;
+DROP TABLE editorial_p1;
+DROP TABLE autor_p1;
+DROP TABLE clientes_p1;
+DROP TABLE bitacora_libro_p1;
+DROP TABLE usuario_p1;
+DROP TABLE empleados_p1;
 
 

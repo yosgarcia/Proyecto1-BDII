@@ -36,28 +36,28 @@ public class Queries {
     public static final String USUARIO_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_usuario(?) }";
     
     // Queries para mostrar registros
-    public static final String MOSTRAR_CLIENTES_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_clientes }";
-    public static final String MOSTRAR_CLIENTE_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_cliente_id(?) }";
-    public static final String MOSTRAR_AUTORES_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_autores }";
-    public static final String MOSTRAR_AUTOR_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_autor_id (?)}";
-    public static final String MOSTRAR_EDITORIALES_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_editoriales }";
-    public static final String MOSTRAR_EDITORIAL_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_editorial_id (?) }";
-    public static final String MOSTRAR_GENEROS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_generos }";
-    public static final String MOSTRAR_GENERO_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_genero_id (?) }";
-    public static final String MOSTRAR_LIBROS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_libros }";
-    public static final String MOSTRAR_LIBRO_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_libro_id (?) }";
-    public static final String MOSTRAR_RESENAS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_resena }";
-    public static final String MOSTRAR_RESENA_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_resena_id (?) }";
-    public static final String MOSTRAR_PRESTAMOS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_prestamos }";
-    public static final String MOSTRAR_PRESTAMO_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_prestamos_id (?)}";
-    public static final String MOSTRAR_N_BITACORAS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_ultimas_nbitacoras(?) }";
-    public static final String MOSTRAR_BITACORAS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_bitacoras }";
-    public static final String MOSTRAR_USUARIOS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_usuarios }";
-    public static final String MOSTRAR_USUARIO_NOMBRE_PROC_CALL = "{ call paquete_consultas_p1.mostrar_usuario_nombre(?) }";
-    public static final String MOSTRAR_EMPLEAADOS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_empleados }";
-    public static final String MOSTRAR_EMPLEADOS_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_empleados_id (?) }";
-    public static final String MOSTRAR_GENERO_POPULAR_PROC_CALL = "{ call paquete_consultas_p1.mostrar_genero_popular }";
-    public static final String MOSTRAR_EDITORIAL_POPULAR_PROC_CALL = "{ call paquete_consultas_p1.mostrar_editorial_popular }";
+    public static final String MOSTRAR_CLIENTES_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_clientes(?) }";
+    public static final String MOSTRAR_CLIENTE_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_cliente_id(?, ?) }";
+    public static final String MOSTRAR_AUTORES_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_autores(?) }";
+    public static final String MOSTRAR_AUTOR_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_autor_id (?, ?)}";
+    public static final String MOSTRAR_EDITORIALES_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_editoriales(?) }";
+    public static final String MOSTRAR_EDITORIAL_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_editorial_id (?, ?) }";
+    public static final String MOSTRAR_GENEROS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_generos(?) }";
+    public static final String MOSTRAR_GENERO_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_genero_id (?, ?) }";
+    public static final String MOSTRAR_LIBROS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_libros(?) }";
+    public static final String MOSTRAR_LIBRO_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_libro_id (?, ?) }";
+    public static final String MOSTRAR_RESENAS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_resena(?) }";
+    public static final String MOSTRAR_RESENA_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_resena_id (?, ?) }";
+    public static final String MOSTRAR_PRESTAMOS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_prestamos(?) }";
+    public static final String MOSTRAR_PRESTAMO_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_prestamos_id (?, ?)}";
+    public static final String MOSTRAR_N_BITACORAS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_ultimas_nbitacoras(?, ?) }";
+    public static final String MOSTRAR_BITACORAS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_bitacoras(?) }";
+    public static final String MOSTRAR_USUARIOS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_usuarios(?) }";
+    public static final String MOSTRAR_USUARIO_NOMBRE_PROC_CALL = "{ call paquete_consultas_p1.mostrar_usuario_nombre(?, ?) }";
+    public static final String MOSTRAR_EMPLEAADOS_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_empleados(?) }";
+    public static final String MOSTRAR_EMPLEADOS_ID_PROC_CALL = "{ call paquete_consultas_p1.mostrar_empleados_id (?, ?) }";
+    public static final String MOSTRAR_GENERO_POPULAR_PROC_CALL = "{ call paquete_consultas_p1.mostrar_genero_popular(?) }";
+    public static final String MOSTRAR_EDITORIAL_POPULAR_PROC_CALL = "{ call paquete_consultas_p1.mostrar_editorial_popular(?) }";
 }
 
     

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.project1_bd2;
 
 import java.sql.DriverManager;
@@ -19,8 +15,8 @@ public class DBConnection {
     public DBConnection() {
 
         DB_URL = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:/Wallet";
-        DB_USER = "YGARCIA"; // Reemplaza con tu nombre de usuario
-        DB_PASSWORD = "bdAlajuela2023s2"; // Reemplaza con tu contraseña
+        DB_USER = "YGARCIA";
+        DB_PASSWORD = "bdAlajuela2023s2";
 
         try {
             // Configurar las propiedades de conexión
@@ -62,13 +58,11 @@ public class DBConnection {
             } catch(SQLException e){
                 
             }
-            
-            // Puedes realizar operaciones en la base de datos aquí
+
         } else {
             System.err.println("Error al conectar a la base de datos Oracle.");
         }
 
-        // Asegúrate de cerrar la conexión cuando hayas terminado
         dBConnection.closeConnection();
     }
 

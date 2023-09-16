@@ -8,11 +8,14 @@ public class Autor {
     private String apellido;
     
     private String nacionalidad;
-    
-    
-    public Autor(){
-        
+
+    public Autor(int id, String nombre, String apellido, String nacionalidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.nacionalidad = nacionalidad;
     }
+    
 
     public int getId() {
         return id;

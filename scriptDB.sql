@@ -1160,6 +1160,8 @@ ALTER SEQUENCE seq_bitacora RESTART;
 DROP PACKAGE paquete_modificaciones_p1; 
 DROP PACKAGE paquete_consultas_p1;
 
+DROP TRIGGER cambio_libros;
+
 DROP TABLE prestamos_p1;
 DROP TABLE resena_p1;
 DROP TABLE libro_p1;

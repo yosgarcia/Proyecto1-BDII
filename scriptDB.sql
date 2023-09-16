@@ -1091,12 +1091,12 @@ CREATE OR REPLACE TRIGGER cambio_libros
     AFTER INSERT OR UPDATE OR DELETE
     ON Libro_p1 FOR EACH ROW
 DECLARE
-    usuario VARCHAR2(50 char);
+    t_usuario VARCHAR2(50 char);
 BEGIN
-    SELECT USER INTO usuario FROM DUAL;
+    SELECT USER INTO t_usuario FROM DUAL;
     IF INSERTING THEN
         INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-        VALUES (SYSDATE, usuario, 'Se insertó el libro: ' || :NEW.titulo);
+        VALUES (SYSDATE, t_usuario, 'Se insertó el libro: ' || :NEW.titulo);
 
     ELSIF UPDATING THEN
         DECLARE
@@ -1133,12 +1133,12 @@ BEGIN
             END IF;
 
             INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-            VALUES (SYSDATE, usuario, accion);
+            VALUES (SYSDATE, t_usuario, accion);
         END;
 
     ELSIF DELETING THEN
         INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-        VALUES (SYSDATE, usuario, 'Se eliminó el libro: ' || :OLD.titulo);
+        VALUES (SYSDATE, t_usuario, 'Se eliminó el libro: ' || :OLD.titulo);
 
     ELSE
         DBMS_OUTPUT.PUT_LINE('Este codigo no es accesible.');

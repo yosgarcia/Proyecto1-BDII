@@ -202,7 +202,7 @@ INSERT INTO Editorial_p1 (nombre, origen) VALUES ('University of Chicago Press',
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Johns Hopkins University Press', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Stanford University Press', 'Estados Unidos');
 
-select * from Editorial_p1;
+
 
 --Inserts TABLA GENERO
 INSERT INTO Genero_p1 (nombre) VALUES ('Ficción');
@@ -236,7 +236,7 @@ INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia y Naturaleza');
 INSERT INTO Genero_p1 (nombre) VALUES ('Tecnología');
 INSERT INTO Genero_p1 (nombre) VALUES ('Cocina');
 
-select * from Genero_P1;
+
 
 --Inserts tabla libro 
 

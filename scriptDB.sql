@@ -1126,6 +1126,8 @@ CREATE OR REPLACE PACKAGE paquete_consultas_p1 AS
     PROCEDURE mostrar_bitacoras(p_cursor OUT SYS_REFCURSOR);
  
     PROCEDURE mostrar_usuario_nombre(p_usuario usuario_p1.username%TYPE, p_cursor OUT SYS_REFCURSOR);
+    
+    PROCEDURE mostrar_usuario_contrasena(p_usuario usuario_p1.username%TYPE, p_contrasena usuario_p1.contrasenna%TYPE, p_cursor OUT SYS_REFCURSOR);
  
     PROCEDURE mostrar_usuarios(p_cursor OUT SYS_REFCURSOR);
  
@@ -1261,6 +1263,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
             SELECT * FROM usuario_p1;
     END;
     
+    PROCEDURE mostrar_usuario_contrasena(p_usuario usuario_p1.username%TYPE, p_contrasena usuario_p1.contrasenna%TYPE,
+                                            p_cursor OUT SYS_REFCURSOR) AS
+    BEGIN
+        OPEN p_cursor FOR
+            SELECT *
+            FROM usuario_p1
+            WHERE username = p_usuario AND contrasenna = p_contrasena;
+    END;
     
     PROCEDURE mostrar_usuario_nombre(p_usuario usuario_p1.username%TYPE, p_cursor OUT SYS_REFCURSOR) AS
     BEGIN

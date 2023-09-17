@@ -1,16 +1,16 @@
-package com.mycompany.project1_bd2;
+package com.mycompany.project1_bd2.entidades;
 
-import oracle.sql.DATE;
+import java.sql.Date;
 
 
 public class Prestamo {
     private int id;
-    private DATE fechaPrestamo;
-    private DATE fechaDevolucion;
+    private Date fechaPrestamo;
+    private Date fechaDevolucion;
     private Libro libro;
     private Cliente cliente;
 
-    public Prestamo(int id, DATE fechaPrestamo, DATE fechaDevolucion, Libro libro, Cliente cliente) {
+    public Prestamo(int id, Date fechaPrestamo, Date fechaDevolucion, Libro libro, Cliente cliente) {
         this.id = id;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
@@ -18,15 +18,17 @@ public class Prestamo {
         this.cliente = cliente;
     }
 
+    
+
     public int getId() {
         return id;
     }
 
-    public DATE getFechaPrestamo() {
+    public Date getFechaPrestamo() {
         return fechaPrestamo;
     }
 
-    public DATE getFechaDevolucion() {
+    public Date getFechaDevolucion() {
         return fechaDevolucion;
     }
 
@@ -42,11 +44,11 @@ public class Prestamo {
         this.id = id;
     }
 
-    public void setFechaPrestamo(DATE fechaPrestamo) {
+    public void setFechaPrestamo(Date fechaPrestamo) {
         this.fechaPrestamo = fechaPrestamo;
     }
 
-    public void setFechaDevolucion(DATE fechaDevolucion) {
+    public void setFechaDevolucion(Date fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 

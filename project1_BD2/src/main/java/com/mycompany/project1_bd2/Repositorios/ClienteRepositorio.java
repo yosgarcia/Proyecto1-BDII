@@ -1,5 +1,7 @@
-package com.mycompany.project1_bd2;
+package com.mycompany.project1_bd2.Repositorios;
 
+import com.mycompany.project1_bd2.entidades.Cliente;
+import com.mycompany.project1_bd2.Queries;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,7 +52,7 @@ public class ClienteRepositorio {
             callableStatement.execute();
 
             // Obtiene el cursor de salida
-            ResultSet resultSet = (ResultSet) callableStatement.getObject(1);
+            ResultSet resultSet = (ResultSet) callableStatement.getObject(2);
 
             // Itera sobre los resultados y crea objetos Cliente
             while (resultSet.next()) {

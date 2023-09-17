@@ -1320,6 +1320,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
 END paquete_consultas_p1;
 /
 
+
 CREATE OR REPLACE TRIGGER cambio_libros
     AFTER INSERT OR UPDATE OR DELETE
     ON Libro_p1 FOR EACH ROW

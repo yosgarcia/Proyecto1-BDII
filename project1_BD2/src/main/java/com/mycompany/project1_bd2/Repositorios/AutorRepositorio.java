@@ -95,7 +95,7 @@ public class AutorRepositorio {
     
     public void modificarAutor(OracleConnection connection, int id, String nombre, String apellido, String nacionalidad){
         try{
-            CallableStatement callableStatement = connection.prepareCall(Queries.AUTOR_MODIFICAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.AUTOR_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, id);
             callableStatement.setString(2, nombre);
             callableStatement.setString(3, apellido);
@@ -112,7 +112,7 @@ public class AutorRepositorio {
     
     public void borrarCiente(OracleConnection connection, int id){
         try{
-            CallableStatement callableStatement = connection.prepareCall(Queries.AUTOR_BORRAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.AUTOR_BORRAR_PROC_CALL);
             callableStatement.setInt(1, id);
             
             callableStatement.execute();

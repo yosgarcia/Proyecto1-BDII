@@ -99,7 +99,7 @@ public class ResennaRepositorio {
     public void modificarResena(OracleConnection connection, int idResena, String descripcion, int calificacion,
                                        int libroId, int clienteId) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.RESENA_MODIFICAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.RESENA_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, idResena);
             callableStatement.setString(2, descripcion);
             callableStatement.setInt(3, calificacion);
@@ -115,7 +115,7 @@ public class ResennaRepositorio {
 
     public static void borrarResena(OracleConnection connection, int idResena) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.RESENA_BORRAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.RESENA_BORRAR_PROC_CALL);
             callableStatement.setInt(1, idResena);
 
             callableStatement.execute();

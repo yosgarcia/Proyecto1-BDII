@@ -620,7 +620,7 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
     PROCEDURE modificar_empleado(p_id empleado_p1.id%TYPE, p_nombre empleado_p1.nombre%TYPE,
                                     p_apellido empleado_p1.apellido%TYPE);
     
-    PROCEDURE ModificarUsuarioBitacora (p_usuario Bitacora_libro_p1.usuario%TYPE);
+    PROCEDURE modificar_usuario_bitacora (p_usuario Bitacora_libro_p1.usuario%TYPE);
     
     PROCEDURE borrar_cliente(p_id clientes_p1.id%TYPE);
     
@@ -860,7 +860,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
                 DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
     END;
     
-    PROCEDURE ModificarUsuarioBitacora (p_usuario Bitacora_libro_p1.usuario%TYPE) AS
+    PROCEDURE modificar_usuario_bitacora (p_usuario Bitacora_libro_p1.usuario%TYPE) AS
         v_ultimo_id NUMBER;
     BEGIN
         SELECT MAX(id) INTO v_ultimo_id FROM Bitacora_libro_p1;

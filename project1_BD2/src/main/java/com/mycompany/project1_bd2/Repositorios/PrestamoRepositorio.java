@@ -82,7 +82,7 @@ public class PrestamoRepositorio {
 
     public static void borrarPrestamo(OracleConnection connection, int idPrestamo) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.PRESTAMO_BORRAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.PRESTAMO_BORRAR_PROC_CALL);
             callableStatement.setInt(1, idPrestamo);
 
             callableStatement.execute();
@@ -95,7 +95,7 @@ public class PrestamoRepositorio {
     public void modificarPrestamo(OracleConnection connection, int idPrestamo, Date fechaPrestamo, Date fechaDevolucion,
                                          int libroId, int clienteId) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.PRESTAMO_MODIFICAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.PRESTAMO_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, idPrestamo);
             callableStatement.setDate(2, fechaPrestamo);
             callableStatement.setDate(3, fechaDevolucion);

@@ -15,25 +15,26 @@ public class Queries {
     
     // Queries para hacer update
     public static final String CLIENTE_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_cliente(?, ?, ?, ?, ?) }";
-    public static final String AUTOR_MODIFICAR_FUNC_CALL = "{ call paquete_modificaciones_p1.modificar_autor(?, ?, ?, ?) }";
-    public static final String EDITORIAL_MODIFICAR_FUNC_CALL = "{ call paquete_modificaciones_p1.modificar_editorial(?, ?, ?) }";
-    public static final String GENERO_MODIFICAR_FUNC_CALL = "{ call paquete_modificaciones_p1.modificar_genero(?, ?) }";
-    public static final String LIBRO_MODIFICAR_FUNC_CALL = "{ call paquete_modificaciones_p1.modificar_libro(?, ?, ?, ?, ?, ?, ?, ?) }";
-    public static final String PRESTAMO_MODIFICAR_FUNC_CALL = "{ call paquete_modificaciones_p1.modificar_prestamo(?, ?, ?, ?, ?)}";
-    public static final String RESENA_MODIFICAR_FUNC_CALL = "{ call paquete_modificaciones_p1.modificar_resena(?, ?, ?, ?, ?) }";
-    public static final String EMPLEADO_MODIFICAR_FUNC_CALL = "{ call paquete_modificaciones_p1.modificar_empleado(?, ?, ?) }";
-    public static final String USUARIO_MODIFICAR_FUNC_CALL = "{ call paquete_modificaciones_p1.modificar_usuario(?, ?, ?, ?) }";
+    public static final String AUTOR_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_autor(?, ?, ?, ?) }";
+    public static final String EDITORIAL_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_editorial(?, ?, ?) }";
+    public static final String GENERO_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_genero(?, ?) }";
+    public static final String LIBRO_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_libro(?, ?, ?, ?, ?, ?, ?, ?) }";
+    public static final String PRESTAMO_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_prestamo(?, ?, ?, ?, ?)}";
+    public static final String RESENA_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_resena(?, ?, ?, ?, ?) }";
+    public static final String EMPLEADO_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_empleado(?, ?, ?) }";
+    public static final String USUARIO_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_usuario(?, ?, ?, ?) }";
+    public static final String BITACORA_USUARIO_MODIFICAR_PROC_CALL = "{ call paquete_modificacciones_p1.modificar_usuario_bitacora(?) }";
     
     // Queries para borrar
     public static final String CLIENTE_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_cliente(?) }";
-    public static final String AUTOR_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_autor(?) }";
-    public static final String EDITORIAL_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_editorial(?) }";
-    public static final String GENERO_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_genero(?) }";
-    public static final String LIBRO_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_libro(?) }";
-    public static final String PRESTAMO_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_prestamo(?)}";
-    public static final String RESENA_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_resena(?) }";
-    public static final String EMPLEADO_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_empleado(?) }";
-    public static final String USUARIO_BORRAR_FUNC_CALL = "{ call paquete_modificaciones_p1.borrar_usuario(?) }";
+    public static final String AUTOR_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_autor(?) }";
+    public static final String EDITORIAL_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_editorial(?) }";
+    public static final String GENERO_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_genero(?) }";
+    public static final String LIBRO_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_libro(?) }";
+    public static final String PRESTAMO_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_prestamo(?)}";
+    public static final String RESENA_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_resena(?) }";
+    public static final String EMPLEADO_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_empleado(?) }";
+    public static final String USUARIO_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_usuario(?) }";
     
     // Queries para mostrar registros
     public static final String MOSTRAR_CLIENTES_PROC_CALL = "{ call paquete_consultas_p1.mostrar_todos_clientes(?) }";

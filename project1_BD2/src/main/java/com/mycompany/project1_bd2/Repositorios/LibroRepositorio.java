@@ -43,7 +43,7 @@ public class LibroRepositorio {
     public void modificarLibro(OracleConnection connection, int pIdLibro, String pTitulo, int pIdEditorial, int pIdGenero, int pIdAutor,
                                        int pAnnoPublicacion, String pISBN, int pInventario) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_MODIFICAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, pIdLibro);
             callableStatement.setString(2, pTitulo);
             callableStatement.setInt(3, pIdEditorial);
@@ -62,7 +62,7 @@ public class LibroRepositorio {
 
     public void borrarLibro(OracleConnection connection, int pIdLibro) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_BORRAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_BORRAR_PROC_CALL);
             callableStatement.setInt(1, pIdLibro);
 
             callableStatement.execute();

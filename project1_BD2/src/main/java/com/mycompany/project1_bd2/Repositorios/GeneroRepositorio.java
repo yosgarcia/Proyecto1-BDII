@@ -32,7 +32,7 @@ public class GeneroRepositorio {
 
     public static void modificarGenero(OracleConnection connection, int idGenero, String nombreGenero) {
         try{
-            CallableStatement callableStatement = connection.prepareCall(Queries.GENERO_MODIFICAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.GENERO_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, idGenero);
             callableStatement.setString(2, nombreGenero);
 
@@ -45,7 +45,7 @@ public class GeneroRepositorio {
 
     public static void borrarGenero(OracleConnection connection, int pIdGenero) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.GENERO_BORRAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.GENERO_BORRAR_PROC_CALL);
             callableStatement.setInt(1, pIdGenero);
 
             callableStatement.execute();

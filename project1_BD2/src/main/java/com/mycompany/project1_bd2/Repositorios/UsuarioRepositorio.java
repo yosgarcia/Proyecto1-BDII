@@ -91,7 +91,7 @@ public class UsuarioRepositorio {
 
     public void modificarUsuario(OracleConnection connection, String username, String contrasenna, int empleadoId) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.USUARIO_MODIFICAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.USUARIO_MODIFICAR_PROC_CALL);
             callableStatement.setString(1, username);
             callableStatement.setString(2, contrasenna);
             callableStatement.setInt(3, empleadoId);
@@ -105,7 +105,7 @@ public class UsuarioRepositorio {
 
     public void borrarUsuario(OracleConnection connection, String username) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.USUARIO_BORRAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.USUARIO_BORRAR_PROC_CALL);
             callableStatement.setString(1, username);
 
             callableStatement.execute();

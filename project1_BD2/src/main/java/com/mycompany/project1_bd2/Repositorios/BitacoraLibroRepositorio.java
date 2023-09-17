@@ -74,6 +74,17 @@ public class BitacoraLibroRepositorio {
         
         return bitacoras;
     }
+    
+    
+    public void modificarUsuarioBitacora(OracleConnection connection, String usuario){
+        try{
+            CallableStatement callableStatement = connection.prepareCall(Queries.BITACORA_USUARIO_MODIFICAR_PROC_CALL);
+            callableStatement.setString(1, usuario);
+            callableStatement.execute();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 
 }

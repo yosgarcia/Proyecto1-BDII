@@ -88,7 +88,7 @@ public class EditorialRepositorio {
     
     public void modificarEditorial(OracleConnection connection, int id, String nombre, String origen) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.EDITORIAL_MODIFICAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.EDITORIAL_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, id);
             callableStatement.setString(2, nombre);
             callableStatement.setString(3, origen);
@@ -102,7 +102,7 @@ public class EditorialRepositorio {
     
      public static void borrarEditorial(OracleConnection connection, int id) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.EDITORIAL_BORRAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.EDITORIAL_BORRAR_PROC_CALL);
             callableStatement.setInt(1, id);
 
             callableStatement.execute();

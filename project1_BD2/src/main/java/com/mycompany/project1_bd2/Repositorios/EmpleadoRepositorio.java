@@ -30,7 +30,7 @@ public class EmpleadoRepositorio {
 
     public void modificarEmpleado(OracleConnection connection, int idEmpleado, String nombre, String apellido) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.EMPLEADO_MODIFICAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.EMPLEADO_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, idEmpleado);
             callableStatement.setString(2, nombre);
             callableStatement.setString(3, apellido);
@@ -44,7 +44,7 @@ public class EmpleadoRepositorio {
 
     public static void borrarEmpleado(OracleConnection connection, int pIdEmpleado) {
         try {
-            CallableStatement callableStatement = connection.prepareCall(Queries.EMPLEADO_BORRAR_FUNC_CALL);
+            CallableStatement callableStatement = connection.prepareCall(Queries.EMPLEADO_BORRAR_PROC_CALL);
             callableStatement.setInt(1, pIdEmpleado);
 
             callableStatement.execute();

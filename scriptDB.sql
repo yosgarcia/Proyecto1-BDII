@@ -107,71 +107,72 @@ INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Juan', 'Pe
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lola', 'Hernandez', 'lolahernandez@ejemplo.com', '85648953');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yosward', 'Garcia', 'yoswigarcia@ejemplo.com', '88468995');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yurgen', 'Cambronero', 'yurgencitoelcabro@ejemplo.com', '87777953');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'González', 'carlosgonzalez@ejemplo.com', '74691238');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'Martínez', 'anamartinez@ejemplo.com', '76582349');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'Rodríguez', 'pedrorodriguez@ejemplo.com', '68743219');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('MarÃ­a', 'López', 'marialopez@ejemplo.com', '78654321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Diego', 'Sánchez', 'diegosanchez@ejemplo.com', '64758932');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Laura', 'Ramírez', 'lauraramirez@ejemplo.com', '79865432');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'Gonzalez', 'carlosgonzalez@ejemplo.com', '74691238');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'Martinez', 'anamartinez@ejemplo.com', '76582349');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'Rodriguez', 'pedrorodriguez@ejemplo.com', '68743219');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('MarÃ­a', 'Lopez', 'marialopez@ejemplo.com', '78654321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Diego', 'Sanchez', 'diegosanchez@ejemplo.com', '64758932');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Laura', 'Ramirez', 'lauraramirez@ejemplo.com', '79865432');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Javier', 'Perez', 'javierperez@ejemplo.com', '68743125');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentina', 'Gutierrez', 'valentinagutierrez@ejemplo.com', '78564321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Santiago', 'Hernández', 'santiagohernandez@ejemplo.com', '74561289');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isabella', 'González', 'isabellagonzalez@ejemplo.com', '86423579');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Santiago', 'Hernandez', 'santiagohernandez@ejemplo.com', '74561289');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isabella', 'Gonzalez', 'isabellagonzalez@ejemplo.com', '86423579');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Leo', 'Mora', 'leoelpelos@ejemplo.com', '63547891');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucía', 'Rodríguez', 'luciarodriguez@ejemplo.com', '78693245');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucia', 'Rodriguez', 'luciarodriguez@ejemplo.com', '78693245');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Matias', 'Lopez', 'matiaslopez@ejemplo.com', '67459823');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mariana', 'Sánchez', 'marianasanchez@ejemplo.com', '76584932');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mariana', 'Sanchez', 'marianasanchez@ejemplo.com', '76584932');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emilio', 'Ramirez', 'emilioramirez@ejemplo.com', '87654321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valeria', 'Pérez', 'valeriaperez@ejemplo.com', '68743215');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Felipe', 'Gutiérrez', 'felipegutierrez@ejemplo.com', '74563129');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Catalina', 'Hernández', 'catalinahernandez@ejemplo.com', '86451279');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valeria', 'Perez', 'valeriaperez@ejemplo.com', '68743215');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Felipe', 'Gutierrez', 'felipegutierrez@ejemplo.com', '74563129');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Catalina', 'Hernandez', 'catalinahernandez@ejemplo.com', '86451279');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Facundo', 'Gonzalez', 'facundogonzalez@ejemplo.com', '63547892');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Antonella', 'Martinez', 'antonellamartinez@ejemplo.com', '76549832');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucas', 'Rodriguez', 'lucasrodriguez@ejemplo.com', '78643921');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isidora', 'Lopez', 'isidoralopez@ejemplo.com', '67459832');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Benjamín', 'Sánchez', 'benjaminsanchez@ejemplo.com', '74563128');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Renata', 'Ramírez', 'renataramirez@ejemplo.com', '87654931');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emiliano', 'Pérez', 'emilianoperez@ejemplo.com', '68743216');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentino', 'Gutiérrez', 'valentinogutierrez@ejemplo.com', '74563127');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carmen', 'Hernández', 'carmenhernandez@ejemplo.com', '86451278');
-
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Benjamin', 'Sanchez', 'benjaminsanchez@ejemplo.com', '74563128');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Renata', 'Ramirez', 'renataramirez@ejemplo.com', '87654931');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emiliano', 'Perez', 'emilianoperez@ejemplo.com', '68743216');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentino', 'Gutierrez', 'valentinogutierrez@ejemplo.com', '74563127');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carmen', 'Hernandez', 'carmenhernandez@ejemplo.com', '86451278');
+select * from  Clientes_p1;
 
 
 --INSERTS TABLA AUTOR
 
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.K', 'Rowling', 'Británica');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gabriel', 'García Márquez', 'Colombiana');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.K', 'Rowling', 'Britanica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gabriel', 'Garcia Marquez', 'Colombiana');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Mario', 'Vargas Llosa', 'Peruana');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Pablo', 'Neruda', 'Chilena');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Isabel', 'Allende', 'Chilena');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gustavo', 'Adolfo Bécquer', 'Española');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gustavo', 'Adolfo Becquer', 'Espanola');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Octavio', 'Paz', 'Mexicana');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Federico', 'García Lorca', 'Española');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Federico', 'Garcia Lorca', 'Espanola');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jorge', 'Borges', 'Argentina');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('José', 'Saramago', 'Portuguesa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Virginia', 'Woolf', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jose', 'Saramago', 'Portuguesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Virginia', 'Woolf', 'Britanica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Alejandro', 'Dumas', 'Francesa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('León', 'Tolstói', 'Rusa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('George', 'Orwell', 'Británica');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jane', 'Austen', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Leon', 'Tolstoi', 'Rusa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('George', 'Orwell', 'Britanica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jane', 'Austen', 'Britanica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Haruki', 'Murakami', 'Japonesa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Agatha', 'Christie', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Agatha', 'Christie', 'Britanica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Mark', 'Twain', 'Estadounidense');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Charles', 'Dickens', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Charles', 'Dickens', 'Britanica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Hermann', 'Hesse', 'Alemana');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Gabriela', 'Mistral', 'Chilena');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Albert', 'Camus', 'Francesa');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.R.R', 'Tolkien', 'Británica');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('J.R.R', 'Tolkien', 'Britanica');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Hans', 'Christian Andersen', 'Danesa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Leo', 'Tolstoy', 'Rusa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Anton', 'Chekhov', 'Rusa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jules', 'Verne', 'Francesa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Rabindranath', 'Tagore', 'India');
-INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Honoré', 'de Balzac', 'Francesa');
+INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Honore', 'de Balzac', 'Francesa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Edgar', 'Allan Poe', 'Estadounidense');
+select * from Autor_p1;
 
 --Inserts tabla editorial
-INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Editorial ABC', 'España');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Editorial ABC', 'Espana');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Penguin Random House', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('HarperCollins Publishers', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Hachette Livre', 'Francia');
@@ -183,7 +184,7 @@ INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Pearson PLC', 'Reino Unido');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Wiley', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Oxford University Press', 'Reino Unido');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Cambridge University Press', 'Reino Unido');
-INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Elsevier', 'Países Bajos');
+INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Elsevier', 'Paises Bajos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Houghton Mifflin Harcourt', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Random House', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Penguin Books', 'Reino Unido');
@@ -202,89 +203,205 @@ INSERT INTO Editorial_p1 (nombre, origen) VALUES ('University of Chicago Press',
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Johns Hopkins University Press', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Stanford University Press', 'Estados Unidos');
 
+select * from Editorial_p1;
+
 
 
 --Inserts TABLA GENERO
-INSERT INTO Genero_p1 (nombre) VALUES ('Ficción');
+INSERT INTO Genero_p1 (nombre) VALUES ('Ficcion');
 INSERT INTO Genero_p1 (nombre) VALUES ('Realismo');
-INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia Ficción');
-INSERT INTO Genero_p1 (nombre) VALUES ('Fantasía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia Ficcion');
+INSERT INTO Genero_p1 (nombre) VALUES ('Fantasia');
 INSERT INTO Genero_p1 (nombre) VALUES ('Misterio');
 INSERT INTO Genero_p1 (nombre) VALUES ('Terror');
 INSERT INTO Genero_p1 (nombre) VALUES ('Aventura');
 INSERT INTO Genero_p1 (nombre) VALUES ('Romance');
 INSERT INTO Genero_p1 (nombre) VALUES ('Drama');
-INSERT INTO Genero_p1 (nombre) VALUES ('Poesía');
-INSERT INTO Genero_p1 (nombre) VALUES ('Biografía');
-INSERT INTO Genero_p1 (nombre) VALUES ('Autobiografía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Poesia');
+INSERT INTO Genero_p1 (nombre) VALUES ('Biografia');
+INSERT INTO Genero_p1 (nombre) VALUES ('Autobiografia');
 INSERT INTO Genero_p1 (nombre) VALUES ('Historia');
 INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia');
-INSERT INTO Genero_p1 (nombre) VALUES ('Economía');
-INSERT INTO Genero_p1 (nombre) VALUES ('Política');
-INSERT INTO Genero_p1 (nombre) VALUES ('Religión');
+INSERT INTO Genero_p1 (nombre) VALUES ('Economia');
+INSERT INTO Genero_p1 (nombre) VALUES ('Politica');
+INSERT INTO Genero_p1 (nombre) VALUES ('Religion');
 INSERT INTO Genero_p1 (nombre) VALUES ('Autoayuda');
-INSERT INTO Genero_p1 (nombre) VALUES ('Aventuras Gráficas');
-INSERT INTO Genero_p1 (nombre) VALUES ('Cómics');
-INSERT INTO Genero_p1 (nombre) VALUES ('Novela Gráfica');
+INSERT INTO Genero_p1 (nombre) VALUES ('Aventuras Graficas');
+INSERT INTO Genero_p1 (nombre) VALUES ('Comics');
+INSERT INTO Genero_p1 (nombre) VALUES ('Novela Grafica');
 INSERT INTO Genero_p1 (nombre) VALUES ('Historieta');
 INSERT INTO Genero_p1 (nombre) VALUES ('Ensayo');
-INSERT INTO Genero_p1 (nombre) VALUES ('Filosofía');
+INSERT INTO Genero_p1 (nombre) VALUES ('Filosofia');
 INSERT INTO Genero_p1 (nombre) VALUES ('Viajes');
 INSERT INTO Genero_p1 (nombre) VALUES ('Crimen');
 INSERT INTO Genero_p1 (nombre) VALUES ('Humor');
 INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia y Naturaleza');
-INSERT INTO Genero_p1 (nombre) VALUES ('Tecnología');
+INSERT INTO Genero_p1 (nombre) VALUES ('Tecnologia');
 INSERT INTO Genero_p1 (nombre) VALUES ('Cocina');
-
+select * from Genero_p1;
 
 
 --Inserts tabla libro 
 
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Harry Potter y la Piedra Filosofal', 1, 4, 1, TO_DATE('1997-06-26', 'YYYY-MM-DD'), '978-0590353427', 50);
-
-INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('100 años de soledad', 2, 1, 2, TO_DATE('1982-05-30', 'YYYY-MM-DD'), '978-9871234567', 45);
-
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('100 anos de soledad', 2, 1, 2, TO_DATE('1967-05-30', 'YYYY-MM-DD'), '978-9871234567', 45);
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('La ciudad y los perros', 3, 1, 3, TO_DATE('1962-04-10', 'YYYY-MM-DD'), '978-1234567890', 55);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Canto General', 4, 1, 4, TO_DATE('1950-05-30', 'YYYY-MM-DD'), '978-0307389732', 60);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('La casa de los espiritus', 5, 9, 5, TO_DATE('1982-08-14', 'YYYY-MM-DD'), '978-0143039969', 70);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Rimas', 6, 9, 6, TO_DATE('1871-07-03', 'YYYY-MM-DD'), '978-8437600772', 40);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Cronica de una muerte anunciada', 7, 1, 2, TO_DATE('1981-09-21', 'YYYY-MM-DD'), '978-0385541382', 55);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Yerma', 8, 1, 8, TO_DATE('1934-06-30', 'YYYY-MM-DD'), '978-9871138124', 48);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Ficciones', 9, 1, 9, TO_DATE('1945-08-01', 'YYYY-MM-DD'), '978-0156007757', 42);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Los 3 mosqueteros', 10, 8, 12, TO_DATE('1844-05-14', 'YYYY-MM-DD'), '978-0156628709', 37);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('1984', 11, 1, 14, TO_DATE('1947-08-28', 'YYYY-MM-DD'), '978-0140449266', 65);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Biblioteca de Babel', 12, 1, 9, TO_DATE('1941-01-01', 'YYYY-MM-DD'), '978-0199232765', 48);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Del amor y otros demonios', 13, 3, 2, TO_DATE('1994-06-08', 'YYYY-MM-DD'), '978-0451524935', 38);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Orgullo y prejuicio', 14, 1, 15, TO_DATE('1813-10-15', 'YYYY-MM-DD'), '978-0553213690', 42);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Muerte en el Nilo', 15, 1, 17, TO_DATE('1937-08-04', 'YYYY-MM-DD'), '978-0375704024', 50);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Las Manzanas', 16, 5, 17, TO_DATE('1969-01-01', 'YYYY-MM-DD'), '978-0062073501', 35);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Las aventuras de Tom Sawyer', 17, 1, 18, TO_DATE('1876-12-01', 'YYYY-MM-DD'), '978-0486260035', 48);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Historia de dos ciudades', 18, 1, 19, TO_DATE('1859-08-01', 'YYYY-MM-DD'), '978-0141439563', 42);
-
-INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Desolación', 19, 1, 21, TO_DATE('1922-01-01', 'YYYY-MM-DD'), '978-0142437186', 60);
-
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Desolacion', 19, 1, 21, TO_DATE('1922-01-01', 'YYYY-MM-DD'), '978-0142437186', 60);
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Tala', 20, 1, 21, TO_DATE('1938-01-01', 'YYYY-MM-DD'), '978-0553383805', 40);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Guerra y Paz', 21, 1, 25, TO_DATE('1869-01-01', 'YYYY-MM-DD'), '978-0565953805', 30);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('El gato negro', 22, 1, 30, TO_DATE('1938-01-01', 'YYYY-MM-DD'), '978-0523873805', 40);
-
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('El cuervo', 23, 1, 30, TO_DATE('1845-01-01', 'YYYY-MM-DD'), '978-0523873805', 40);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Harry Potter y la camara secreta', 1, 4, 1, TO_DATE('1998-07-02', 'YYYY-MM-DD'), '978-0590353427', 50);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Cronica de una muerte anunciada', 2, 1, 2, TO_DATE('1981-08-07', 'YYYY-MM-DD'), '978-9871234567', 40);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Del amor y otros demonios', 2, 1, 2, TO_DATE('1994-02-03', 'YYYY-MM-DD'), '978-9871234567', 25);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Doce cuentos peregrinos', 2, 1, 2, TO_DATE('1992-07-22', 'YYYY-MM-DD'), '978-9871234567', 45);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Crimenes de la calle Morgue', 23, 1, 30, TO_DATE('1829-05-11', 'YYYY-MM-DD'), '978-0523873805', 40);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Resurreccion', 21, 1, 25, TO_DATE('1899-03-15', 'YYYY-MM-DD'), '978-0565953805', 30);
+INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Cuentos de Eva Luna', 5, 9, 5, TO_DATE('1989-08-23', 'YYYY-MM-DD'), '978-0143039969', 10);
+select * from Libro_p1;
+
+
+
+
+--Inserts tabla Prestamos
+--Prestamos Enero
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-03', 'YYYY-MM-DD'), TO_DATE('2023-01-10', 'YYYY-MM-DD'), 3,7);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-05', 'YYYY-MM-DD'), TO_DATE('2023-01-12', 'YYYY-MM-DD'), 18,15);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-07', 'YYYY-MM-DD'), TO_DATE('2023-01-14', 'YYYY-MM-DD'), 14,2);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-09', 'YYYY-MM-DD'), TO_DATE('2023-01-16', 'YYYY-MM-DD'), 8,8);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-16', 'YYYY-MM-DD'), TO_DATE('2023-01-23', 'YYYY-MM-DD'), 19,7);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-17', 'YYYY-MM-DD'), TO_DATE('2023-01-24', 'YYYY-MM-DD'), 21,21);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-18', 'YYYY-MM-DD'), TO_DATE('2023-01-25', 'YYYY-MM-DD'), 12,30);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-20', 'YYYY-MM-DD'), TO_DATE('2023-01-27', 'YYYY-MM-DD'), 15,19);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-22', 'YYYY-MM-DD'), TO_DATE('2023-01-29', 'YYYY-MM-DD'), 2,4);
+--Prestamos Febrero
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-02-01', 'YYYY-MM-DD'), TO_DATE('2023-02-08', 'YYYY-MM-DD'), 1,10);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-02-09', 'YYYY-MM-DD'), TO_DATE('2023-02-16', 'YYYY-MM-DD'), 5,1);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-02-11', 'YYYY-MM-DD'), TO_DATE('2023-02-18', 'YYYY-MM-DD'), 14,20);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-02-11', 'YYYY-MM-DD'), TO_DATE('2023-02-18', 'YYYY-MM-DD'), 15,8);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-02-13', 'YYYY-MM-DD'), TO_DATE('2023-02-20', 'YYYY-MM-DD'), 11,22);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-02-15', 'YYYY-MM-DD'), TO_DATE('2023-02-22', 'YYYY-MM-DD'), 4,9);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-02-16', 'YYYY-MM-DD'), TO_DATE('2023-02-23', 'YYYY-MM-DD'), 1,24);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-02-20', 'YYYY-MM-DD'), TO_DATE('2023-02-27', 'YYYY-MM-DD'), 6,6);
+
+--Prestamos Marzo
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-02', 'YYYY-MM-DD'), TO_DATE('2023-03-09', 'YYYY-MM-DD'), 4,5);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-05', 'YYYY-MM-DD'), TO_DATE('2023-03-12', 'YYYY-MM-DD'), 24,25);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-07', 'YYYY-MM-DD'), TO_DATE('2023-03-14', 'YYYY-MM-DD'), 6,4);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-10', 'YYYY-MM-DD'), TO_DATE('2023-03-17', 'YYYY-MM-DD'), 9,1);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-11', 'YYYY-MM-DD'), TO_DATE('2023-03-18', 'YYYY-MM-DD'), 9,9);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-13', 'YYYY-MM-DD'), TO_DATE('2023-03-20', 'YYYY-MM-DD'), 22,5);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-14', 'YYYY-MM-DD'), TO_DATE('2023-03-21', 'YYYY-MM-DD'), 2,15);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-19', 'YYYY-MM-DD'), TO_DATE('2023-03-26', 'YYYY-MM-DD'), 6,8);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-22', 'YYYY-MM-DD'), TO_DATE('2023-03-29', 'YYYY-MM-DD'), 9,17);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-03-24', 'YYYY-MM-DD'), TO_DATE('2023-03-31', 'YYYY-MM-DD'), 8,25);
+
+--Prestamos Abril
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-01', 'YYYY-MM-DD'), TO_DATE('2023-04-08', 'YYYY-MM-DD'), 12,12);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-05', 'YYYY-MM-DD'), TO_DATE('2023-04-12', 'YYYY-MM-DD'), 20,9);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-11', 'YYYY-MM-DD'), TO_DATE('2023-04-18', 'YYYY-MM-DD'), 11,1);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-11', 'YYYY-MM-DD'), TO_DATE('2023-04-18', 'YYYY-MM-DD'), 21,2);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-12', 'YYYY-MM-DD'), TO_DATE('2023-04-19', 'YYYY-MM-DD'), 11,12);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-14', 'YYYY-MM-DD'), TO_DATE('2023-04-21', 'YYYY-MM-DD'), 15,22);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-15', 'YYYY-MM-DD'), TO_DATE('2023-04-22', 'YYYY-MM-DD'), 29,4);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-22', 'YYYY-MM-DD'), TO_DATE('2023-04-29', 'YYYY-MM-DD'), 27,14);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-04-23', 'YYYY-MM-DD'), TO_DATE('2023-04-30', 'YYYY-MM-DD'), 19,14);
+--Prestamos Mayo
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-05-07', 'YYYY-MM-DD'), TO_DATE('2023-05-14', 'YYYY-MM-DD'), 2,14);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-05-08', 'YYYY-MM-DD'), TO_DATE('2023-05-15', 'YYYY-MM-DD'), 9,21);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-05-10', 'YYYY-MM-DD'), TO_DATE('2023-05-17', 'YYYY-MM-DD'), 14,2);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-05-14', 'YYYY-MM-DD'), TO_DATE('2023-05-21', 'YYYY-MM-DD'), 5,20);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-05-17', 'YYYY-MM-DD'), TO_DATE('2023-05-24', 'YYYY-MM-DD'), 18,12);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-05-24', 'YYYY-MM-DD'), TO_DATE('2023-05-31', 'YYYY-MM-DD'), 14,30);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-05-31', 'YYYY-MM-DD'), TO_DATE('2023-06-06', 'YYYY-MM-DD'), 11,2);
+--Prestamos Junio
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-06-06', 'YYYY-MM-DD'), TO_DATE('2023-06-13', 'YYYY-MM-DD'), 15,20);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-06-07', 'YYYY-MM-DD'), TO_DATE('2023-06-14', 'YYYY-MM-DD'), 17,17);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-06-10', 'YYYY-MM-DD'), TO_DATE('2023-06-17', 'YYYY-MM-DD'), 13,14);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-06-16', 'YYYY-MM-DD'), TO_DATE('2023-06-23', 'YYYY-MM-DD'), 5,11);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-06-19', 'YYYY-MM-DD'), TO_DATE('2023-06-26', 'YYYY-MM-DD'), 14,9);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-06-22', 'YYYY-MM-DD'), TO_DATE('2023-06-29', 'YYYY-MM-DD'), 30,20);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-06-26', 'YYYY-MM-DD'), TO_DATE('2023-07-03', 'YYYY-MM-DD'), 8,21);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-06-28', 'YYYY-MM-DD'), TO_DATE('2023-07-05', 'YYYY-MM-DD'), 10,25);
+
+
+--Prestamos Julio
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-07-04', 'YYYY-MM-DD'), TO_DATE('2023-07-11', 'YYYY-MM-DD'), 4,7);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-07-05', 'YYYY-MM-DD'), TO_DATE('2023-07-12', 'YYYY-MM-DD'), 3,25);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-07-07', 'YYYY-MM-DD'), TO_DATE('2023-07-14', 'YYYY-MM-DD'), 18,1);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-07-07', 'YYYY-MM-DD'), TO_DATE('2023-07-14', 'YYYY-MM-DD'), 5,4);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-07-12', 'YYYY-MM-DD'), TO_DATE('2023-07-19', 'YYYY-MM-DD'), 6,24);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-07-15', 'YYYY-MM-DD'), TO_DATE('2023-07-22', 'YYYY-MM-DD'), 15,20);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-07-16', 'YYYY-MM-DD'), TO_DATE('2023-07-23', 'YYYY-MM-DD'), 19,20);
+--Prestamos Agosto
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-01', 'YYYY-MM-DD'), TO_DATE('2023-08-08', 'YYYY-MM-DD'), 8,20);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-06', 'YYYY-MM-DD'), TO_DATE('2023-08-13', 'YYYY-MM-DD'), 5,1);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-08', 'YYYY-MM-DD'), TO_DATE('2023-08-15', 'YYYY-MM-DD'), 28,27);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-11', 'YYYY-MM-DD'), TO_DATE('2023-08-18', 'YYYY-MM-DD'), 19,5);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-15', 'YYYY-MM-DD'), TO_DATE('2023-08-22', 'YYYY-MM-DD'), 9,15);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-21', 'YYYY-MM-DD'), TO_DATE('2023-08-28', 'YYYY-MM-DD'), 30,22);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-23', 'YYYY-MM-DD'), TO_DATE('2023-08-30', 'YYYY-MM-DD'), 14,3);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-27', 'YYYY-MM-DD'), TO_DATE('2023-09-03', 'YYYY-MM-DD'), 1,2);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-08-31', 'YYYY-MM-DD'), TO_DATE('2023-09-07', 'YYYY-MM-DD'), 12,25);
+--Prestamos Septiembre
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-04', 'YYYY-MM-DD'), TO_DATE('2023-09-11', 'YYYY-MM-DD'), 4,21);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-07', 'YYYY-MM-DD'), TO_DATE('2023-09-14', 'YYYY-MM-DD'), 1,21);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-13', 'YYYY-MM-DD'), TO_DATE('2023-09-20', 'YYYY-MM-DD'), 10,22);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-16', 'YYYY-MM-DD'), TO_DATE('2023-09-23', 'YYYY-MM-DD'), 1,3);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-16', 'YYYY-MM-DD'), TO_DATE('2023-09-23', 'YYYY-MM-DD'), 1,1);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-16', 'YYYY-MM-DD'), TO_DATE('2023-09-23', 'YYYY-MM-DD'), 17,15);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-16', 'YYYY-MM-DD'), TO_DATE('2023-09-23', 'YYYY-MM-DD'), 1,12);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-18', 'YYYY-MM-DD'), TO_DATE('2023-09-25', 'YYYY-MM-DD'), 11,14);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-20', 'YYYY-MM-DD'), TO_DATE('2023-09-27', 'YYYY-MM-DD'), 10,20);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-09-23', 'YYYY-MM-DD'), TO_DATE('2023-09-30', 'YYYY-MM-DD'), 26,11);
+--Prestamos Octubre
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-02', 'YYYY-MM-DD'), TO_DATE('2023-10-09', 'YYYY-MM-DD'), 21,21);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-10', 'YYYY-MM-DD'), TO_DATE('2023-10-17', 'YYYY-MM-DD'), 5,25);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-11', 'YYYY-MM-DD'), TO_DATE('2023-10-18', 'YYYY-MM-DD'), 4,18);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-15', 'YYYY-MM-DD'), TO_DATE('2023-10-22', 'YYYY-MM-DD'), 1,8);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-18', 'YYYY-MM-DD'), TO_DATE('2023-10-25', 'YYYY-MM-DD'), 7,2);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-20', 'YYYY-MM-DD'), TO_DATE('2023-10-27', 'YYYY-MM-DD'), 2,27);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-21', 'YYYY-MM-DD'), TO_DATE('2023-10-28', 'YYYY-MM-DD'), 4,3);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-21', 'YYYY-MM-DD'), TO_DATE('2023-10-28', 'YYYY-MM-DD'), 9,28);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-24', 'YYYY-MM-DD'), TO_DATE('2023-10-31', 'YYYY-MM-DD'), 1,21);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-10-26', 'YYYY-MM-DD'), TO_DATE('2023-11-02', 'YYYY-MM-DD'), 3,3);
+
+--Prestamos Noviembre
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-11-04', 'YYYY-MM-DD'), TO_DATE('2023-11-11', 'YYYY-MM-DD'), 11,11);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-11-06', 'YYYY-MM-DD'), TO_DATE('2023-11-13', 'YYYY-MM-DD'), 4,2);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-11-07', 'YYYY-MM-DD'), TO_DATE('2023-11-14', 'YYYY-MM-DD'), 19,12);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-11-14', 'YYYY-MM-DD'), TO_DATE('2023-11-21', 'YYYY-MM-DD'), 5,3);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-11-17', 'YYYY-MM-DD'), TO_DATE('2023-11-24', 'YYYY-MM-DD'), 8,9);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-11-20', 'YYYY-MM-DD'), TO_DATE('2023-11-27', 'YYYY-MM-DD'), 18,12);
+ --Prestamos Diciembre
+ INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-01', 'YYYY-MM-DD'), TO_DATE('2023-12-08', 'YYYY-MM-DD'), 8,2);
+ INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-07', 'YYYY-MM-DD'), TO_DATE('2023-12-14', 'YYYY-MM-DD'), 4,4);
+ INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-11', 'YYYY-MM-DD'), TO_DATE('2023-12-18', 'YYYY-MM-DD'), 6,6);
+ INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-13', 'YYYY-MM-DD'), TO_DATE('2023-12-20', 'YYYY-MM-DD'), 1,17);
+ INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-16', 'YYYY-MM-DD'), TO_DATE('2023-12-23', 'YYYY-MM-DD'), 28,30);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-17', 'YYYY-MM-DD'), TO_DATE('2023-12-24', 'YYYY-MM-DD'), 24,24);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-21', 'YYYY-MM-DD'), TO_DATE('2023-12-28', 'YYYY-MM-DD'), 2,2);
+INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-24', 'YYYY-MM-DD'), TO_DATE('2023-12-31', 'YYYY-MM-DD'), 3,6);
+
+select * from Prestamos_p1;
+
+
+--Inserts tabla resena
 
 
 
@@ -1096,13 +1213,13 @@ BEGIN
     SELECT USER INTO t_usuario FROM DUAL;
     IF INSERTING THEN
         INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-        VALUES (SYSDATE, t_usuario, 'Se insertó el libro: ' || :NEW.titulo);
+        VALUES (SYSDATE, t_usuario, 'Se insertï¿½ el libro: ' || :NEW.titulo);
 
     ELSIF UPDATING THEN
         DECLARE
             accion VARCHAR2(250 char);
         BEGIN
-            accion := 'Se modificó el libro: ' || :NEW.id;
+            accion := 'Se modificï¿½ el libro: ' || :NEW.id;
 
             IF :NEW.inventario != :OLD.inventario THEN
                 accion := accion || '. Inventario antes: ' || :OLD.inventario || ', Inventario actuak: ' || :NEW.inventario;
@@ -1129,7 +1246,7 @@ BEGIN
             END IF;
             
             IF :NEW.anno_publicacion != :OLD.anno_publicacion THEN
-                accion := accion || '. año publicacion anterior: ' || :OLD.anno_publicacion || ', año publicacion actual: ' || :NEW.anno_publicacion;
+                accion := accion || '. aï¿½o publicacion anterior: ' || :OLD.anno_publicacion || ', aï¿½o publicacion actual: ' || :NEW.anno_publicacion;
             END IF;
 
             INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
@@ -1138,7 +1255,7 @@ BEGIN
 
     ELSIF DELETING THEN
         INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-        VALUES (SYSDATE, t_usuario, 'Se eliminó el libro: ' || :OLD.titulo);
+        VALUES (SYSDATE, t_usuario, 'Se eliminï¿½ el libro: ' || :OLD.titulo);
 
     ELSE
         DBMS_OUTPUT.PUT_LINE('Este codigo no es accesible.');

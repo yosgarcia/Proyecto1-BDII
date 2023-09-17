@@ -306,7 +306,7 @@ INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Alejandro', 'Vidal');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Oliver', 'Santos');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Juan', 'Aguilar');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Marco', 'Campos');
-INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Cristina', 'Castellon');
+INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Yurgen', 'Cambronero');
 
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('andrea_aron', 'con123', 1);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('jflores', 'password456', 2);
@@ -338,7 +338,7 @@ INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('alevidal', 
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('olisantos', 'oliver_pass', 28);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('j_aguilar', 'juan2023', 29);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('marcampos', 'marco_pass', 30);
-INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('cris_cast', 'cristina123', 31);
+INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('YCAMBRONERO', 'cristina123', 31);
 
 --Inserts tabla Prestamos
 --Prestamos Enero
@@ -461,106 +461,106 @@ INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id
 INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-24', 'YYYY-MM-DD'), TO_DATE('2023-12-31', 'YYYY-MM-DD'), 3,6);
 
 --Resennas
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Pesimo', 1, 3, 7)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy buena', 7, 18, 15)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Puede mejorar', 3, 14, 2)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Masomenos', 5, 8, 8)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('INCREIBLE', 9, 19, 7)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Basura', 2, 21, 21)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me encanto', 8, 12, 30)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Mediocre', 4, 15, 19)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('La mayor basura de la historia', 1, 2, 4)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Pesimo', 1, 3, 7);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy buena', 7, 18, 15);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Puede mejorar', 3, 14, 2);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Masomenos', 5, 8, 8);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('INCREIBLE', 9, 19, 7);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Basura', 2, 21, 21);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me encanto', 8, 12, 30);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Mediocre', 4, 15, 19);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('La mayor basura de la historia', 1, 2, 4);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Interesante', 6, 1, 10)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('LO MEJOR DEL MUNDO', 10, 5, 1)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Aburrido', 3, 14, 20)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Simple', 2, 15, 8)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Unico', 8, 11, 22)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Llamativo', 7, 4, 9)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Para pasar el rato', 5, 1, 24)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Espere mas...', 4, 6, 6)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Interesante', 6, 1, 10);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('LO MEJOR DEL MUNDO', 10, 5, 1);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Aburrido', 3, 14, 20);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Simple', 2, 15, 8);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Unico', 8, 11, 22);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Llamativo', 7, 4, 9);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Para pasar el rato', 5, 1, 24);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Espere mas...', 4, 6, 6);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Perdida de tiempo', 1, 4, 5)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Recomendado a full', 9, 24, 25)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Ni bien ni mal', 6, 6, 4)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy predecible', 2, 9, 1)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo volveria a leer mil veces', 10, 9, 9)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No muy llamativo', 3, 22, 5)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('De 10', 8, 2, 15)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy bueno', 7, 6, 8)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Mas malo que bueno', 4, 9, 17)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy de una sola vez', 5, 8, 25)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Perdida de tiempo', 1, 4, 5);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Recomendado a full', 9, 24, 25);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Ni bien ni mal', 6, 6, 4);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy predecible', 2, 9, 1);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo volveria a leer mil veces', 10, 9, 9);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No muy llamativo', 3, 22, 5);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('De 10', 8, 2, 15);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy bueno', 7, 6, 8);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Mas malo que bueno', 4, 9, 17);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy de una sola vez', 5, 8, 25);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo peor que he visto...', 1, 12, 12)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Para pasar el rato nada mas', 6, 20, 9)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('De mis favoritos, recomiendo leerlo', 9, 11, 1)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Hay muchos mejores que esto...', 2, 21, 2)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Nada mejor, sin duda una obra de arte', 10, 11, 12)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Nada llamativo', 3, 15, 22)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Magnifico en todo sentido', 8, 29, 4)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bastante bueno!', 7, 27, 14)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No es lo mejor pero bueno...', 4, 19, 14)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo peor que he visto...', 1, 12, 12);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Para pasar el rato nada mas', 6, 20, 9);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('De mis favoritos, recomiendo leerlo', 9, 11, 1);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Hay muchos mejores que esto...', 2, 21, 2);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Nada mejor, sin duda una obra de arte', 10, 11, 12);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Nada llamativo', 3, 15, 22);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Magnifico en todo sentido', 8, 29, 4);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bastante bueno!', 7, 27, 14);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No es lo mejor pero bueno...', 4, 19, 14);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Algo entretiene, pero no mucho', 5, 2, 14)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me esperaba nada y aun asi me decepciono', 1, 9, 21)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy bueno y entretenido', 8, 14, 2)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Esto se considera libro?', 3, 5, 20)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una maravilla, es sin duda maravilloso', 9, 18, 12)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Regular', 4, 14, 30)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo entre lo bueno y bueno entre lo malo', 6, 11, 2)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Algo entretiene, pero no mucho', 5, 2, 14);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me esperaba nada y aun asi me decepciono', 1, 9, 21);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy bueno y entretenido', 8, 14, 2);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Esto se considera libro?', 3, 5, 20);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una maravilla, es sin duda maravilloso', 9, 18, 12);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Regular', 4, 14, 30);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo entre lo bueno y bueno entre lo malo', 6, 11, 2);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Ni fu ni fa', 2, 15, 20)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo ame!', 10, 17, 17)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Pfff hay muchos mejores', 3, 13, 14)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me siento estafado', 2, 5, 11)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Un poco malo si...', 4, 14, 9)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Decepcionante', 1, 30, 20)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Precioso y unico', 9, 8, 21)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Simple y entretenido', 6, 10, 25)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Ni fu ni fa', 2, 15, 20);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo ame!', 10, 17, 17);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Pfff hay muchos mejores', 3, 13, 14);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me siento estafado', 2, 5, 11);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Un poco malo si...', 4, 14, 9);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Decepcionante', 1, 30, 20);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Precioso y unico', 9, 8, 21);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Simple y entretenido', 6, 10, 25);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Super bueno, recomendadisimo', 7, 4, 7)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy malo la verdad', 2, 3, 25)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo mejor que he leido en un buen tiempo', 10, 18, 1)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bastante bueno, muy buen libro', 8, 5, 4)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Aburrido y predecible', 3, 6, 24)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('He leido libros malos pero este fue el colmo', 1, 15, 20)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy regular, en todo sentido', 5, 19, 20)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Super bueno, recomendadisimo', 7, 4, 7);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy malo la verdad', 2, 3, 25);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo mejor que he leido en un buen tiempo', 10, 18, 1);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bastante bueno, muy buen libro', 8, 5, 4);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Aburrido y predecible', 3, 6, 24);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('He leido libros malos pero este fue el colmo', 1, 15, 20);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy regular, en todo sentido', 5, 19, 20);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me gusto bastante, pero pudo haber sido mejor', 7, 8, 20)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una joya entre joyas', 9, 5, 1)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy ñeh', 3, 28, 27)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Entretenido pero de ahi no mas', 5, 19, 5)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo es piropo', 2, 9, 15)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Nada mal', 7, 30, 22)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me gusto mucho', 8, 14, 3)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Este libro marco una nueva etapa en mi vida', 10, 1, 2)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Estresante', 3, 12, 25)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me gusto bastante, pero pudo haber sido mejor', 7, 8, 20);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una joya entre joyas', 9, 5, 1);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy ñeh', 3, 28, 27);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Entretenido pero de ahi no mas', 5, 19, 5);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo es piropo', 2, 9, 15);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Nada mal', 7, 30, 22);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me gusto mucho', 8, 14, 3);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Este libro marco una nueva etapa en mi vida', 10, 1, 2);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Estresante', 3, 12, 25);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Ganas de lavarme los ojos con cloro despues de leer este libro', 1, 4, 21)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bueno pero tampoco es para tanto', 6, 1, 21)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No fue de mi gusto', 2, 10, 22)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No estuvo mal pero tampoco lo volveria a leer', 6, 1, 3)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('m***a', 1, 1, 1)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No le pongo menos calificacion para ser considerado', 3, 17, 15)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No era lo que esperaba', 5, 1, 12)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una vez esta bien, dos veces podria, ya tres como que no', 7, 11, 14)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('DE SER POR MI ME GRABARIA ESTE LIBRO EN LAS RETINAS DE LOS OJOS', 10, 10, 20)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Sin duda una buena eleccion', 8, 26, 11)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Ganas de lavarme los ojos con cloro despues de leer este libro', 1, 4, 21);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bueno pero tampoco es para tanto', 6, 1, 21);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No fue de mi gusto', 2, 10, 22);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No estuvo mal pero tampoco lo volveria a leer', 6, 1, 3);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('m***a', 1, 1, 1);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No le pongo menos calificacion para ser considerado', 3, 17, 15);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No era lo que esperaba', 5, 1, 12);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una vez esta bien, dos veces podria, ya tres como que no', 7, 11, 14);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('DE SER POR MI ME GRABARIA ESTE LIBRO EN LAS RETINAS DE LOS OJOS', 10, 10, 20);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Sin duda una buena eleccion', 8, 26, 11);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me arrepiento de nada :3', 9, 21, 21)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Hmm', 6, 5, 25)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo', 3, 4, 18)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Mal hecho', 4, 1, 8)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Para gustos colores...', 2, 7, 2)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me arrepiento tanto de haber perdido mi tiempo asi', 1, 2, 27)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malito', 2, 4, 3)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('En un basurero encuentro mejores', 2, 9, 28)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bueno pero no taaan bueno', 6, 1, 21)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('A mi me gusto bastante', 7, 3, 3)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me arrepiento de nada :3', 9, 21, 21);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Hmm', 6, 5, 25);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo', 3, 4, 18);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Mal hecho', 4, 1, 8);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Para gustos colores...', 2, 7, 2);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me arrepiento tanto de haber perdido mi tiempo asi', 1, 2, 27);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malito', 2, 4, 3);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('En un basurero encuentro mejores', 2, 9, 28);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bueno pero no taaan bueno', 6, 1, 21);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('A mi me gusto bastante', 7, 3, 3);
 
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Se que cada quien tiene sus gustos pero para mi este fue magnifico', 8, 11, 11)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Perdida de todo', 4, 4, 2)
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me convencio lo suficiente', 5, 19, 12)
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Se que cada quien tiene sus gustos pero para mi este fue magnifico', 8, 11, 11);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Perdida de todo', 4, 4, 2);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me convencio lo suficiente', 5, 19, 12);
 
 
 CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS 
@@ -637,8 +637,6 @@ CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS
     PROCEDURE borrar_empleado(p_id empleado_p1.id%TYPE);
     
     PROCEDURE borrar_usuario(p_usuario usuario_p1.username%TYPE);
-    
-    PROCEDURE borrar_bitacora_libro(p_id bitacora_libro_p1.id%TYPE);
     
 END paquete_modificaciones_p1;
 /
@@ -873,18 +871,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si el cliente existe en la BD
             DELETE FROM clientes_p1
             WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Cliente con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar cliente con ID: ' || p_id);
-            END IF;
+            COMMIT;
+            DBMS_OUTPUT.PUT_LINE('Cliente con ID ' || p_id || ' eliminado exitosamente.');
         ELSE
             DBMS_OUTPUT.PUT_LINE('Cliente con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar cliente: ' || SQLERRM);
     END;
     
@@ -901,18 +895,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si el autor existe en la BD
             DELETE FROM autor_p1
             WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Autor con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar autor con ID: ' || p_id);
-            END IF;
+            COMMIT;
+            DBMS_OUTPUT.PUT_LINE('Autor con ID ' || p_id || ' eliminado exitosamente');
         ELSE
             DBMS_OUTPUT.PUT_LINE('Autor con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar autor: ' || SQLERRM);
     END;
     
@@ -929,18 +919,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si la editorial existe en la BD
             DELETE FROM editorial_p1
             WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Editorial con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar editorial con ID: ' || p_id);
-            END IF;
+            DBMS_OUTPUT.PUT_LINE('Editorial con ID ' || p_id || ' eliminado exitosamente');
+            COMMIT;
         ELSE
             DBMS_OUTPUT.PUT_LINE('Editorial con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar editorial: ' || SQLERRM);
     END;
     
@@ -957,18 +943,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si el genero existe en la BD
             DELETE FROM genero_p1
             WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Genero con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar genero con ID: ' || p_id);
-            END IF;
+            DBMS_OUTPUT.PUT_LINE('Genero con ID ' || p_id || ' eliminado exitosamente');
+            COMMIT;
         ELSE
             DBMS_OUTPUT.PUT_LINE('Genero con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar reseña: ' || SQLERRM);
     END;
     
@@ -985,23 +967,19 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si el libro existe en la BD
             DELETE FROM libro_p1
             WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Libro con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar libro con ID: ' || p_id);
-            END IF;
+            COMMIT;
+            DBMS_OUTPUT.PUT_LINE('Libro con ID ' || p_id || ' eliminado.');
         ELSE
             DBMS_OUTPUT.PUT_LINE('Libro con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar libro: ' || SQLERRM);
     END;
     
     
-    -- PROCEDIMIENTO PARA BORRAR UNA RESEÑA
+    -- PROCEDIMIENTO PARA BORRAR UNA RESENNA
     PROCEDURE borrar_resena(p_id resena_p1.id%TYPE) IS
         r_cont NUMBER;
     BEGIN
@@ -1013,18 +991,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si ka reseña existe en la BD
             DELETE FROM resena_p1
             WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Reseña con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar reseña con ID: ' || p_id);
-            END IF;
+            DBMS_OUTPUT.PUT_LINE('Resenna con ID ' || p_id || ' eliminado exitosamente');
+            COMMIT;
         ELSE
             DBMS_OUTPUT.PUT_LINE('Reseña con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar reseña: ' || SQLERRM);
     END;
     
@@ -1041,18 +1015,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si el prestamo existe en la BD
             DELETE FROM prestamos_p1
             WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Prestamo con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar prestamo con ID: ' || p_id);
-            END IF;
+            DBMS_OUTPUT.PUT_LINE('Prestamo con ID ' || p_id || ' eliminado exitosamente');
+            COMMIT;
         ELSE
             DBMS_OUTPUT.PUT_LINE('Prestamo con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar prestamo: ' || SQLERRM);
     END;
     
@@ -1069,18 +1039,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si el empleado existe en la BD
             DELETE FROM empleado_p1
             WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Empleado con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar empleado con ID: ' || p_id);
-            END IF;
+            DBMS_OUTPUT.PUT_LINE('Empleado con ID ' || p_id || ' eliminado exitosamente');
+            COMMIT;
         ELSE
             DBMS_OUTPUT.PUT_LINE('Empleado con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar empleado: ' || SQLERRM);
     END;
     
@@ -1097,50 +1063,19 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
             -- Si el usuario existe en la BD
             DELETE FROM usuario_p1
             WHERE username = p_usuario;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Usuario ' || p_usuario || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar usuario: ' || p_usuario);
-            END IF;
+            DBMS_OUTPUT.PUT_LINE('Usuario ' || p_usuario || ' eliminado exitosamente');
+            COMMIT;
         ELSE
             DBMS_OUTPUT.PUT_LINE('Usuario ' || p_usuario || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
+                ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error al eliminar usuario: ' || SQLERRM);
     END;
     
-    
-    PROCEDURE borrar_bitacora_libro(p_id bitacora_libro_p1.id%TYPE) IS
-        p_cont NUMBER;
-    BEGIN
-        SELECT COUNT(*) INTO p_cont
-        FROM bitacora_libro_p1 b
-        WHERE b.id = p_id;
-        
-        IF p_cont = 1 THEN
-            -- Si la bitacora existe en la BD
-            DELETE FROM bitacora_libro_p1
-            WHERE id = p_id;
-            IF SQL%ROWCOUNT = 1 THEN
-                COMMIT;
-                DBMS_OUTPUT.PUT_LINE('Bitacora con ID ' || p_id || ' eliminado exitosamente');
-            ELSE
-                ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('No se pudo eliminar bitacora con ID: ' || p_id);
-            END IF;
-        ELSE
-            DBMS_OUTPUT.PUT_LINE('Bitacora con ID ' || p_id || ' no existe.');
-        END IF;
-        EXCEPTION
-            WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error al eliminar bitacora: ' || SQLERRM);
-    END;
-    
 END paquete_modificaciones_p1;
-
+/
 
 
 CREATE OR REPLACE PACKAGE paquete_consultas_p1 AS
@@ -1359,8 +1294,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
     END;
     
 END paquete_consultas_p1;
-
-Select user from dual;
+/
 
 CREATE OR REPLACE TRIGGER cambio_libros
     AFTER INSERT OR UPDATE OR DELETE
@@ -1370,8 +1304,8 @@ DECLARE
 BEGIN
     SELECT USER INTO t_usuario FROM DUAL;
     IF INSERTING THEN
-        INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-        VALUES (SYSDATE, t_usuario, 'Se insert� el libro: ' || :NEW.titulo);
+        INSERT INTO bitacora_libro_p1 (fecha, usuario, descripcion)
+        VALUES (SYSDATE, t_usuario, 'Se inserto el libro: ' || :NEW.titulo);
 
     ELSIF UPDATING THEN
         DECLARE
@@ -1404,7 +1338,7 @@ BEGIN
             END IF;
             
             IF :NEW.anno_publicacion != :OLD.anno_publicacion THEN
-                accion := accion || '. a�o publicacion anterior: ' || :OLD.anno_publicacion || ', a�o publicacion actual: ' || :NEW.anno_publicacion;
+                accion := accion || '. anno publicacion anterior: ' || :OLD.anno_publicacion || ', anno publicacion actual: ' || :NEW.anno_publicacion;
             END IF;
 
             INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
@@ -1413,14 +1347,13 @@ BEGIN
 
     ELSIF DELETING THEN
         INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-        VALUES (SYSDATE, t_usuario, 'Se elimin� el libro: ' || :OLD.titulo);
+        VALUES (SYSDATE, t_usuario, 'Se elimino el libro: ' || :OLD.titulo);
 
     ELSE
         DBMS_OUTPUT.PUT_LINE('Este codigo no es accesible.');
     END IF;
 END;
-
-
+/
 
 ALTER SEQUENCE seq_clientes RESTART;
 ALTER SEQUENCE seq_autor RESTART;
@@ -1446,6 +1379,6 @@ DROP TABLE autor_p1;
 DROP TABLE clientes_p1;
 DROP TABLE bitacora_libro_p1;
 DROP TABLE usuario_p1;
-DROP TABLE empleados_p1;
+DROP TABLE empleado_p1;
 
 

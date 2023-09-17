@@ -1,14 +1,15 @@
-package com.mycompany.project1_bd2;
+package com.mycompany.project1_bd2.entidades;
 
+import java.sql.Date;
 import oracle.sql.DATE;
 
 public class BitacoraLibro {
     private int id;
-    private DATE fecha;
+    private Date fecha;
     private Usuario usuario;
     private String descripcion;
 
-    public BitacoraLibro(int id, DATE fecha, Usuario usuario, String descripcion) {
+    public BitacoraLibro(int id, Date fecha, Usuario usuario, String descripcion) {
         this.id = id;
         this.fecha = fecha;
         this.usuario = usuario;
@@ -19,7 +20,7 @@ public class BitacoraLibro {
         return id;
     }
 
-    public DATE getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
@@ -35,7 +36,7 @@ public class BitacoraLibro {
         this.id = id;
     }
 
-    public void setFecha(DATE fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 

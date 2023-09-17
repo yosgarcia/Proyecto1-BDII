@@ -1,5 +1,6 @@
-package com.mycompany.project1_bd2;
+package com.mycompany.project1_bd2.entidades;
 
+import java.sql.Date;
 import oracle.sql.DATE;
 
 public class Libro {
@@ -8,11 +9,11 @@ public class Libro {
     private Editorial editorial;
     private Genero genero;
     private Autor autor;
-    private DATE annoPublicacion;
+    private Date annoPublicacion;
     private String isbn;
     private int inventario;
 
-    public Libro(int id, String titulo, Editorial editorial, Genero genero, Autor autor, DATE annoPublicacion, String isbn, int inventario) {
+    public Libro(int id, String titulo, Editorial editorial, Genero genero, Autor autor, Date annoPublicacion, String isbn, int inventario) {
         this.id = id;
         this.titulo = titulo;
         this.editorial = editorial;
@@ -48,7 +49,7 @@ public class Libro {
         return autor;
     }
 
-    public DATE getAnnoPublicacion() {
+    public Date getAnnoPublicacion() {
         return annoPublicacion;
     }
 
@@ -76,7 +77,7 @@ public class Libro {
         this.autor = autor;
     }
 
-    public void setAnnoPublicacion(DATE annoPublicacion) {
+    public void setAnnoPublicacion(Date annoPublicacion) {
         this.annoPublicacion = annoPublicacion;
     }
 

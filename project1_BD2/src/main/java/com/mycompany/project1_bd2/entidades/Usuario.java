@@ -1,4 +1,6 @@
-package com.mycompany.project1_bd2;
+package com.mycompany.project1_bd2.entidades;
+
+import com.mycompany.project1_bd2.entidades.Empleado;
 
 
 public class Usuario {

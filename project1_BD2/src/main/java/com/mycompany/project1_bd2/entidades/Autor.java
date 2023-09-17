@@ -1,4 +1,4 @@
-package com.mycompany.project1_bd2;
+package com.mycompany.project1_bd2.entidades;
 
 public class Autor {
     private int id;

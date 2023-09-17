@@ -1,4 +1,7 @@
-package com.mycompany.project1_bd2;
+package com.mycompany.project1_bd2.entidades;
+
+import com.mycompany.project1_bd2.entidades.Libro;
+import com.mycompany.project1_bd2.entidades.Cliente;
 
 
 public class Resenna {

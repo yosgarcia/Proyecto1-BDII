@@ -7,21 +7,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Libreria</title>
-    </head>
-    <body>
-        <h1>Bienvenido al Sistema de Registros de la Librería</h1>
-        <br>
-        <br>
-        <h2>Menu Principal</h2>
-        <ul>
-            <li><a href="Consultas.jsp">Consultar</a></li>
-            <br>
-            <li><a href="Eliminar.jsp">Eliminar</a></li>
-            <br>
-            <li><a href="Agregar.jsp">Agregar</a></li>
-        </ul>
-    </body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Libreria</title>
+</head>
+<body>
+    <h1>Bienvenido al Sistema de Registros de la Librería</h1>
+    <br>
+    <br>
+    <h2>Menu Principal</h2>
+    <button onclick="location.href='Consultas.jsp'">Consultar</button><br><br>
+    <button onclick="location.href='Eliminar.jsp'">Eliminar</button><br><br>
+    <button onclick="location.href='Agregar.jsp'">Agregar</button>
+</body>
 </html>

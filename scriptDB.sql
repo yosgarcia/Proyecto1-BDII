@@ -1404,3 +1404,4 @@ DROP TABLE bitacora_libro_p1;
 DROP TABLE usuario_p1;
 DROP TABLE empleado_p1;
 
+select * from usuario_p1;

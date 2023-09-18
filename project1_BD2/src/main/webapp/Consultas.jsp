@@ -12,9 +12,9 @@
         <title>Consultar</title>
     </head>
     <body>
-        <h1> Seleccione opcion para eliminar</h1>
-        <li><a href="ConsultaCliente.jsp">Buscar Libro</a></li><br><br>
-        <li><a href="ConsultaCliente.jsp">Buscar Cliente</a></li><br><br>
-        <li><a href="EliminarPrestamo.jsp">Buscar Prestamo</a></li><br><br>
+        <h1> Seleccione lo que desea consultar</h1>
+        <button onclick="location.href='ConsultaLibro.jsp'">Consultar Libro</button><br><br>
+        <button onclick="location.href='ConsultaCliente.jsp'">Consultar Cliente</button><br><br>
+        <button onclick="location.href='ConsultaPrestamo.jsp'">Consultar Prestamo</button><br><br>
     </body>
 </html>

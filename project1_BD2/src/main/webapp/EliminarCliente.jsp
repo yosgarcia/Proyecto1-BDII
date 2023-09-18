@@ -17,7 +17,7 @@
     <div align="center" class="contenedor">
         <h2>Eliminar Cliente por ID</h2>
         <!-- Formulario para ingresar el ID del cliente a eliminar -->
-        <form class="formulario" action="eliminar_cliente.php" method="post">
+        <form class="formulario" action="BorrarClienteServlet.java" method="post">
             <label for="clienteId">ID del Cliente:</label>
             <input type="text" id="clienteId" name="clienteId" placeholder="Ingrese el ID del cliente">
             <input type="submit" value="Eliminar">

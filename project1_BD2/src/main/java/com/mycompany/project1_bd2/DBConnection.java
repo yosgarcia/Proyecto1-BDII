@@ -16,8 +16,8 @@ public class DBConnection {
     
     public DBConnection() {
 
-        DB_URL = "jdbc:oracle:thin:@siuadb2_high?TNS_ADMIN=C:/Wallet_siuadb2";
-        DB_USER = "LMORA";
+        DB_URL = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:/Wallet";
+        DB_USER = "YGARCIA";
         DB_PASSWORD = "bdAlajuela2023s2";
 
         try {

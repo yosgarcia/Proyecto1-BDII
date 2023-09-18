@@ -306,7 +306,7 @@ INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Alejandro', 'Vidal');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Oliver', 'Santos');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Juan', 'Aguilar');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Marco', 'Campos');
-INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Yurgen', 'Cambronero');
+INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Cristina', 'Cambronero');
 
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('andrea_aron', 'con123', 1);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('jflores', 'password456', 2);
@@ -338,7 +338,7 @@ INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('alevidal', 
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('olisantos', 'oliver_pass', 28);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('j_aguilar', 'juan2023', 29);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('marcampos', 'marco_pass', 30);
-INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('YCAMBRONERO', 'cristina123', 31);
+INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('cristcambro', 'cristina123', 31);
 
 --Inserts tabla Prestamos
 --Prestamos Enero
@@ -528,7 +528,7 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me gusto bastante, pero pudo haber sido mejor', 7, 8, 20);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una joya entre joyas', 9, 5, 1);
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy ñeh', 3, 28, 27);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy olvidable', 3, 28, 27);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Entretenido pero de ahi no mas', 5, 19, 5);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo es piropo', 2, 9, 15);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Nada mal', 7, 30, 22);
@@ -540,7 +540,7 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bueno pero tampoco es para tanto', 6, 1, 21);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No fue de mi gusto', 2, 10, 22);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No estuvo mal pero tampoco lo volveria a leer', 6, 1, 3);
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('m***a', 1, 1, 1);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una basura', 1, 1, 1);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No le pongo menos calificacion para ser considerado', 3, 17, 15);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No era lo que esperaba', 5, 1, 12);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una vez esta bien, dos veces podria, ya tres como que no', 7, 11, 14);
@@ -1374,7 +1374,7 @@ BEGIN
     END IF;
 END;
 /
-select * from Usuario_p1;
+
 
 
 

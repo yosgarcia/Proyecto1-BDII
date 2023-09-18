@@ -110,7 +110,7 @@ INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yurgen', '
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'Gonzalez', 'carlosgonzalez@ejemplo.com', '74691238');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'Martinez', 'anamartinez@ejemplo.com', '76582349');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'Rodriguez', 'pedrorodriguez@ejemplo.com', '68743219');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('MarÃ­a', 'Lopez', 'marialopez@ejemplo.com', '78654321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('María', 'Lopez', 'marialopez@ejemplo.com', '78654321');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Diego', 'Sanchez', 'diegosanchez@ejemplo.com', '64758932');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Laura', 'Ramirez', 'lauraramirez@ejemplo.com', '79865432');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Javier', 'Perez', 'javierperez@ejemplo.com', '68743125');
@@ -528,7 +528,7 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me gusto bastante, pero pudo haber sido mejor', 7, 8, 20);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una joya entre joyas', 9, 5, 1);
-INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy Ã±eh', 3, 28, 27);
+INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy ñeh', 3, 28, 27);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Entretenido pero de ahi no mas', 5, 19, 5);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo es piropo', 2, 9, 15);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Nada mal', 7, 30, 22);
@@ -561,7 +561,6 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Se que cada quien tiene sus gustos pero para mi este fue magnifico', 8, 11, 11);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Perdida de todo', 4, 4, 2);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me convencio lo suficiente', 5, 19, 12);
-
 
 CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS 
     FUNCTION insertar_cliente (p_nombre clientes_p1.nombre%TYPE, p_apellido clientes_p1.apellido%TYPE, p_correo clientes_p1.correo%TYPE,
@@ -965,7 +964,7 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('Error al eliminar reseÃ±a: ' || SQLERRM);
+                DBMS_OUTPUT.PUT_LINE('Error al eliminar reseña: ' || SQLERRM);
     END;
     
     
@@ -1002,18 +1001,18 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         WHERE r.id = p_id;
         
         IF r_cont = 1 THEN
-            -- Si ka reseÃ±a existe en la BD
+            -- Si ka reseña existe en la BD
             DELETE FROM resena_p1
             WHERE id = p_id;
             DBMS_OUTPUT.PUT_LINE('Resenna con ID ' || p_id || ' eliminado exitosamente');
             COMMIT;
         ELSE
-            DBMS_OUTPUT.PUT_LINE('ReseÃ±a con ID ' || p_id || ' no existe.');
+            DBMS_OUTPUT.PUT_LINE('Reseña con ID ' || p_id || ' no existe.');
         END IF;
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK;
-                DBMS_OUTPUT.PUT_LINE('Error al eliminar reseÃ±a: ' || SQLERRM);
+                DBMS_OUTPUT.PUT_LINE('Error al eliminar reseña: ' || SQLERRM);
     END;
     
     
@@ -1137,7 +1136,7 @@ CREATE OR REPLACE PACKAGE paquete_consultas_p1 AS
     
     PROCEDURE mostrar_genero_popular(p_cursor OUT SYS_REFCURSOR);
     
-    PROCEDURE mostrar_editorial_popular(p_cursor OUT SYS_REFCURSOR);
+    PROCEDURE mostrar_origen_popular(p_cursor OUT SYS_REFCURSOR);
     
 END paquete_consultas_p1;
 /
@@ -1298,29 +1297,25 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
     PROCEDURE mostrar_genero_popular(p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
         OPEN p_cursor FOR
-            SELECT c.id, c.nombre, c.apellido, g.nombre 
-            FROM clientes_p1 c
-            LEFT JOIN prestamos_p1 p ON c.id = p.cliente_id
-            LEFT JOIN libro_p1 l ON p.libro_id = l.id
-            LEFT JOIN genero_p1 g ON l.genero_id = g.id
-            ORDER BY g.nombre, c.id;
+            SELECT g.nombre AS genero, COUNT(*) AS total_prestamos
+            FROM Prestamos_p1 p
+            INNER JOIN Libro_p1 l ON p.libro_id = l.id
+            INNER JOIN Genero_p1 g ON l.genero_id = g.id
+            GROUP BY g.nombre;
     END;
 
-    PROCEDURE mostrar_editorial_popular(p_cursor OUT SYS_REFCURSOR) AS
+    PROCEDURE mostrar_origen_popular(p_cursor OUT SYS_REFCURSOR) AS
     BEGIN
         OPEN p_cursor FOR
-            SELECT c.id, c.nombre, c.apellido, e.nombre 
-            FROM clientes_p1 c
-            INNER JOIN prestamos_p1 p ON c.id = p.cliente_id
-            INNER JOIN libro_p1 l ON p.libro_id = l.id
-            INNER JOIN editorial_p1 e ON l.editorial_id = e.id
-            ORDER BY e.nombre, c.id;
+            SELECT e.origen AS origen_editorial, COUNT(*) AS total_prestamos
+            FROM Prestamos_p1 p
+            INNER JOIN Libro_p1 l ON p.libro_id = l.id
+            INNER JOIN Editorial_p1 e ON l.editorial_id = e.id
+            GROUP BY e.origen;
     END;
     
 END paquete_consultas_p1;
 /
-
-
 CREATE OR REPLACE TRIGGER cambio_libros
     AFTER INSERT OR UPDATE OR DELETE
     ON Libro_p1 FOR EACH ROW
@@ -1336,7 +1331,7 @@ BEGIN
         DECLARE
             accion VARCHAR2(250 char);
         BEGIN
-            accion := 'Se modificï¿½ el libro: ' || :NEW.id;
+            accion := 'Se modifico el libro: ' || :NEW.id;
 
             IF :NEW.inventario != :OLD.inventario THEN
                 accion := accion || '. Inventario antes: ' || :OLD.inventario || ', Inventario actuak: ' || :NEW.inventario;
@@ -1379,6 +1374,11 @@ BEGIN
     END IF;
 END;
 /
+select * from Usuario_p1;
+
+
+
+
 
 ALTER SEQUENCE seq_clientes RESTART;
 ALTER SEQUENCE seq_autor RESTART;
@@ -1405,5 +1405,4 @@ DROP TABLE clientes_p1;
 DROP TABLE bitacora_libro_p1;
 DROP TABLE usuario_p1;
 DROP TABLE empleado_p1;
-
 

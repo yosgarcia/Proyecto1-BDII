@@ -12,7 +12,7 @@ import oracle.jdbc.driver.OracleConnection;
 
 public class UsuarioRepositorio {
     
-    public Usuario mostrarUsuarioPorNombre(OracleConnection connection, String username) {
+    public static Usuario mostrarUsuarioPorNombre(OracleConnection connection, String username) {
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_USUARIO_NOMBRE_PROC_CALL);
 
@@ -41,8 +41,39 @@ public class UsuarioRepositorio {
         }
         return null;
     }
+    
+    public static Usuario obtenerUsuarioContrasena(OracleConnection connection, String username, String contrasena){
+        try{
+            CallableStatement callableStatement = connection.prepareCall(Queries.VALIDAR_USUARIO);
 
-    public List<Usuario> mostrarUsuarios(OracleConnection connection) {
+            callableStatement.setString(1, username);
+            callableStatement.setString(2, contrasena);
+            callableStatement.registerOutParameter(3, oracle.jdbc.OracleTypes.CURSOR);
+            callableStatement.execute();
+
+            // Obtener el cursor de salida
+            ResultSet resultSet = (ResultSet) callableStatement.getObject(3);
+
+            // Iterar sobre los resultados y procesarlos según sea necesario
+            if (resultSet.next()) {
+                // Obtener los datos del usuario
+                String userName = resultSet.getString("username");
+                String contrasenna = resultSet.getString("contrasenna");
+                int empleadoId = resultSet.getInt("empleado_id");
+
+                Empleado empleado = new Empleado(empleadoId, null, null);
+                Usuario usuario = new Usuario(userName, contrasenna, empleado);
+                return usuario;
+            }
+
+            resultSet.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static List<Usuario> mostrarUsuarios(OracleConnection connection) {
         List<Usuario> usuarios = new ArrayList<>();
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_USUARIOS_PROC_CALL);
@@ -71,7 +102,7 @@ public class UsuarioRepositorio {
         return usuarios;
     }
 
-    public String insertarUsuario(OracleConnection connection, String username, String contrasenna, int empleadoId) {
+    public static String insertarUsuario(OracleConnection connection, String username, String contrasenna, int empleadoId) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.USUARIO_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, java.sql.Types.VARCHAR);
@@ -89,7 +120,7 @@ public class UsuarioRepositorio {
         }
     }
 
-    public void modificarUsuario(OracleConnection connection, String username, String contrasenna, int empleadoId) {
+    public static void modificarUsuario(OracleConnection connection, String username, String contrasenna, int empleadoId) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.USUARIO_MODIFICAR_PROC_CALL);
             callableStatement.setString(1, username);
@@ -103,7 +134,7 @@ public class UsuarioRepositorio {
         }
     }
 
-    public void borrarUsuario(OracleConnection connection, String username) {
+    public static void borrarUsuario(OracleConnection connection, String username) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.USUARIO_BORRAR_PROC_CALL);
             callableStatement.setString(1, username);

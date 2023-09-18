@@ -1,5 +1,7 @@
 package com.mycompany.project1_bd2;
 
+import com.mycompany.project1_bd2.Repositorios.UsuarioRepositorio;
+import com.mycompany.project1_bd2.entidades.Usuario;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -14,8 +16,8 @@ public class DBConnection {
     
     public DBConnection() {
 
-        DB_URL = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:/Wallet";
-        DB_USER = "YGARCIA";
+        DB_URL = "jdbc:oracle:thin:@siuadb2_high?TNS_ADMIN=C:/Wallet_siuadb2";
+        DB_USER = "LMORA";
         DB_PASSWORD = "bdAlajuela2023s2";
 
         try {
@@ -49,21 +51,37 @@ public class DBConnection {
         }
     }
 
-    public static void main(String[] args) {
-        DBConnection dBConnection = new DBConnection();
-        if (dBConnection.isConnected()) {
-            System.out.println("Conexión exitosa a la base de datos Oracle.");
-            try {
-                System.out.println("Database Username is: " + dBConnection.connection.getUserName());
-            } catch(SQLException e){
-                
-            }
-
-        } else {
-            System.err.println("Error al conectar a la base de datos Oracle.");
-        }
-
-        dBConnection.closeConnection();
+    public String getDB_URL() {
+        return DB_URL;
     }
+
+    public String getDB_USER() {
+        return DB_USER;
+    }
+
+    public String getDB_PASSWORD() {
+        return DB_PASSWORD;
+    }
+
+    public OracleConnection getConnection() {
+        return connection;
+    }
+    
+    /*
+    public static void main(String[] args){
+        DBConnection dbConection = new DBConnection();
+        Usuario usuarioAValidar = UsuarioRepositorio.obtenerUsuarioContrasena(dbConection.getConnection(), "jflores", "password456");
+        if(usuarioAValidar != null){
+            System.err.println(usuarioAValidar.getUsername());
+        }
+        else{
+            System.err.println("holaa");
+        }
+        
+        dbConection.closeConnection();
+        
+    }*/
+    
+    
 
 }

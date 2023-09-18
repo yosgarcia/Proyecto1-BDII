@@ -1,17 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package com.mycompany.project1_bd2;
 
-import com.mycompany.project1_bd2.Repositorios.UsuarioRepositorio;
-import com.mycompany.project1_bd2.entidades.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-
-
-public class LoginServlet extends HttpServlet {
+/**
+ *
+ * @author yaira
+ */
+public class OperacionesServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -25,35 +29,18 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String usuario = request.getParameter("usuario");
-        String contrasena = request.getParameter("contrasena");
-        
         try ( PrintWriter out = response.getWriter()) {
-            
-            DBConnection dbConecction = new DBConnection();
-            Usuario usuarioAValidar = UsuarioRepositorio.obtenerUsuarioContrasena(dbConecction.getConnection(), usuario, contrasena);
-            if (usuarioAValidar != null){
-                request.getSession().setAttribute("usuario", usuario);
-                response.sendRedirect("menu.jsp");
-            } else {
-                response.sendRedirect("index.jsp");
-            }
-            
-            
-            
-            /* TODO output your page here. You may use following sample code. 
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet ObtenerClienteServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ObtenerClienteServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            response.sendRedirect("menu.jsp");*/
         }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

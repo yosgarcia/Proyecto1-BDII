@@ -4,59 +4,59 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="consulta.css">
-        <title>Ventana Modal de Clientes</title>
+        <title>Ventana Modal de Libros</title>
     </head>
     <body>
-        <h1>Ventana Modal de Clientes</h1>
+        <h1>Ventana Modal de Libros</h1>
 
 <!-- Botones para mostrar las opciones -->
 <div class="bn-container">
-    <button onclick="mostrarClientesPorID()">Mostrar Clientes por ID</button>
-    <button onclick="mostrarTodosClientes()">Mostrar Todos los Clientes</button>
+    <button onclick="mostrarLibrosPorID()">Mostrar Libros por ID</button>
+    <button onclick="mostrarTodosLibros()">Mostrar Todos los Libros</button>
 </div>
 
 
 <!-- Ventana modal para mostrar clientes por ID -->
 <div id="modalLibroPorID" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="cerrarModalClientesPorID()">&times;</span>
-        <h2>Mostrar Clientes por ID</h2>
+        <span class="close" onclick="cerrarModalLibrosPorID()">&times;</span>
+        <h2>Mostrar Libros por ID</h2>
         <form>
-            <label for="clienteId">ID del Cliente:</label>
-            <input type="text" id="clienteId" placeholder="Ingrese el ID del cliente">
+            <label for="LibroId">ID del Libro:</label>
+            <input type="text" id="LibroId" placeholder="Ingrese el ID del Libro">
             <button type="submit">Mostrar</button>
         </form>
     </div>
 </div>
 
 <!-- Ventana modal para mostrar todos los clientes -->
-<div id="modalTodosClientes" class="modal">
+<div id="modalTodosLibros" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="cerrarModalTodosClientes()">&times;</span>
-        <h2>Mostrar Todos los Clientes</h2>
+        <span class="close" onclick="cerrarModalTodosLibros()">&times;</span>
+        <h2>Mostrar Todos los Libros</h2>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <p>Aquí puedes mostrar todos los clientes de la base de datos.</p>
+        <p>Mostrar todos los libros.</p>
     </div>
 </div>
 
 <script>
-    function mostrarClientesPorID() {
-        var modal = document.getElementById("modalClientesPorID");
+    function mostrarLibrosPorID() {
+        var modal = document.getElementById("modalLibroPorID");
         modal.style.display = "block";
     }
 
-    function mostrarTodosClientes() {
-        var modal = document.getElementById("modalTodosClientes");
+    function mostrarTodosLibros() {
+        var modal = document.getElementById("modalTodosLibros");
         modal.style.display = "block";
     }
 
-    function cerrarModalClientesPorID() {
-        var modal = document.getElementById("modalClientesPorID");
+    function cerrarModalLibrosPorId() {
+        var modal = document.getElementById("modalLibroPorID");
         modal.style.display = "none";
     }
 
-    function cerrarModalTodosClientes() {
-        var modal = document.getElementById("modalTodosClientes");
+    function cerrarModalTodosLibros() {
+        var modal = document.getElementById("modalTodosLibros");
         modal.style.display = "none";
     }
 </script>

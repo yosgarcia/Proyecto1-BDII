@@ -13,7 +13,6 @@
 </head>
 <body>
     <h1>Eliminar Libro</h1>
-    
     <form action="procesar_eliminar_libro.jsp" method="post">
         <label for="idLibro">ID de Libro:</label>
         <input type="text" id="idCliente" name="idCliente" required><br><br>

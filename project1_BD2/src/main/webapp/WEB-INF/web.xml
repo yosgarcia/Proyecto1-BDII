@@ -2,11 +2,51 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.mycompany.project1_bd2.LoginServlet</servlet-class>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultaClienteIdServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaClienteIdServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultaClientes</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaClientesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertarClienteServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.InsertarClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarClienteServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ActualizarClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BorrarClienteServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.BorrarClienteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaClienteIdServlet</servlet-name>
+        <url-pattern>/ConsultaClienteIdServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaClientes</servlet-name>
+        <url-pattern>/ConsultaClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertarClienteServlet</servlet-name>
+        <url-pattern>/InsertarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarClienteServlet</servlet-name>
+        <url-pattern>/ActualizarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BorrarClienteServlet</servlet-name>
+        <url-pattern>/BorrarClienteServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

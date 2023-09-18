@@ -13,7 +13,7 @@ import java.sql.Types;
 public class ClienteRepositorio {
     
     
-    public Cliente obtenerPorId(OracleConnection connection, int id){
+    public static Cliente obtenerPorId(OracleConnection connection, int id){
         try {
             // Llama al procedimiento almacenado
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_CLIENTE_ID_PROC_CALL);
@@ -42,7 +42,7 @@ public class ClienteRepositorio {
     }
     
     
-    public List<Cliente> obtenerTodosClientes(OracleConnection connection){
+    public static List<Cliente> obtenerTodosClientes(OracleConnection connection){
         List<Cliente> clientes = new ArrayList<>();
 
         try {
@@ -75,7 +75,7 @@ public class ClienteRepositorio {
         return clientes;
     }
     
-    public int nuevoCliente(OracleConnection connection, String nombre, String apellido, String correo, String telefono){
+    public static int nuevoCliente(OracleConnection connection, String nombre, String apellido, String correo, String telefono){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.CLIENTE_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, Types.NUMERIC);
@@ -85,7 +85,7 @@ public class ClienteRepositorio {
             callableStatement.setString(5, telefono);
 
             callableStatement.execute();
-
+            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -95,7 +95,7 @@ public class ClienteRepositorio {
     }
     
     
-    public void modificarCliente(OracleConnection connection, int id, String nombre, String apellido, String correo, String telefono){
+    public static void modificarCliente(OracleConnection connection, int id, String nombre, String apellido, String correo, String telefono){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.CLIENTE_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, id);
@@ -105,21 +105,24 @@ public class ClienteRepositorio {
             callableStatement.setString(5, telefono);
 
             callableStatement.execute();
-
+            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     
     
-    public void borrarCiente(OracleConnection connection, int id){
+    public static void borrarCiente(OracleConnection connection, int id){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.CLIENTE_BORRAR_PROC_CALL);
             callableStatement.setInt(1, id);
             
             callableStatement.execute();
+            
         } catch (Exception e){
             e.printStackTrace();
+            throw new RuntimeException(e);
+
         }
     }
 }

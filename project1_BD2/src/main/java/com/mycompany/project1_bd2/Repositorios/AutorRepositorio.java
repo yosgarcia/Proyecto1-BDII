@@ -14,7 +14,7 @@ import java.sql.Types;
 public class AutorRepositorio {
     
     
-    public Autor obtenerPorId(OracleConnection connection, int id){
+    public static Autor obtenerPorId(OracleConnection connection, int id){
         try {
             // Llama al procedimiento almacenado
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_AUTOR_ID_PROC_CALL);
@@ -42,7 +42,7 @@ public class AutorRepositorio {
     }
     
     
-    public List<Autor> obtenerTodosClientes(OracleConnection connection){
+    public static List<Autor> obtenerTodosClientes(OracleConnection connection){
         List<Autor> autores = new ArrayList<>();
 
         try {
@@ -74,7 +74,7 @@ public class AutorRepositorio {
         return autores;
     }
     
-    public int nuevoAutor(OracleConnection connection, String nombre, String apellido, String nacionalidad){
+    public static int nuevoAutor(OracleConnection connection, String nombre, String apellido, String nacionalidad){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.AUTOR_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, Types.NUMERIC);
@@ -83,7 +83,7 @@ public class AutorRepositorio {
             callableStatement.setString(4, nacionalidad);
 
             callableStatement.execute();
-
+            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -93,7 +93,7 @@ public class AutorRepositorio {
     }
     
     
-    public void modificarAutor(OracleConnection connection, int id, String nombre, String apellido, String nacionalidad){
+    public static void modificarAutor(OracleConnection connection, int id, String nombre, String apellido, String nacionalidad){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.AUTOR_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, id);
@@ -103,19 +103,20 @@ public class AutorRepositorio {
 
 
             callableStatement.execute();
-
+            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     
     
-    public void borrarCiente(OracleConnection connection, int id){
+    public static void borrarCiente(OracleConnection connection, int id){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.AUTOR_BORRAR_PROC_CALL);
             callableStatement.setInt(1, id);
             
             callableStatement.execute();
+            
         } catch (Exception e){
             e.printStackTrace();
         }

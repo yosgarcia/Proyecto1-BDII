@@ -15,7 +15,7 @@ import oracle.jdbc.driver.OracleConnection;
 public class PrestamoRepositorio {
     
     
-    public List<Prestamo> mostrarTodosPrestamos(OracleConnection connection) {
+    public static List<Prestamo> mostrarTodosPrestamos(OracleConnection connection) {
         List<Prestamo> prestamos = new ArrayList<>();
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_PRESTAMOS_PROC_CALL);
@@ -49,7 +49,7 @@ public class PrestamoRepositorio {
         return prestamos;
     }
 
-    public Prestamo mostrarPrestamoPorId(OracleConnection connection, int idPrestamo) {
+    public static Prestamo mostrarPrestamoPorId(OracleConnection connection, int idPrestamo) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_PRESTAMO_ID_PROC_CALL);
             callableStatement.setInt(1, idPrestamo);
@@ -92,7 +92,7 @@ public class PrestamoRepositorio {
         }
     }
 
-    public void modificarPrestamo(OracleConnection connection, int idPrestamo, Date fechaPrestamo, Date fechaDevolucion,
+    public static void modificarPrestamo(OracleConnection connection, int idPrestamo, Date fechaPrestamo, Date fechaDevolucion,
                                          int libroId, int clienteId) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.PRESTAMO_MODIFICAR_PROC_CALL);
@@ -103,12 +103,13 @@ public class PrestamoRepositorio {
             callableStatement.setInt(5, clienteId);
 
             callableStatement.execute();
+            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public int insertarPrestamo(OracleConnection connection, Date fechaPrestamo, Date fechaDevolucion, int libroId, int clienteId) {
+    public static int insertarPrestamo(OracleConnection connection, Date fechaPrestamo, Date fechaDevolucion, int libroId, int clienteId) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.PRESTAMO_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, java.sql.Types.NUMERIC);
@@ -118,6 +119,7 @@ public class PrestamoRepositorio {
             callableStatement.setInt(5, clienteId);
 
             callableStatement.execute();
+            connection.commit();
 
             return callableStatement.getInt(1);
 

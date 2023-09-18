@@ -11,7 +11,7 @@ import oracle.jdbc.driver.OracleConnection;
 
 public class EmpleadoRepositorio {
     
-    public int nuevoEmpleado(OracleConnection connection, String nombre, String apellido) {
+    public static int nuevoEmpleado(OracleConnection connection, String nombre, String apellido) {
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.EMPLEADO_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, Types.NUMERIC);
@@ -19,7 +19,7 @@ public class EmpleadoRepositorio {
             callableStatement.setString(3, apellido);
 
             callableStatement.execute();
-
+            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -28,7 +28,7 @@ public class EmpleadoRepositorio {
         }
     }
 
-    public void modificarEmpleado(OracleConnection connection, int idEmpleado, String nombre, String apellido) {
+    public static void modificarEmpleado(OracleConnection connection, int idEmpleado, String nombre, String apellido) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.EMPLEADO_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, idEmpleado);
@@ -36,7 +36,7 @@ public class EmpleadoRepositorio {
             callableStatement.setString(3, apellido);
 
             callableStatement.execute();
-
+            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,7 +54,7 @@ public class EmpleadoRepositorio {
         }
     }
 
-    public Empleado mostrarEmpleadosPorId(OracleConnection connection, int pIdEmpleado) {
+    public static Empleado mostrarEmpleadosPorId(OracleConnection connection, int pIdEmpleado) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_EDITORIAL_ID_PROC_CALL);
             callableStatement.setInt(1, pIdEmpleado);

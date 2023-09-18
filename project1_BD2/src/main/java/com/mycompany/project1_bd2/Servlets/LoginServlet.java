@@ -1,5 +1,6 @@
-package com.mycompany.project1_bd2;
+package com.mycompany.project1_bd2.Servlets;
 
+import com.mycompany.project1_bd2.DBConnection;
 import com.mycompany.project1_bd2.Repositorios.UsuarioRepositorio;
 import com.mycompany.project1_bd2.entidades.Usuario;
 import java.io.IOException;
@@ -34,6 +35,7 @@ public class LoginServlet extends HttpServlet {
             Usuario usuarioAValidar = UsuarioRepositorio.obtenerUsuarioContrasena(dbConecction.getConnection(), usuario, contrasena);
             if (usuarioAValidar != null){
                 request.getSession().setAttribute("usuario", usuario);
+                dbConecction.closeConnection();
                 response.sendRedirect("menu.jsp");
             } else {
                 response.sendRedirect("index.jsp");

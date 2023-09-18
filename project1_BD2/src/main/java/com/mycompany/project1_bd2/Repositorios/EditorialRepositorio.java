@@ -12,7 +12,7 @@ import oracle.jdbc.driver.OracleConnection;
 
 public class EditorialRepositorio {
     
-    public Editorial mostrarEditorialPorId(OracleConnection connection, int pIdEditorial) {
+    public static Editorial mostrarEditorialPorId(OracleConnection connection, int pIdEditorial) {
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_EDITORIAL_ID_PROC_CALL);
             callableStatement.setInt(1, pIdEditorial);
@@ -40,7 +40,7 @@ public class EditorialRepositorio {
     }
     
     
-    public List<Editorial> mostrarTodosEditoriales(OracleConnection connection) {
+    public static List<Editorial> mostrarTodosEditoriales(OracleConnection connection) {
         
         List<Editorial> editoriales = new ArrayList<>();
         try {
@@ -68,7 +68,7 @@ public class EditorialRepositorio {
         return editoriales;
     }
     
-    public int nuevoEditorial(OracleConnection connection, String nombre, String origen){
+    public static int nuevoEditorial(OracleConnection connection, String nombre, String origen){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.EDITORIAL_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, Types.NUMERIC);
@@ -76,6 +76,7 @@ public class EditorialRepositorio {
             callableStatement.setString(3, origen);
 
             callableStatement.execute();
+            connection.commit();
 
             return callableStatement.getInt(1);
 
@@ -86,7 +87,7 @@ public class EditorialRepositorio {
     }
     
     
-    public void modificarEditorial(OracleConnection connection, int id, String nombre, String origen) {
+    public static void modificarEditorial(OracleConnection connection, int id, String nombre, String origen) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.EDITORIAL_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, id);
@@ -94,6 +95,7 @@ public class EditorialRepositorio {
             callableStatement.setString(3, origen);
 
             callableStatement.execute();
+            connection.commit();
 
         } catch (Exception e) {
             e.printStackTrace();

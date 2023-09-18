@@ -14,7 +14,7 @@ import oracle.jdbc.driver.OracleConnection;
 public class BitacoraLibroRepositorio {
     
     
-    public List<BitacoraLibro> mostrarBitacoras(OracleConnection connection) {
+    public static List<BitacoraLibro> mostrarBitacoras(OracleConnection connection) {
         List<BitacoraLibro> bitacoras = new ArrayList<>();
         
         try{
@@ -44,7 +44,7 @@ public class BitacoraLibroRepositorio {
     
     
     
-    public List<BitacoraLibro> mostrarUltimasNBitacoras(OracleConnection connection, int pNum) {
+    public static List<BitacoraLibro> mostrarUltimasNBitacoras(OracleConnection connection, int pNum) {
         
         List<BitacoraLibro> bitacoras = new ArrayList<>();
         try{
@@ -76,11 +76,12 @@ public class BitacoraLibroRepositorio {
     }
     
     
-    public void modificarUsuarioBitacora(OracleConnection connection, String usuario){
+    public static void modificarUsuarioBitacora(OracleConnection connection, String usuario){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.BITACORA_USUARIO_MODIFICAR_PROC_CALL);
             callableStatement.setString(1, usuario);
             callableStatement.execute();
+            connection.commit();
         } catch (Exception e){
             e.printStackTrace();
         }

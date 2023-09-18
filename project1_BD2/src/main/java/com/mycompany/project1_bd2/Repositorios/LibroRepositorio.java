@@ -17,7 +17,7 @@ import oracle.jdbc.driver.OracleConnection;
 
 public class LibroRepositorio {
     
-    public int insertarLibro(OracleConnection connection, String pTitulo, int pIdEditorial, int pIdGenero, int pIdAutor,
+    public static int insertarLibro(OracleConnection connection, String pTitulo, int pIdEditorial, int pIdGenero, int pIdAutor,
                                     int pAnnoPublicacion, String pISBN, int pInventario) {
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_INSERTAR_FUNC_CALL);
@@ -31,7 +31,7 @@ public class LibroRepositorio {
             callableStatement.setInt(8, pInventario);
 
             callableStatement.execute();
-
+            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -40,7 +40,7 @@ public class LibroRepositorio {
         }
     }
 
-    public void modificarLibro(OracleConnection connection, int pIdLibro, String pTitulo, int pIdEditorial, int pIdGenero, int pIdAutor,
+    public static void modificarLibro(OracleConnection connection, int pIdLibro, String pTitulo, int pIdEditorial, int pIdGenero, int pIdAutor,
                                        int pAnnoPublicacion, String pISBN, int pInventario) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_MODIFICAR_PROC_CALL);
@@ -54,13 +54,13 @@ public class LibroRepositorio {
             callableStatement.setInt(8, pInventario);
 
             callableStatement.execute();
-
+            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void borrarLibro(OracleConnection connection, int pIdLibro) {
+    public static void borrarLibro(OracleConnection connection, int pIdLibro) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_BORRAR_PROC_CALL);
             callableStatement.setInt(1, pIdLibro);
@@ -72,7 +72,7 @@ public class LibroRepositorio {
         }
     }
 
-    public List<Libro> mostrarTodosLibros(OracleConnection connection) {
+    public static List<Libro> mostrarTodosLibros(OracleConnection connection) {
         List<Libro> libros = new ArrayList<>();
         
         try{
@@ -111,7 +111,7 @@ public class LibroRepositorio {
         return libros;
     }
 
-    public Libro mostrarLibroPorId(OracleConnection connection, int pIdLibro) {
+    public static Libro mostrarLibroPorId(OracleConnection connection, int pIdLibro) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_LIBRO_ID_PROC_CALL);
             callableStatement.setInt(1, pIdLibro);

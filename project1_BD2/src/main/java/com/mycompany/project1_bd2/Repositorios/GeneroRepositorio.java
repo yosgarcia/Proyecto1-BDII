@@ -14,14 +14,14 @@ import oracle.jdbc.driver.OracleConnection;
 
 public class GeneroRepositorio {
     
-    public int insertarGenero(OracleConnection connection, String nombreGenero) {
+    public static int insertarGenero(OracleConnection connection, String nombreGenero) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.GENERO_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, Types.NUMERIC);
             callableStatement.setString(2, nombreGenero);
 
             callableStatement.execute();
-
+            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -37,7 +37,7 @@ public class GeneroRepositorio {
             callableStatement.setString(2, nombreGenero);
 
             callableStatement.execute();
-
+            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,7 +55,7 @@ public class GeneroRepositorio {
         }
     }
 
-    public List<Genero> mostrarTodosGeneros(OracleConnection connection) {
+    public static List<Genero> mostrarTodosGeneros(OracleConnection connection) {
         List<Genero> generos = new ArrayList<>();
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_GENEROS_PROC_CALL);
@@ -82,7 +82,7 @@ public class GeneroRepositorio {
     }
 
     
-    public Genero mostrarGeneroPorId(OracleConnection connection, int pIdGenero) {
+    public static Genero mostrarGeneroPorId(OracleConnection connection, int pIdGenero) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_GENERO_ID_PROC_CALL);
             callableStatement.setInt(1, pIdGenero);

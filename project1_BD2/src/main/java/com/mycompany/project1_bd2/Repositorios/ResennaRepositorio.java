@@ -11,7 +11,7 @@ import oracle.jdbc.driver.OracleConnection;
 public class ResennaRepositorio {
     
     
-     public List<Resenna> mostrarTodosResena(OracleConnection connection) {
+     public static List<Resenna> mostrarTodosResena(OracleConnection connection) {
         List<Resenna> resennas = new ArrayList<>();
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_RESENAS_PROC_CALL);
@@ -45,7 +45,7 @@ public class ResennaRepositorio {
         return resennas;
     }
 
-    public Resenna mostrarResenaPorId(OracleConnection connection, int idResena) {
+    public static Resenna mostrarResenaPorId(OracleConnection connection, int idResena) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_RESENA_ID_PROC_CALL);
             callableStatement.setInt(1, idResena);
@@ -77,7 +77,7 @@ public class ResennaRepositorio {
         return null;
     }
 
-    public int insertarResena(OracleConnection connection, String descripcion, int calificacion, int libroId, int clienteId) {
+    public static int insertarResena(OracleConnection connection, String descripcion, int calificacion, int libroId, int clienteId) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.RESENA_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, java.sql.Types.NUMERIC);
@@ -87,6 +87,7 @@ public class ResennaRepositorio {
             callableStatement.setInt(5, clienteId);
 
             callableStatement.execute();
+            connection.commit();
 
             return callableStatement.getInt(1);
 
@@ -96,7 +97,7 @@ public class ResennaRepositorio {
         }
     }
 
-    public void modificarResena(OracleConnection connection, int idResena, String descripcion, int calificacion,
+    public static void modificarResena(OracleConnection connection, int idResena, String descripcion, int calificacion,
                                        int libroId, int clienteId) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.RESENA_MODIFICAR_PROC_CALL);
@@ -107,6 +108,7 @@ public class ResennaRepositorio {
             callableStatement.setInt(5, clienteId);
 
             callableStatement.execute();
+            connection.commit();
 
         } catch (Exception e) {
             e.printStackTrace();

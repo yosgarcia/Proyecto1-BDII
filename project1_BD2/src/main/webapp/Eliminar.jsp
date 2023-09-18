@@ -12,6 +12,9 @@
         <title>Eliminar</title>
     </head>
     <body>
-        <li><a href="EliminarLibro.jsp">Eliminar Libro</a></li>
+        <h1> Seleccione opcion para eliminar</h1>
+        <li><a href="EliminarLibro.jsp">Eliminar Libro</a></li><br><br>
+        <li><a href="EliminarCliente.jsp">Eliminar Cliente</a></li><br><br>
+        <li><a href="EliminarPrestamo.jsp">Eliminar Prestamo</a></li><br><br>
     </body>
 </html>

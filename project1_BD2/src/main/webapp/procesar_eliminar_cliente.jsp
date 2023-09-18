@@ -1,6 +1,6 @@
 <%-- 
-    Document   : EliminarUsuario
-    Created on : 17 sep. 2023, 22:00:11
+    Document   : procesar_eliminar_cliente
+    Created on : 17 sep. 2023, 22:38:03
     Author     : leomo
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Eliminar Usuario</title>
+        <title>JSP Page</title>
     </head>
     <body>
         <h1>Hello World!</h1>

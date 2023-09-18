@@ -12,6 +12,9 @@
         <title>Consultar</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1> Seleccione opcion para eliminar</h1>
+        <li><a href="ConsultaCliente.jsp">Buscar Libro</a></li><br><br>
+        <li><a href="ConsultaCliente.jsp">Buscar Cliente</a></li><br><br>
+        <li><a href="EliminarPrestamo.jsp">Buscar Prestamo</a></li><br><br>
     </body>
 </html>

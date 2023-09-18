@@ -1378,7 +1378,7 @@ select * from Usuario_p1;
 
 
 
-
+select * from Libro_P1;
 
 ALTER SEQUENCE seq_clientes RESTART;
 ALTER SEQUENCE seq_autor RESTART;

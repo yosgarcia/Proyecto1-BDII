@@ -21,7 +21,7 @@
             <br>
             <li><a href="Eliminar.jsp">Eliminar</a></li>
             <br>
-            <li><a href="Consultas.jsp">Consultar</a></li>
+            <li><a href="Agregar.jsp">Agregar</a></li>
         </ul>
     </body>
 </html>

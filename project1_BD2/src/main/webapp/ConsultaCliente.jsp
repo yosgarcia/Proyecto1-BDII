@@ -36,10 +36,10 @@
         <form action="ConsultaClienteIdServlet" method="post">
             ID del Cliente: <input class="inpt" type="text" name="clienteId" placeholder="Ingrese el ID del cliente"><br>
             <input class="btn" type="submit" value="Mostrar">
-            <p>
-                ${info}
-            </p>
         </form>
+        <p>
+            ${info}
+        </p>
     </div>
 </div>
 

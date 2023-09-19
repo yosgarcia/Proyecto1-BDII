@@ -40,10 +40,8 @@
         <span class="close" onclick="cerrarModalPrestamosPorId()">&times;</span>
         <h2>Mostrar Prestamos por ID</h2>
         <form action="ConsultaClienteIdServlet" method="post">
-            ID del Prestamo: <input class="inpt" type="text" id="prestamoId" placeholder="Ingrese el ID del prestamo"><br>
-            <div id="ninth" class="buttonBox">
-                <subbott style="position: absolute;top: 50%" type="submit">Mostrar</subbott>
-            </div>
+            ID del Prestamo: <input class="inpt" type="text" id="prestamoId" placeholder="Ingrese el ID del prestamo" required><br>
+                <input class="btn" type="submit" value="Mostrar">
         </form>
     </div>
 </div>

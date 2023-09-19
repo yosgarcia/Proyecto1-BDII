@@ -45,18 +45,14 @@ public class ConsultaClienteIdServlet extends HttpServlet {
                 System.out.println(datos);
                 request.setAttribute("info", datos);
         
-                RequestDispatcher rd =request.getRequestDispatcher("ConsultaCliente.jsp");
+                RequestDispatcher rd =request.getRequestDispatcher("");
                 rd.forward(request, response);
-                out.println("<html>");
-                out.println("<body>");
-                out.println("<h1>Información del Cliente:</h1>");
+                out.println("<h3>Información del Cliente:</h3>");
                 out.println("<p>ID del Cliente: " + clienteABuscar.getId() + "</p>");
                 out.println("<p>Nombre: " + clienteABuscar.getNombre() + "</p>");
                 out.println("<p>Apellido: " + clienteABuscar.getApellido() + "</p>");
                 out.println("<p>Correo: " + clienteABuscar.getCorreo() + "</p>");
                 out.println("<p>Teléfono: " + clienteABuscar.getTelefono() + "</p>");
-                out.println("</body>");
-                out.println("</html>");
                 dbConecction.closeConnection();
                 //response.sendRedirect("index.jsp");
             } else {

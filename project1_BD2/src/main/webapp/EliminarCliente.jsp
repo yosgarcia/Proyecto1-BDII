@@ -21,33 +21,42 @@
         </form>
     </div>
 
-   <div id="mensajeEliminado" class="modal"> 
+   <div id="modalMensajeEliminado" class="modal"> 
      <div class="modal-content"> 
-         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span> 
-         <h2>Mostrar Todos los Clientes</h2> 
+         <span class="close" onclick="cerrarModalMensajeEliminado()">&times;</span> 
+         <h2>Confirmacion de accion</h2> 
          <!-- Contenido de la ventana modal para mostrar todos los clientes --> 
-         <p>Aquí puedes mostrar todos los clientes de la base de datos.</p> 
+         <p>Se elimino el cliente con el ID: ${cliente}.</p> 
+     </div> 
+ </div> 
+
+ <div id="modalMensajeNoEliminado" class="modal"> 
+     <div class="modal-content"> 
+         <span class="close" onclick="cerrarModalMensajeEliminado()">&times;</span> 
+         <h2>Confirmacion de accion</h2> 
+         <!-- Contenido de la ventana modal para mostrar todos los clientes --> 
+         <p>No se encontro el cliente con el ID: ${cliente}.</p> 
      </div> 
  </div> 
   
  <script> 
      function mensajeEliminado() { 
-         var modal = document.getElementById("mensajeEliminado"); 
+         var modal = document.getElementById("modalMensajeEliminado"); 
          modal.style.display = "block"; 
      } 
   
      function mensajeNoEliminado() { 
-         var modal = document.getElementById("mensajeNoEliminado"); 
+         var modal = document.getElementById("modalMensajeNoEliminado"); 
          modal.style.display = "block"; 
      } 
   
-     function cerrarModalMensajeEliminado() { 
-         var modal = document.getElementById("modalClientesPorID"); 
+     function cerrarModalMensajeNoEliminado() { 
+         var modal = document.getElementById("modalMensajeEliminado"); 
          modal.style.display = "none"; 
      } 
   
      function cerrarModalMensajeNoEliminado() { 
-         var modal = document.getElementById("mensajeNoEliminado"); 
+         var modal = document.getElementById("modalMensajeNoEliminado"); 
          modal.style.display = "none"; 
      } 
  </script>

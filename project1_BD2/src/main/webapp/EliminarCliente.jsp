@@ -16,7 +16,7 @@
     <div align="center" class="login-container" >
             <h1>Eliminar Cliente</h1>
         <form action="BorrarClienteServlet" method="post">
-            ID del Cliente: <input class="inpt" type="text" name="clienteId"><br>
+            ID del Cliente: <input class="inpt" type="text" name="clienteId" required><br>
             <input class="btn" type="submit" value="Eliminar Cliente">
         </form>
     </div>

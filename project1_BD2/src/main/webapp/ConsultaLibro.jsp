@@ -34,7 +34,7 @@
         <span class="close" onclick="cerrarModalLibrosPorId()">&times;</span>
         <h2>Mostrar Libros por ID</h2>
         <form action="ConsultaClienteIdServlet" method="post">
-            ID del Libro: <input class="inpt" type="text" id="libroId" placeholder="Ingrese el ID del libro" required><br>
+            ID del Libro: <input class="inpt" type="text" name="libroId" placeholder="Ingrese el ID del libro" required><br>
                 <input class="btn" type="submit" value="Mostrar">
         </form>
     </div>

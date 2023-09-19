@@ -15,7 +15,7 @@
 <body>
     <div align="center" class="login-container" >
             <h1>Agregar Cliente</h1>
-        <form action="procesar_eliminar_libro.jsp" method="post">
+        <form action="InsertarClienteServlet" method="post">
             Nombre: <input class="inpt" type="text" name="nombreCliente" required><br>
             Apellido: <input class="inpt" type="text" name="apellidoCliente" required><br>
             Correo: <input class="inpt" type="email" name="correoCliente" required><br>

@@ -22,7 +22,7 @@ public class ClienteRepositorio {
             callableStatement.execute();
 
             // Obtiene el cursor de salida
-            ResultSet resultSet = (ResultSet) callableStatement.getObject(1);
+            ResultSet resultSet = (ResultSet) callableStatement.getObject(2);
 
             // Itera sobre los resultados y muestra la información
             if (resultSet.next()) {

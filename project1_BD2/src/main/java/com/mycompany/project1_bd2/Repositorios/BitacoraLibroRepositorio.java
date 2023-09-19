@@ -27,7 +27,7 @@ public class BitacoraLibroRepositorio {
 
             while (resultSet.next()) {
                 int idBitacora = resultSet.getInt("id");
-                Date fecha = resultSet.getDate("fecha");
+                String fecha = resultSet.getString("fecha");
                 String usuario = resultSet.getString("usuario");
                 String descripcion = resultSet.getString("descripcion");
                 Usuario nUsuario = new Usuario(usuario, null, null);
@@ -59,7 +59,7 @@ public class BitacoraLibroRepositorio {
             // Itera sobre los resultados
             while (resultSet.next()) {
                 int idBitacora = resultSet.getInt("id");
-                Date fecha = resultSet.getDate("fecha");
+                String fecha = resultSet.getString("fecha");
                 String usuario = resultSet.getString("usuario");
                 String descripcion = resultSet.getString("descripcion");
                 Usuario nUsuario = new Usuario(usuario, null, null);

@@ -61,6 +61,8 @@ public class Queries {
     public static final String MOSTRAR_EDITORIAL_POPULAR_PROC_CALL = "{ call paquete_consultas_p1.mostrar_editorial_popular(?) }";
     
     public static final String VALIDAR_USUARIO = "{ call paquete_consultas_p1.mostrar_usuario_contrasena(?, ?, ?) }";
+    
+    public static final String CONTAR_PRESTAMOS_CLIENTE_ID = "{ ? = call paquete_consultas_p1.contar_libros_prestados(?) }";
 }
 
     

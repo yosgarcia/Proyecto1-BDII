@@ -93,7 +93,7 @@ CREATE TABLE Resena_p1 (
 );
 CREATE TABLE Bitacora_libro_p1 (
     id NUMBER DEFAULT seq_bitacora.NEXTVAL NOT NULL,
-    fecha DATE NOT NULL,
+    fecha VARCHAR2 NOT NULL,
     usuario VARCHAR2(50 char),
     descripcion VARCHAR2(250 char),
     CONSTRAINT bitacora_pk PRIMARY KEY (id),
@@ -1138,6 +1138,8 @@ CREATE OR REPLACE PACKAGE paquete_consultas_p1 AS
     
     PROCEDURE mostrar_origen_popular(p_cursor OUT SYS_REFCURSOR);
     
+    FUNCTION contar_libros_prestados(p_cliente_id prestamos_p1.cliente_id%TYPE) RETURN NUMBER;
+    
 END paquete_consultas_p1;
 /
 
@@ -1314,6 +1316,19 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
             GROUP BY e.origen;
     END;
     
+    
+    FUNCTION contar_libros_prestados(p_cliente_id prestamos_p1.cliente_id%TYPE)
+    RETURN NUMBER
+    AS
+        v_cantidad_libros NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO v_cantidad_libros
+        FROM Prestamos_p1
+        WHERE cliente_id = p_cliente_id;
+    
+        RETURN v_cantidad_libros;
+    END contar_libros_prestados;
+    
 END paquete_consultas_p1;
 /
 CREATE OR REPLACE TRIGGER cambio_libros
@@ -1323,7 +1338,7 @@ BEGIN
     
     IF INSERTING THEN
         INSERT INTO bitacora_libro_p1 (fecha, usuario, descripcion)
-        VALUES (SYSDATE, null, 'Se inserto el libro: ' || :NEW.titulo);
+        VALUES (TO_CHAR (Sysdate, 'DD-MM-YYYY HH24:MI:SS'), null, 'Se inserto el libro: ' || :NEW.titulo);
 
     ELSIF UPDATING THEN
         DECLARE
@@ -1360,12 +1375,12 @@ BEGIN
             END IF;
 
             INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-            VALUES (SYSDATE, null, accion);
+            VALUES (TO_CHAR (Sysdate, 'DD-MM-YYYY HH24:MI:SS'), null, accion);
         END;
 
     ELSIF DELETING THEN
         INSERT INTO Bitacora_libro_p1 (fecha, usuario, descripcion)
-        VALUES (SYSDATE, null, 'Se elimino el libro: ' || :OLD.titulo);
+        VALUES (TO_CHAR (Sysdate, 'DD-MM-YYYY HH24:MI:SS'), null, 'Se elimino el libro: ' || :OLD.titulo);
 
     ELSE
         DBMS_OUTPUT.PUT_LINE('Este codigo no es accesible.');
@@ -1404,4 +1419,4 @@ DROP TABLE bitacora_libro_p1;
 DROP TABLE usuario_p1;
 DROP TABLE empleado_p1;
 
-select * from usuario_p1;
+

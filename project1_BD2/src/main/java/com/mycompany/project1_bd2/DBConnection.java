@@ -1,7 +1,7 @@
 package com.mycompany.project1_bd2;
 
-import com.mycompany.project1_bd2.Repositorios.UsuarioRepositorio;
-import com.mycompany.project1_bd2.entidades.Usuario;
+import com.mycompany.project1_bd2.Repositorios.ClienteRepositorio;
+import com.mycompany.project1_bd2.entidades.Cliente;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -17,7 +17,7 @@ public class DBConnection {
     public DBConnection() {
 
         DB_URL = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:/Wallet";
-        DB_USER = "YCAMBRONERO";
+        DB_USER = "YGARCIA";
         DB_PASSWORD = "bdAlajuela2023s2";
 
         try {
@@ -66,16 +66,16 @@ public class DBConnection {
     public OracleConnection getConnection() {
         return connection;
     }
-    
+  
     /*
     public static void main(String[] args){
         DBConnection dbConection = new DBConnection();
-        Usuario usuarioAValidar = UsuarioRepositorio.obtenerUsuarioContrasena(dbConection.getConnection(), "jflores", "password456");
+        Cliente usuarioAValidar = ClienteRepositorio.obtenerPorId(dbConection.getConnection(), 2);
         if(usuarioAValidar != null){
-            System.err.println(usuarioAValidar.getUsername());
+            System.out.println(usuarioAValidar.getNombre());
         }
         else{
-            System.err.println("holaa");
+            System.out.println("holaa");
         }
         
         dbConection.closeConnection();

@@ -34,10 +34,8 @@
         <span class="close" onclick="cerrarModalClientesPorID()">&times;</span>
         <h2>Mostrar Clientes por ID</h2>
         <form action="ConsultaClienteIdServlet" method="post">
-            ID del Cliente: <input class="inpt" type="text" id="clienteId" placeholder="Ingrese el ID del cliente"><br>
-            <div id="ninth" class="buttonBox">
-                <subbott style="position: absolute;top: 50%" type="submit">Mostrar</subbott>
-            </div>
+            ID del Cliente: <input class="inpt" type="text" name="clienteId" placeholder="Ingrese el ID del cliente"><br>
+            <input type="submit" value="Iniciar sesión">
             <p>
                 ${info}
             </p>

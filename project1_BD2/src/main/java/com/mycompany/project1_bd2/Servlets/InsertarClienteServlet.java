@@ -31,10 +31,10 @@ public class InsertarClienteServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String correo = request.getParameter("correo");
-        String telefono = request.getParameter("telefono");
+        String nombre = request.getParameter("nombreCliente");
+        String apellido = request.getParameter("apellidoCliente");
+        String correo = request.getParameter("correoCliente");
+        String telefono = request.getParameter("telefonoCliente");
         
         try ( PrintWriter out = response.getWriter()) {
             DBConnection dBConnection = new DBConnection();

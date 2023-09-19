@@ -16,7 +16,7 @@
     <div align="center" class="login-container" >
             <h1>Eliminar Libro</h1>
         <form action="procesar_eliminar_libro.jsp" method="post">
-            ID de Libro: <input class="inpt" type="text" name="idLibro"><br>
+            ID de Libro: <input class="inpt" type="text" name="idLibro" required><br>
             <input class="btn" type="submit" value="Eliminar Libro">
         </form>
     </div>

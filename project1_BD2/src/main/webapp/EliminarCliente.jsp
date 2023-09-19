@@ -20,6 +20,37 @@
             <input class="btn" type="submit" value="Eliminar Cliente">
         </form>
     </div>
+
+   <div id="mensajeEliminado" class="modal"> 
+     <div class="modal-content"> 
+         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span> 
+         <h2>Mostrar Todos los Clientes</h2> 
+         <!-- Contenido de la ventana modal para mostrar todos los clientes --> 
+         <p>Aquí puedes mostrar todos los clientes de la base de datos.</p> 
+     </div> 
+ </div> 
+  
+ <script> 
+     function mensajeEliminado() { 
+         var modal = document.getElementById("mensajeEliminado"); 
+         modal.style.display = "block"; 
+     } 
+  
+     function mensajeNoEliminado() { 
+         var modal = document.getElementById("mensajeNoEliminado"); 
+         modal.style.display = "block"; 
+     } 
+  
+     function cerrarModalMensajeEliminado() { 
+         var modal = document.getElementById("modalClientesPorID"); 
+         modal.style.display = "none"; 
+     } 
+  
+     function cerrarModalMensajeNoEliminado() { 
+         var modal = document.getElementById("mensajeNoEliminado"); 
+         modal.style.display = "none"; 
+     } 
+ </script>
     
 </body>
 </html>

@@ -13,24 +13,37 @@
         <title>Ventana Modal de Prestamo</title>
     </head>
     <body>
-        <h1>Ventana Modal de Prestamo</h1>
+    <h1>Sistema de Consulta de Prestamos</h1>
+    <h2>Selecciona el tipo de consulta</h2>
+    <div class="contentBox">
+        <div id="fourth" class="buttonBox">
+            <button onclick="mostrarPrestamosPorID()">Mostrar por ID</button>
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+        </div>
 
-<!-- Botones para mostrar las opciones -->
-<div class="bn-container">
-    <button onclick="mostrarPrestamosPorID()">Mostrar Prestamo por ID</button>
-    <button onclick="mostrarTodosPrestamos()">Mostrar Todos los Prestamos</button>
-</div>
+        <div id="fourth" class="buttonBox">
+            <button onclick="mostrarTodosPrestamos()">Mostrar Todos</button>
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+        </div>
+    </div>
 
 
 <!-- Ventana modal para mostrar clientes por ID -->
 <div id="modalPrestamoPorID" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="cerrarModalPrestamosPorID()">&times;</span>
+        <span class="close" onclick="cerrarModalPrestamosPorId()">&times;</span>
         <h2>Mostrar Prestamos por ID</h2>
-        <form>
-            <label for="PrestamoId">ID del Prestamo:</label>
-            <input type="text" id="PrestamoId" placeholder="Ingrese el ID del Prestamo">
-            <button type="submit">Mostrar</button>
+        <form action="ConsultaClienteIdServlet" method="post">
+            ID del Prestamo: <input class="inpt" type="text" id="prestamoId" placeholder="Ingrese el ID del prestamo"><br>
+            <div id="ninth" class="buttonBox">
+                <subbott style="position: absolute;top: 50%" type="submit">Mostrar</subbott>
+            </div>
         </form>
     </div>
 </div>

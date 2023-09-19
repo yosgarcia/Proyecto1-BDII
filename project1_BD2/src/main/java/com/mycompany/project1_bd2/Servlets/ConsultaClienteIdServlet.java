@@ -9,6 +9,7 @@ import com.mycompany.project1_bd2.Repositorios.ClienteRepositorio;
 import com.mycompany.project1_bd2.entidades.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +30,7 @@ public class ConsultaClienteIdServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    String datos;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -38,6 +40,8 @@ public class ConsultaClienteIdServlet extends HttpServlet {
             Cliente clienteABuscar = ClienteRepositorio.obtenerPorId(dbConecction.getConnection(), clienteId);
             if (clienteABuscar != null){
                 // Mostrar la información del cliente
+                datos = "Informacion del Cliente: \nID del cliente" + clienteABuscar.getId() + "\nNombre: " + clienteABuscar.getNombre() + "\n"
+                        + "Apellido: "+ clienteABuscar.getApellido() + "Correo: "+ clienteABuscar.getCorreo() + "Teléfono: "+ clienteABuscar.getTelefono();
                 out.println("<html>");
                 out.println("<body>");
                 out.println("<h1>Información del Cliente:</h1>");
@@ -83,6 +87,11 @@ public class ConsultaClienteIdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        System.out.println(datos);
+        request.setAttribute("info", datos);
+        
+        RequestDispatcher rd =request.getRequestDispatcher("newjsp.jsp");
+        rd.forward(request, response);
     }
 
     /**

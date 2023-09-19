@@ -15,7 +15,7 @@
 <body>
     <div align="center" class="login-container" >
             <h1>Eliminar Cliente</h1>
-        <form action="BorrarClienteServlet.java" method="post">
+        <form action="BorrarClienteServlet" method="post">
             ID del Cliente: <input class="inpt" type="text" name="clienteId"><br>
             <input class="btn" type="submit" value="Eliminar Cliente">
         </form>

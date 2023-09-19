@@ -7,24 +7,40 @@
         <title>Ventana Modal de Libros</title>
     </head>
     <body>
-        <h1>Ventana Modal de Libros</h1>
+        
+    <h1>Sistema de Consulta de Libros</h1>
+    <h2>Selecciona el tipo de consulta</h2>
+    <div class="contentBox">
+        <div id="fourth" class="buttonBox">
+            <button onclick="mostrarLibrosPorID()">Mostrar por ID</button>
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+        </div>
 
-<!-- Botones para mostrar las opciones -->
-<div class="bn-container">
-    <button onclick="mostrarLibrosPorID()">Mostrar Libros por ID</button>
-    <button onclick="mostrarTodosLibros()">Mostrar Todos los Libros</button>
-</div>
-
+        <div id="fourth" class="buttonBox">
+            <button onclick="mostrarTodosLibros()">Mostrar Todos</button>
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+        </div>
+    </div>
 
 <!-- Ventana modal para mostrar clientes por ID -->
 <div id="modalLibroPorID" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="cerrarModalLibrosPorID()">&times;</span>
+        <span class="close" onclick="cerrarModalLibrosPorId()">&times;</span>
         <h2>Mostrar Libros por ID</h2>
-        <form>
-            <label for="LibroId">ID del Libro:</label>
-            <input type="text" id="LibroId" placeholder="Ingrese el ID del Libro">
-            <button type="submit">Mostrar</button>
+        <form action="ConsultaClienteIdServlet" method="post">
+            ID del Libro: <input class="inpt" type="text" id="libroId" placeholder="Ingrese el ID del libro"><br>
+            <div id="ninth" class="buttonBox">
+                <subbott style="position: absolute;top: 50%" type="submit">Mostrar</subbott>
+            </div>
+            <p>
+                ${info}
+            </p>
         </form>
     </div>
 </div>

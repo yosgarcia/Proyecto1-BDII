@@ -35,7 +35,7 @@
         <h2>Mostrar Clientes por ID</h2>
         <form action="ConsultaClienteIdServlet" method="post">
             ID del Cliente: <input class="inpt" type="text" name="clienteId" placeholder="Ingrese el ID del cliente"><br>
-            <input type="submit" value="Iniciar sesión">
+            <input class="btn" type="submit" value="Iniciar sesiÃ³n">
             <p>
                 ${info}
             </p>
@@ -49,7 +49,7 @@
         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span>
         <h2>Mostrar Todos los Clientes</h2>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <p>Aquí puedes mostrar todos los clientes de la base de datos.</p>
+        <p>AquÃ­ puedes mostrar todos los clientes de la base de datos.</p>
     </div>
 </div>
 

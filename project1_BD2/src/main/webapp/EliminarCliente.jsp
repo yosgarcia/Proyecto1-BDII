@@ -32,7 +32,7 @@
 
  <div id="modalMensajeNoEliminado" class="modal"> 
      <div class="modal-content"> 
-         <span class="close" onclick="cerrarModalMensajeEliminado()">&times;</span> 
+         <span class="close" onclick="cerrarModalMensajeNoEliminado()">&times;</span> 
          <h2>Confirmacion de accion</h2> 
          <!-- Contenido de la ventana modal para mostrar todos los clientes --> 
          <p>No se encontro el cliente con el ID: ${cliente}.</p> 

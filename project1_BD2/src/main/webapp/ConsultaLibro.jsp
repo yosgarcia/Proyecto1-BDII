@@ -36,11 +36,8 @@
         <form action="ConsultaClienteIdServlet" method="post">
             ID del Libro: <input class="inpt" type="text" id="libroId" placeholder="Ingrese el ID del libro"><br>
             <div id="ninth" class="buttonBox">
-                <subbott style="position: absolute;top: 50%" type="submit">Mostrar</subbott>
+                <input class="btn" type="submit" value="Mostrar">
             </div>
-            <p>
-                ${info}
-            </p>
         </form>
     </div>
 </div>

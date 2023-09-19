@@ -16,7 +16,7 @@
         <div align="center" class="login-container" >
             <h1>Eliminar Prestamo</h1>
         <form action="procesar_eliminar_libro.jsp" method="post">
-            ID del Prestamo: <input class="inpt" type="text" name="idPrestamo"><br>
+            ID del Prestamo: <input class="inpt" type="text" name="idPrestamo" required><br>
             <input class="btn" type="submit" value="Eliminar Prestamo">
         </form>
     </div>

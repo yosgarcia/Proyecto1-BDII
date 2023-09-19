@@ -9,27 +9,21 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Agregar Libro</title>
 </head>
 <body>
-    <h1>Agregar Libro</h1>
-    <form action="procesar_eliminar_libro.jsp" method="post">        
-        <label for="nombreLibro">Nombre de Libro:</label>
-        <input type="text" id="nombreLibro" name="nombreLibro" required><br><br>
-        
-        <label for="ISBN">ISBN:</label>
-        <input type="text" id="ISBN" name="ISBN" required><br><br>
-        
-        <label for="editorialLibro">Editorial:</label>
-        <input type="text" id="Editorial" name="Editorial" required><br><br>
-        
-        <label for="generoLibro">Genero:</label>
-        <input type="text" id="Genero" name="Genero" required><br><br>
-        
-        <label for="autorLibro">Autor:</label>
-        <input type="text" id="Autor" name="Autor" required><br><br>
-        <input type="submit" value="Agregar Libro">
-    </form>
+    <div align="center" class="login-container" >
+            <h1>Agregar Libro</h1>
+        <form action="procesar_eliminar_libro.jsp" method="post">
+            Nombre del Libro: <input class="inpt" type="text" name="nombreLibro" required><br>
+            ISBN: <input class="inpt" type="text" name="ISBN" required><br>
+            Editorial: <input class="inpt" type="text" name="Editorial" required><br>
+            Genero: <input class="inpt" type="text" name="Genero" required><br>
+            Autor: <input class="inpt" type="text" name="Autor" required><br>
+            <input class="btn" type="submit" value="Agregar Libro">
+        </form>
+    </div>
 </body>
 </html>
 

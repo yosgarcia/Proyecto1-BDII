@@ -9,26 +9,19 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Agregar Libro</title>
 </head>
 <body>
-    <h1>Agregar Libro</h1>
-    <form action="procesar_eliminar_libro.jsp" method="post">        
-        <label for="AgregarPrestamo">Agregar Prestamo:</label>
-        <input type="text" id="nombreLibro" name="nombreLibro" required><br><br>
-        
-        <label for="FechaInicioPrestamo">Fecha de Prestamo:</label>
-        <input type="text" id="fechainicioprestamo" name="fechainicioprestamo" required><br><br>
-        
-        <label for="FechaFinalPrestamo">Fecha de devolucion:</label>
-        <input type="text" id="fechafinalprestamo" name="fechafinalprestamo" required><br><br>
-        
-        <label for="idCliente">Cliente que alquila (ID):</label>
-        <input type="text" id="idcliente" name="idcliente" required><br><br>
-        
-        <label for="idLibro">Libro:</label>
-        <input type="text" id="Autor" name="Autor" required><br><br>
-        <input type="submit" value="Agregar Libro">
-    </form>
+    <div align="center" class="login-container" >
+            <h1>Agregar Prestamo</h1>
+        <form action="procesar_eliminar_libro.jsp" method="post">
+            Fecha de prestamo: <input class="inpt" type="date" name="fechaPrestamo" required><br>
+            Fecha de devolución: <input class="inpt" type="date" name="fechaDevolucion" required><br>
+            Cliente que alquila (ID):  <input class="inpt" type="text" name="idCliente" required><br>
+            Libro que alquila (ID): <input class="inpt" type="text" name="idLibro" required><br>
+            <input class="btn" type="submit" value="Agregar Prestamo">
+        </form>
+    </div>
 </body>
 </html>

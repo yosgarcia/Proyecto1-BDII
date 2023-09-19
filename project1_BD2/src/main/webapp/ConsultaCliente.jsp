@@ -6,12 +6,26 @@
 </head>
 <body>
 
-<h1>Ventana Modal de Clientes</h1>
+<h1>Sistema de Consulta de Clientes</h1>
+<h2>Selecciona el tipo de consulta</h2>
 
 <!-- Botones para mostrar las opciones -->
-<div class="btn-container">
-    <button onclick="mostrarClientesPorID()">Mostrar Clientes por ID</button>
-    <button onclick="mostrarTodosClientes()">Mostrar Todos los Clientes</button>
+<div class="contentBox">
+    <div id="fourth" class="buttonBox">
+        <button onclick="mostrarClientesPorID()">Mostrar por ID</button>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+    </div>
+    
+    <div id="fourth" class="buttonBox">
+        <button onclick="mostrarTodosClientes()">Mostrar Todos</button>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+    </div>
 </div>
 
 <!-- Ventana modal para mostrar clientes por ID -->
@@ -20,9 +34,10 @@
         <span class="close" onclick="cerrarModalClientesPorID()">&times;</span>
         <h2>Mostrar Clientes por ID</h2>
         <form>
-            <label for="clienteId">ID del Cliente:</label>
-            <input type="text" id="clienteId" placeholder="Ingrese el ID del cliente">
-            <button type="submit">Mostrar</button>
+            ID del Cliente: <input class="inpt" type="text" id="clienteId" placeholder="Ingrese el ID del cliente"><br>
+            <div id="ninth" class="buttonBox">
+                <subbott style="position: absolute;top: 50%" type="submit">Mostrar</subbott>
+            </div>
         </form>
     </div>
 </div>

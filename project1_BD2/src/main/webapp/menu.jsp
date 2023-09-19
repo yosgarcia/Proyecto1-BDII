@@ -8,16 +8,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="menu.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Libreria</title>
 </head>
 <body>
     <h1>Bienvenido al Sistema de Registros de la Librería</h1>
-    <br>
-    <br>
     <h2>Menu Principal</h2>
-    <button onclick="location.href='Consultas.jsp'">Consultar</button><br><br>
-    <button onclick="location.href='Eliminar.jsp'">Eliminar</button><br><br>
-    <button onclick="location.href='Agregar.jsp'">Agregar</button>
+
+    <div class="contentBox">
+      <div id="sixth" class="buttonBox">
+        <button onclick="location.href='Consultas.jsp'">Consultar</button>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+      </div>
+      <div id="sixth" class="buttonBox">
+        <button onclick="location.href='Agregar.jsp'">Agregar</button>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+      </div>
+      <div id="sixth" class="buttonBox">
+        <button onclick="location.href='Eliminar.jsp'">Eliminar</button>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+      </div>
+    </div>
 </body>
 </html>

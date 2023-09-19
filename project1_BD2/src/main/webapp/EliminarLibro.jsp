@@ -9,25 +9,17 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Eliminar Cliente</title>
 </head>
 <body>
-    <h1>Eliminar Libro</h1>
-    <form action="procesar_eliminar_libro.jsp" method="post">
-        <label for="idLibro">ID de Libro:</label>
-        <input type="text" id="idCliente" name="idCliente" required><br><br>
-        
-        <label for="nombreLibro">Nombre de Libro:</label>
-        <input type="text" id="nombreCliente" name="nombreCliente" required><br><br>
-        
-        <label for="ISBN">ISBN:</label>
-        <input type="text" id="apellidoCliente" name="apellidoCliente" required><br><br>
-        
-        <label for="telefonoCliente">Número de teléfono:</label>
-        <input type="text" id="telefonoCliente" name="telefonoCliente" required><br><br>
-        
-        <input type="submit" value="Eliminar Cliente">
-    </form>
+    <div align="center" class="login-container" >
+            <h1>Eliminar Libro</h1>
+        <form action="procesar_eliminar_libro.jsp" method="post">
+            ID de Libro: <input class="inpt" type="text" name="idLibro"><br>
+            <input class="btn" type="submit" value="Eliminar Libro">
+        </form>
+    </div>
 </body>
 </html>
 

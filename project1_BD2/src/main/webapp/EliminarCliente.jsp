@@ -9,18 +9,15 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="consulta.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Eliminar Cliente</title>
 </head>
 <body>
-    <h1>Eliminar Cliente</h1>
-    <div align="center" class="contenedor">
-        <h2>Eliminar Cliente por ID</h2>
-        <!-- Formulario para ingresar el ID del cliente a eliminar -->
-        <form class="formulario" action="BorrarClienteServlet.java" method="post">
-            <label for="clienteId">ID del Cliente:</label>
-            <input type="text" id="clienteId" name="clienteId" placeholder="Ingrese el ID del cliente">
-            <input type="submit" value="Eliminar">
+    <div align="center" class="login-container" >
+            <h1>Eliminar Cliente</h1>
+        <form action="BorrarClienteServlet.java" method="post">
+            ID del Cliente: <input class="inpt" type="text" name="clienteId"><br>
+            <input class="btn" type="submit" value="Eliminar Cliente">
         </form>
     </div>
     

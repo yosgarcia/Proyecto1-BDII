@@ -41,6 +41,8 @@ public class BorrarClienteServlet extends HttpServlet {
             if (clienteBorrar != null){
                 ClienteRepositorio.borrarCiente(dbConnection.getConnection(),id);
                 response.getWriter().println("Cliente borrado exitosamente.");
+
+out.println("mensajeEliminado();");
             } else {
                 response.getWriter().println("Cliente no existe en la base de datos.");
             }

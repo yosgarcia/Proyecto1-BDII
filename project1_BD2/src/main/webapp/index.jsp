@@ -11,8 +11,8 @@
         <div align="center" class="login-container" >
             <h1>Iniciar sesión</h1>
         <form action="login" method="post">
-            Usuario: <input class="inpt" type="text" name="usuario"><br>
-            Contraseña: <input class="inpt" type="password" name="contrasena"><br>
+            Usuario: <input class="inpt" type="text" name="usuario" required><br>
+            Contraseña: <input class="inpt" type="password" name="contrasena" required><br>
             <input class="btn" type="submit" value="Iniciar sesión">
         </form>
         </div>

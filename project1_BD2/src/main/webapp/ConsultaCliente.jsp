@@ -34,7 +34,7 @@
         <span class="close" onclick="cerrarModalClientesPorID()">&times;</span>
         <h2>Mostrar Clientes por ID</h2>
         <form action="ConsultaClienteIdServlet" method="post">
-            ID del Cliente: <input class="inpt" type="text" name="clienteId" placeholder="Ingrese el ID del cliente"><br>
+            ID del Cliente: <input class="inpt" type="text" name="clienteId" placeholder="Ingrese el ID del cliente" required><br>
             <input class="btn" type="submit" value="Mostrar">
         </form>
         <p>

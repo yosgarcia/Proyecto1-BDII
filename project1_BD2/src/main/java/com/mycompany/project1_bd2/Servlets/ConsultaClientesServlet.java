@@ -40,7 +40,6 @@ public class ConsultaClientesServlet extends HttpServlet {
             if (!clientes.isEmpty()) {
                 request.setAttribute("listado", clientes);
                 request.setAttribute("listo", "dos");
-                System.out.println("holaaaaa");
                 RequestDispatcher rd =request.getRequestDispatcher("ConsultaCliente.jsp");
                 rd.forward(request, response);
                 dbConecction.closeConnection();

@@ -102,8 +102,8 @@
                    <td><%= cliente.getId() %></td>
                    <td><%= cliente.getFechaPrestamo() %></td>
                    <td><%= cliente.getFechaDevolucion() %></td>
-                   <td><%= cliente.getLibro() %></td>
-                   <td><%= cliente.getCliente() %></td>
+                   <td><%= cliente.getLibro().getId() %></td>
+                   <td><%= cliente.getCliente().getId() %></td>
                 </tr>
                <%}%>  
             </tbody>

@@ -102,9 +102,9 @@
                 <tr>
                    <td><%= cliente.getId() %></td>
                    <td><%= cliente.getTitulo() %></td>
-                   <td><%= cliente.getEditorial() %></td>
-                   <td><%= cliente.getGenero() %></td>
-                   <td><%= cliente.getAutor() %></td>
+                   <td><%= cliente.getEditorial().getId() %></td>
+                   <td><%= cliente.getGenero().getId() %></td>
+                   <td><%= cliente.getAutor().getId() %></td>
                    <td><%= cliente.getAnnoPublicacion() %></td>
                    <td><%= cliente.getIsbn() %></td>
                    <td><%= cliente.getInventario() %></td>

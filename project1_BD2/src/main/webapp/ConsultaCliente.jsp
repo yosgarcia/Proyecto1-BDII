@@ -51,7 +51,7 @@
         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span>
         <h2>Mostrar Todos los Clientes</h2>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <p>AquÃ­ puedes mostrar todos los clientes de la base de datos.</p>
+        <p>Aquí­ puedes mostrar todos los clientes de la base de datos.</p>
     </div>
 </div>
 
@@ -76,7 +76,7 @@
         modal.style.display = "none";
     }
     
-    if (${listo} == 1) {
+    if (listo === 1) {
         mostrarClientesPorID();
     }
 </script>

@@ -68,8 +68,6 @@
     <div class="modal-content1">
         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span>
         <h2>Mostrar Todos los Clientes</h2>
-        <form action="ConsultaClientes" method="post">
-        </form>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
         <table style="align-content: center" border="1">
             <thead>

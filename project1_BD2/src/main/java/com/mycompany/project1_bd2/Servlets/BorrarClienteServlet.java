@@ -42,12 +42,15 @@ public class BorrarClienteServlet extends HttpServlet {
             if (clienteBorrar != null){
                 ClienteRepositorio.borrarCliente(dbConnection.getConnection(),id);
 
-                out.println("<script>");
-                out.println("   mensajeEliminado();");
-                out.println("</script>");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "Se ha eliminado el cliente con el ID: " + id);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             } else {
-                response.getWriter().println("Cliente no existe en la base de datos.");
-                out.println("mensajeNoEliminado()");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "No se ha encontrado el cliente con el ID: " + id);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             }
             
             dbConnection.closeConnection();

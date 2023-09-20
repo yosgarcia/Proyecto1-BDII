@@ -17,5 +17,32 @@
         </form>
         </div>
         
+        <div id="modalNoPermitido" class="modal">
+            <div class="modal-content">
+                <h2>¡AVISO!</h2>
+                <!-- Contenido de la ventana modal para mostrar todos los clientes -->
+                <p>Ingresa un usuario y contraseña validos.</p>
+                <button class="btncito" onclick="cerrarModalNoPermitido()"> Cerrar </button>
+            </div>
+        </div>
+
+        <script>
+            var changes = '${permitido}';
+
+            function mostrarModalNoPermitido() {
+                var modal = document.getElementById("modalNoPermitido");
+                modal.style.display = "block";
+            }
+
+            function cerrarModalNoPermitido() {
+                var modal = document.getElementById("modalNoPermitido");
+                modal.style.display = "none";
+            }
+
+            if (changes === "no") {
+                mostrarModalNoPermitido();
+            }
+        </script>
+        
     </body>
 </html>

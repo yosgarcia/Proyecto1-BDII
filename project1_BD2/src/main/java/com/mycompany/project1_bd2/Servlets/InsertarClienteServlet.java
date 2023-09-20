@@ -42,9 +42,15 @@ public class InsertarClienteServlet extends HttpServlet {
             int id = ClienteRepositorio.nuevoCliente(dBConnection.getConnection(), nombre, apellido, correo, telefono);
             if(id != -1){
                 
-                out.println("Cliente insertado exitosamente con ID: " + id);
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "Se ha agregado un cliente con el ID " + id);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             } else{
-                out.println("Error al insertar el cliente en la base de datos");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "No se ha podido agregar el nuevo cliente");
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             }
             dBConnection.closeConnection();
         }

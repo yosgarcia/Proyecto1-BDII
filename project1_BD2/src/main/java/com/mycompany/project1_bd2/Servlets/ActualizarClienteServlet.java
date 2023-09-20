@@ -56,9 +56,15 @@ public class ActualizarClienteServlet extends HttpServlet {
                     telefono = clienteModificar.getTelefono();
                 }
                 ClienteRepositorio.modificarCliente(dbConnection.getConnection(),id, nombre, apellido, correo, telefono);
-                response.getWriter().println("Cliente actualizado exitosamente.");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "Se ha actualizado el cliente con el ID: " + id);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             } else { 
-                response.getWriter().println("Cliente no existe en la base de datos.");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "No se ha encontrado el cliente con el ID: " + id);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             }
             
             dbConnection.closeConnection();

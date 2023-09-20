@@ -46,5 +46,32 @@
         <div class="border"></div>
       </div>
     </div>
+    
+    <div id="modalMensaje" class="modal">
+        <div class="modal-content">
+            <h2>¡AVISO!</h2>
+            <!-- Contenido de la ventana modal para mostrar todos los clientes -->
+            <p>${mensaje}.</p>
+            <button class="btncito" onclick="cerrarModalNoPermitido()"> Cerrar </button>
+        </div>
+    </div>
+
+    <script>
+        var changes = '${accion}';
+
+        function mostrarModalMensaje() {
+            var modal = document.getElementById("modalMensaje");
+            modal.style.display = "block";
+        }
+
+        function mostrarModalMensaje() {
+            var modal = document.getElementById("modalMensaje");
+            modal.style.display = "none";
+        }
+        
+        if (changes === "mostrar") {
+            mostrarModalMensaje();
+        }
+    </script>
 </body>
 </html>

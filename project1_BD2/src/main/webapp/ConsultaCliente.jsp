@@ -54,9 +54,6 @@
         <p>Aquí­ puedes mostrar todos los clientes de la base de datos.</p>
     </div>
 </div>
-<var>
-    
-</var>
 
 <script>
     var changes = '${listo}';

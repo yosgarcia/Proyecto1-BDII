@@ -3,6 +3,7 @@ package com.mycompany.project1_bd2.Servlets;
 import com.mycompany.project1_bd2.DBConnection;
 import com.mycompany.project1_bd2.Repositorios.UsuarioRepositorio;
 import com.mycompany.project1_bd2.entidades.Usuario;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -38,7 +39,9 @@ public class LoginServlet extends HttpServlet {
                 dbConecction.closeConnection();
                 response.sendRedirect("menu.jsp");
             } else {
-                response.sendRedirect("index.jsp");
+                request.setAttribute("permitido", "no");
+                RequestDispatcher rd =request.getRequestDispatcher("index.jsp");
+                rd.forward(request, response);
             }
             
             

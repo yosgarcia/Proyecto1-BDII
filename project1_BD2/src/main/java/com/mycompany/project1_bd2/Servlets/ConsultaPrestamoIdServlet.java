@@ -44,8 +44,8 @@ public class ConsultaPrestamoIdServlet extends HttpServlet {
                 request.setAttribute("idi", "ID: " + prestamoABuscar.getId());
                 request.setAttribute("prestamu", "Fecha Prestamo: " + prestamoABuscar.getFechaPrestamo());
                 request.setAttribute("devolucioni","Fecha Devolucion: " + prestamoABuscar.getFechaDevolucion());
-                request.setAttribute("clienti", "ClienteID: " + prestamoABuscar.getCliente());
-                request.setAttribute("libru", "LibroID: " + prestamoABuscar.getLibro());
+                request.setAttribute("clienti", "ClienteID: " + prestamoABuscar.getCliente().getId());
+                request.setAttribute("libru", "LibroID: " + prestamoABuscar.getLibro().getId());
                 request.setAttribute("listo", "uno");
         
                 RequestDispatcher rd =request.getRequestDispatcher("ConsultaPrestamo.jsp");

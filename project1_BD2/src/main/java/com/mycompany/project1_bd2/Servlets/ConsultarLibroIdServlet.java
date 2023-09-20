@@ -52,8 +52,8 @@ public class ConsultarLibroIdServlet extends HttpServlet {
                 request.setAttribute("idi", "ID: " + libroABuscar.getId());
                 request.setAttribute("titulu", libroABuscar.getTitulo());
                 request.setAttribute("editoriali", "Editorial: " + editorial.getNombre());
-                request.setAttribute("generu", "Genero:" + genero.getNombre());
-                request.setAttribute("autori", "Autor: " + autor.getNombre());
+                request.setAttribute("generu", "Genero: " + genero.getNombre());
+                request.setAttribute("autori", "Autor: " + autor.getNombre() + " " + autor.getApellido());
                 request.setAttribute("annu", libroABuscar.getAnnoPublicacion());
                 request.setAttribute("isbni", "ISBN: " + libroABuscar.getIsbn());
                 request.setAttribute("inventariu",libroABuscar.getInventario()+" unidades");

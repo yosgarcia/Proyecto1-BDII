@@ -9,7 +9,7 @@
         <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaClienteIdServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ConsultaClientes</servlet-name>
+        <servlet-name>ConsultaClientesServlet</servlet-name>
         <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaClientesServlet</servlet-class>
     </servlet>
     <servlet>
@@ -81,7 +81,7 @@
         <url-pattern>/ConsultaClienteIdServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ConsultaClientes</servlet-name>
+        <servlet-name>ConsultaClientesServlet</servlet-name>
         <url-pattern>/ConsultaClientes</url-pattern>
     </servlet-mapping>
     <servlet-mapping>

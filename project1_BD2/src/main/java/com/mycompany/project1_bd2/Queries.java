@@ -63,6 +63,13 @@ public class Queries {
     public static final String VALIDAR_USUARIO = "{ call paquete_consultas_p1.mostrar_usuario_contrasena(?, ?, ?) }";
     
     public static final String CONTAR_PRESTAMOS_CLIENTE_ID = "{ ? = call paquete_consultas_p1.contar_libros_prestados(?) }";
+
+    public static final String VALIDAR_CLIENTE_PRESTAMO = "{ ? = call paquete_consultas_p1.verificar_cliente_prestamo(?) }";
+    public static final String VALIDAR_CLIENTE_RESENA = "{ ? = call paquete_consultas_p1.verificar_cliente_resena(?) }";
+    public static final String VALIDAR_LIBRO_PRESTAMO = "{ ? = call paquete_consultas_p1.verificar_libro_prestamo(?) }";
+    public static final String VALIDAR_LIBRO_RESENA = "{ ? = call paquete_consultas_p1.verificar_libro_resena(?) }";
+
+
 }
 
     

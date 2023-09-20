@@ -1205,6 +1205,14 @@ CREATE OR REPLACE PACKAGE paquete_consultas_p1 AS
     
     FUNCTION contar_libros_prestados(p_cliente_id prestamos_p1.cliente_id%TYPE) RETURN NUMBER;
     
+    FUNCTION verificar_cliente_prestamo(p_cliente_id prestamos_p1.cliente_id%TYPE) RETURN NUMBER;
+    
+    FUNCTION verificar_cliente_resena(p_cliente_id resena_p1.cliente_id%TYPE) RETURN NUMBER;
+    
+    FUNCTION verificar_libro_prestamo(p_libro_id prestamos_p1.libro_id%TYPE) RETURN NUMBER;
+    
+    FUNCTION verificar_libro_resena(p_libro_id resena_p1.libro_id%TYPE) RETURN NUMBER;
+    
 END paquete_consultas_p1;
 /
 
@@ -1394,6 +1402,52 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
         RETURN v_cantidad_libros;
     END contar_libros_prestados;
     
+    
+    FUNCTION verificar_cliente_prestamo(p_cliente_id prestamos_p1.cliente_id%TYPE)
+    RETURN NUMBER 
+    AS
+        v_count NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO v_count
+        FROM prestamos_p1 p
+        WHERE p.cliente_id = p_cliente_id;
+        RETURN v_count;
+    END;
+    
+    FUNCTION verificar_cliente_resena(p_cliente_id resena_p1.cliente_id%TYPE)
+    RETURN NUMBER 
+    AS
+        v_count NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO v_count
+        FROM resena_p1 r
+        WHERE r.cliente_id = p_cliente_id;
+        RETURN v_count;
+    END;
+    
+    FUNCTION verificar_libro_prestamo(p_libro_id prestamos_p1.libro_id%TYPE)
+    RETURN NUMBER 
+    AS
+        v_count NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO v_count
+        FROM prestamos_p1 p
+        WHERE p.libro_id = p_libro_id;
+        RETURN v_count;
+    END;
+    
+    FUNCTION verificar_libro_resena(p_libro_id resena_p1.libro_id%TYPE)
+    RETURN NUMBER 
+    AS
+        v_count NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO v_count
+        FROM resena_p1 r
+        WHERE r.libro_id = p_libro_id;
+        RETURN v_count;
+    END;
+    
+    
 END paquete_consultas_p1;
 /
 CREATE OR REPLACE TRIGGER cambio_libros
@@ -1452,8 +1506,9 @@ BEGIN
     END IF;
 END;
 /
-
-call paquete_modificaciones_p1.borrar_cliente(3);
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('daniela', 'jimenens', 'danij@ejemplo.com', '444444');
+COMMIT;
+call paquete_modificaciones_p1.borrar_cliente(32);
 select * from clientes_p1;
 
 

@@ -52,7 +52,7 @@ public class ClienteRepositorio {
             callableStatement.execute();
 
             // Obtiene el cursor de salida
-            ResultSet resultSet = (ResultSet) callableStatement.getObject(2);
+            ResultSet resultSet = (ResultSet) callableStatement.getObject(1);
 
             // Itera sobre los resultados y crea objetos Cliente
             while (resultSet.next()) {
@@ -122,6 +122,36 @@ public class ClienteRepositorio {
             e.printStackTrace();
             throw new RuntimeException(e);
 
+        }
+    }
+    
+    public static int verificarClientePrestamo(OracleConnection connection, int id){
+        try{
+            CallableStatement callableStatement = connection.prepareCall(Queries.VALIDAR_CLIENTE_PRESTAMO);
+            callableStatement.registerOutParameter(1, Types.NUMERIC);
+            callableStatement.setInt(2, id);
+
+            callableStatement.execute();
+            return callableStatement.getInt(1);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;  // Retornar un valor indicando un error
+        }
+    }
+    
+    public static int verificarClienteResena(OracleConnection connection, int id){
+        try{
+            CallableStatement callableStatement = connection.prepareCall(Queries.VALIDAR_CLIENTE_RESENA);
+            callableStatement.registerOutParameter(1, Types.NUMERIC);
+            callableStatement.setInt(2, id);
+
+            callableStatement.execute();
+            return callableStatement.getInt(1);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;  // Retornar un valor indicando un error
         }
     }
 }

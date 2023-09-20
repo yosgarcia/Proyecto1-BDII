@@ -4,6 +4,7 @@ import com.mycompany.project1_bd2.Repositorios.ClienteRepositorio;
 import com.mycompany.project1_bd2.entidades.Cliente;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Properties;
 import oracle.jdbc.driver.OracleConnection;
 
@@ -67,21 +68,33 @@ public class DBConnection {
         return connection;
     }
   
-    
+    /*
     public static void main(String[] args){
         DBConnection dbConection = new DBConnection();
         //Cliente usuarioAValidar = ClienteRepositorio.obtenerPorId(dbConection.getConnection(), 2);
-        ClienteRepositorio.borrarCliente(dbConection.getConnection(), 3);
-        try{
-            ClienteRepositorio.borrarCliente(dbConection.getConnection(), 3);
-            System.out.println("cliente eliminado");
-        } catch(Exception e){
-            System.out.println("error");
+        List<Cliente> clientes = ClienteRepositorio.obtenerTodosClientes(dbConection.getConnection());
+        for(Cliente client : clientes){
+            System.out.println("Nombre: " + client.getNombre());
         }
+        
+        int num = ClienteRepositorio.verificarClientePrestamo(dbConection.getConnection(), 32);
+        if(num > 0){
+            System.out.println("cliente no se puede eliminar");
+        }else{
+            ClienteRepositorio.borrarCliente(dbConection.getConnection(), 32);
+            System.out.println("cliente eliminado");
+        }
+        
+        List<Cliente> clientesNov = ClienteRepositorio.obtenerTodosClientes(dbConection.getConnection());
+        for(Cliente client : clientesNov){
+            System.out.println("Nombre: " + client.getNombre());
+        }
+        
+        
         
         dbConection.closeConnection();
         
-    }
+    }*/
     
     
 

@@ -146,4 +146,35 @@ public class LibroRepositorio {
         return null;
     }
     
+    
+    public static int verificarLibroPrestamo(OracleConnection connection, int id){
+        try{
+            CallableStatement callableStatement = connection.prepareCall(Queries.VALIDAR_LIBRO_PRESTAMO);
+            callableStatement.registerOutParameter(1, Types.NUMERIC);
+            callableStatement.setInt(2, id);
+
+            callableStatement.execute();
+            return callableStatement.getInt(1);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1; 
+        }
+    }
+    
+    public static int verificarLibroResena(OracleConnection connection, int id){
+        try{
+            CallableStatement callableStatement = connection.prepareCall(Queries.VALIDAR_LIBRO_RESENA);
+            callableStatement.registerOutParameter(1, Types.NUMERIC);
+            callableStatement.setInt(2, id);
+
+            callableStatement.execute();
+            return callableStatement.getInt(1);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1; 
+        }
+    }
+    
 }

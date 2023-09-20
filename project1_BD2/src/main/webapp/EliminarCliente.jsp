@@ -58,7 +58,7 @@
      function cerrarModalMensajeNoEliminado() { 
          var modal = document.getElementById("modalMensajeNoEliminado"); 
          modal.style.display = "none"; 
-     } 
+     }
  </script>
     
 </body>

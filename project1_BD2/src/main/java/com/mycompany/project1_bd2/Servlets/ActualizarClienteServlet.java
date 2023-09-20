@@ -33,19 +33,31 @@ public class ActualizarClienteServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int id = Integer.parseInt(request.getParameter("id"));
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String correo = request.getParameter("correo");
-        String telefono = request.getParameter("telefono");
+        int id = Integer.parseInt(request.getParameter("idCliente"));
+        String nombre = request.getParameter("nombreCliente");
+        String apellido = request.getParameter("apellidoCliente");
+        String correo = request.getParameter("correoCliente");
+        String telefono = request.getParameter("telefonoCliente");
         
         try ( PrintWriter out = response.getWriter()) {
             DBConnection dbConnection = new DBConnection();
             Cliente clienteModificar = ClienteRepositorio.obtenerPorId(dbConnection.getConnection(), id);
             if (clienteModificar != null){
+                if (nombre == null) {
+                    nombre = clienteModificar.getNombre();
+                }
+                if (apellido == null) {
+                    apellido = clienteModificar.getApellido();
+                }
+                if (correo == null) {
+                    correo = clienteModificar.getCorreo();
+                }
+                if (telefono == null) {
+                    telefono = clienteModificar.getTelefono();
+                }
                 ClienteRepositorio.modificarCliente(dbConnection.getConnection(),id, nombre, apellido, correo, telefono);
                 response.getWriter().println("Cliente actualizado exitosamente.");
-            } else {
+            } else { 
                 response.getWriter().println("Cliente no existe en la base de datos.");
             }
             

@@ -49,7 +49,7 @@ public class InsertarLibroServlet extends HttpServlet {
             int generoId = Integer.parseInt(request.getParameter("Genero"));
             int autorId = Integer.parseInt(request.getParameter("Autor"));
             java.util.Date publicacionFecha = formatoFecha.parse(request.getParameter("publicacionLibro"));
-            java.sql.Date publicacionFechaSQL = new java.sql.Date(publicacionFecha.getTime());
+            java.util.Date publicacionFechaSQL = new java.util.Date(publicacionFecha.getTime());
             String isbn = request.getParameter("ISBN");
             int inventario = Integer.parseInt(request.getParameter("inventarioLibro"));
             

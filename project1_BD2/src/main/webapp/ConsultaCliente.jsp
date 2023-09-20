@@ -1,12 +1,7 @@
-<%@page import="java.util.Iterator"%>
 <%@page import="com.mycompany.project1_bd2.entidades.Cliente"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
-<%
- List<Cliente> clientes = request.getAttribute("listado");
- Iterator<Cliente> itClientes=clientes.iterator();
-%>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="consulta.css">
@@ -82,16 +77,15 @@
                 </tr>
             </thead>
             <tbody>
-                            <%while(itClientes.hasNext()){
-                                Cliente cli=it.next();%>
-                              <tr>
-                                 <td><%= cli.getId() %></td>
-                                 <td><%= cli.getNombre() %></td>
-                                 <td><%= cli.getApellido() %></td>
-                                 <td><%= cli.getCorreo() %></td>
-                                 <td><%= cli.getTelefono() %></td>
-                              </tr>
-                             <%}%>  
+                <c:forEach items="${listado.rows}" var="cliente">
+                    <tr>
+                             <td>${cliente.getId()}</td>
+                             <td>${cliente.getNombre()}</td>
+                             <td>${cliente.getApellido()}</td>
+                             <td>${cliente.getCorreo()}</td>
+                             <td>${cliente.getTelefono()}</td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
 </div>

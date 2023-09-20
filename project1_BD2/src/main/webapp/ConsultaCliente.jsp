@@ -28,10 +28,6 @@
     </div>
 </div>
 
-<%
-    String changes = (String) request.getParameter("listo");
-%>
-
 <!-- Ventana modal para mostrar clientes por ID -->
 <div id="modalClientesPorID" class="modal">
     <div class="modal-content">
@@ -58,8 +54,12 @@
         <p>Aquí­ puedes mostrar todos los clientes de la base de datos.</p>
     </div>
 </div>
+<var>
+    
+</var>
 
 <script>
+    var changes = '<c:out value="${listo}" scope="request" escapeXml="false"/>';
     function mostrarClientesPorID() {
         var modal = document.getElementById("modalClientesPorID");
         modal.style.display = "block";

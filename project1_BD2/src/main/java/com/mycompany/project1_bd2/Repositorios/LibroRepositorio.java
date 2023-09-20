@@ -7,7 +7,7 @@ import com.mycompany.project1_bd2.entidades.Genero;
 import com.mycompany.project1_bd2.entidades.Libro;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Types;
@@ -26,7 +26,7 @@ public class LibroRepositorio {
             callableStatement.setInt(3, pIdEditorial);
             callableStatement.setInt(4, pIdGenero);
             callableStatement.setInt(5, pIdAutor);
-            callableStatement.setDate(6, pAnnoPublicacion);
+            callableStatement.setDate(6, new java.sql.Date(pAnnoPublicacion.getTime()));
             callableStatement.setString(7, pISBN);
             callableStatement.setInt(8, pInventario);
 
@@ -49,7 +49,7 @@ public class LibroRepositorio {
             callableStatement.setInt(3, pIdEditorial);
             callableStatement.setInt(4, pIdGenero);
             callableStatement.setInt(5, pIdAutor);
-            callableStatement.setDate(6, pAnnoPublicacion);
+            callableStatement.setDate(6, new java.sql.Date(pAnnoPublicacion.getTime()));
             callableStatement.setString(7, pISBN);
             callableStatement.setInt(8, pInventario);
 

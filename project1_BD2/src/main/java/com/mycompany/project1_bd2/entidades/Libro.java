@@ -1,7 +1,6 @@
 package com.mycompany.project1_bd2.entidades;
 
-import java.sql.Date;
-import oracle.sql.DATE;
+import java.util.Date;
 
 public class Libro {
     private int id;

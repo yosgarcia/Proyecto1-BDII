@@ -28,6 +28,10 @@
     </div>
 </div>
 
+<%
+    String changes = request.getParameter("listo");
+%>
+
 <!-- Ventana modal para mostrar clientes por ID -->
 <div id="modalClientesPorID" class="modal">
     <div class="modal-content">
@@ -76,7 +80,7 @@
         modal.style.display = "none";
     }
     
-    if (listo === 1) {
+    if (listo === "uno") {
         mostrarClientesPorID();
     }
 </script>

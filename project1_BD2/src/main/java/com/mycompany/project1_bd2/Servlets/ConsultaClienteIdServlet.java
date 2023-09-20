@@ -45,7 +45,7 @@ public class ConsultaClienteIdServlet extends HttpServlet {
                 request.setAttribute("correu", clienteABuscar.getCorreo());
                 request.setAttribute("telefonu", clienteABuscar.getTelefono());
                 request.setAttribute("nombri", clienteABuscar.getNombre());
-                request.setAttribute("listo", 1);
+                request.setAttribute("listo", "uno");
         
                 RequestDispatcher rd =request.getRequestDispatcher("ConsultaCliente.jsp");
                 rd.forward(request, response);

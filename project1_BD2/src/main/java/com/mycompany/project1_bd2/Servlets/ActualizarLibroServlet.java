@@ -45,21 +45,21 @@ public class ActualizarLibroServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         try ( PrintWriter out = response.getWriter()){
-            int libroId = Integer.parseInt(request.getParameter("libroId"));
-            String titulo = request.getParameter("titulo");
-            Integer editorialId = Integer.parseInt(request.getParameter("editorialId"));
-            Integer autorId = Integer.parseInt(request.getParameter("autorId"));
-            Integer generoId = Integer.parseInt(request.getParameter("generoId"));
+            int libroId = Integer.parseInt(request.getParameter("idLibro"));
+            String titulo = request.getParameter("nombreLibro");
+            Integer editorialId = Integer.parseInt(request.getParameter("Editorial"));
+            Integer autorId = Integer.parseInt(request.getParameter("Autor"));
+            Integer generoId = Integer.parseInt(request.getParameter("Genero"));
             
             java.sql.Date fechaPublicacionSQL;
             try{
-                java.util.Date publicacionFecha = formatoFecha.parse(request.getParameter("fechaPublicacion"));
+                java.util.Date publicacionFecha = formatoFecha.parse(request.getParameter("publicacionLibro"));
                 fechaPublicacionSQL = new java.sql.Date(publicacionFecha.getTime());
             } catch (NullPointerException e){
                 fechaPublicacionSQL = null;
             }
-            String isbn = request.getParameter("isbn");
-            Integer inventario = Integer.parseInt(request.getParameter("inventario"));
+            String isbn = request.getParameter("ISBN");
+            Integer inventario = Integer.parseInt(request.getParameter("inventarioLibro"));
             
             DBConnection dbConnection = new DBConnection();
             Libro libroActualizar = LibroRepositorio.mostrarLibroPorId(dbConnection.getConnection(), libroId);
@@ -68,22 +68,58 @@ public class ActualizarLibroServlet extends HttpServlet {
             if (libroActualizar != null){
                    //FALTA
             // Validar que haga que solo se actualicen datos que se ingresen
-                Editorial editorial = EditorialRepositorio.mostrarEditorialPorId(dbConnection.getConnection(), editorialId);
-                Genero genero = GeneroRepositorio.mostrarGeneroPorId(dbConnection.getConnection(), generoId);
-                Autor autor = AutorRepositorio.obtenerPorId(dbConnection.getConnection(), autorId);
+                Editorial editorial;
+                Genero genero;
+                Autor autor;
                 
+                if (editorialId == 0) {
+                    editorial = EditorialRepositorio.mostrarEditorialPorId(dbConnection.getConnection(), libroActualizar.getEditorial().getId());
+                } else {
+                    editorial = EditorialRepositorio.mostrarEditorialPorId(dbConnection.getConnection(), editorialId);
+                }
+                if (generoId == 0) {
+                    genero = GeneroRepositorio.mostrarGeneroPorId(dbConnection.getConnection(), libroActualizar.getGenero().getId());
+                } else {
+                    genero = GeneroRepositorio.mostrarGeneroPorId(dbConnection.getConnection(), generoId);
+                }
+                if (autorId == 0) {
+                     autor = AutorRepositorio.obtenerPorId(dbConnection.getConnection(), libroActualizar.getAutor().getId());
+                } else {
+                    autor = AutorRepositorio.obtenerPorId(dbConnection.getConnection(), autorId);
+                }
                 if(editorial != null && genero != null && autor != null){
                     
+                    if (titulo.isEmpty()) {
+                        titulo = libroActualizar.getTitulo();
+                    }
+                    if (isbn.isEmpty()) {
+                        isbn = libroActualizar.getIsbn();
+                    }
+                    if (inventario == 0) {
+                        inventario = libroActualizar.getInventario();
+                    }
+                    if (fechaPublicacionSQL == null) {
+                        fechaPublicacionSQL = libroActualizar.getAnnoPublicacion();
+                    }
                     LibroRepositorio.modificarLibro(dbConnection.getConnection(), libroId, titulo, editorialId, generoId,
                             autorId, fechaPublicacionSQL, isbn, inventario);
                     BitacoraLibroRepositorio.modificarUsuarioBitacora(dbConnection.getConnection(), DBConnection.getUsuario());
-                    
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "Se ha actualizado el libro con el ID: " + libroId);
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
                 } else{
-                    out.println("Editorial, genero o autor no existen");
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "Editorial, genero o autor dados no existen");
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
                 }
                 
             } else{
-                out.println("Libro a actualizar no existe");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "No se ha encontrado el libro con el ID: " + libroId);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             }
             
             dbConnection.closeConnection();

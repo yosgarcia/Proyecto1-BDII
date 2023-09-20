@@ -5,8 +5,13 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
+import com.mycompany.project1_bd2.Repositorios.ClienteRepositorio;
+import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
+import com.mycompany.project1_bd2.entidades.Cliente;
+import com.mycompany.project1_bd2.entidades.Libro;
 import com.mycompany.project1_bd2.entidades.Prestamo;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -35,7 +40,7 @@ public class ActualizarPrestamoServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         try ( PrintWriter out = response.getWriter()){
-            int prestamoId = Integer.parseInt(request.getParameter("prestamoId"));
+            int prestamoId = Integer.parseInt(request.getParameter("idPrestamo"));
             
             java.sql.Date fechaPrestamoSQL;
             java.sql.Date fechaDevolucionSQL;
@@ -53,34 +58,61 @@ public class ActualizarPrestamoServlet extends HttpServlet {
             }
             
             
-            Integer libroId = Integer.parseInt(request.getParameter("libroId"));
-            Integer clienteId = Integer.parseInt(request.getParameter("clienteId"));
+            Integer libroId = Integer.parseInt(request.getParameter("idCliente"));
+            Integer clienteId = Integer.parseInt(request.getParameter("idLibro"));
             
                         
             DBConnection dBConnection = new DBConnection();
             Prestamo prestamo = PrestamoRepositorio.mostrarPrestamoPorId(dBConnection.getConnection(), prestamoId);
             //Libro libro = LibroRepositorio.mostrarLibroPorId(dBConnection.getConnection(), libroId);
             //Cliente cliente = ClienteRepositorio.obtenerPorId(dBConnection.getConnection(), clienteId);
+            Libro libro;
+            Cliente cliente;
             
             // hacer bien validaciones
+            if (libroId == 0) {
+                libro = LibroRepositorio.mostrarLibroPorId(dBConnection.getConnection(), prestamo.getLibro().getId());
+            } else {
+                libro = LibroRepositorio.mostrarLibroPorId(dBConnection.getConnection(), libroId);
+            }
+            if (clienteId == 0) {
+                cliente = ClienteRepositorio.obtenerPorId(dBConnection.getConnection(), prestamo.getCliente().getId());
+            } else {
+                cliente = ClienteRepositorio.obtenerPorId(dBConnection.getConnection(), clienteId);
+            }
             if(prestamo != null){
-                if(fechaPrestamoSQL == null){
-                    fechaPrestamoSQL = prestamo.getFechaPrestamo();
-                }
-                if(fechaDevolucionSQL == null){
-                    fechaDevolucionSQL = prestamo.getFechaDevolucion();
-                }
-                if(libroId == null){
-                    libroId = prestamo.getLibro().getId();
-                }
-                if(clienteId == null){
-                    clienteId = prestamo.getCliente().getId();
+                if (cliente != null && libro != null) {
+                    if(fechaPrestamoSQL == null){
+                        fechaPrestamoSQL = prestamo.getFechaPrestamo();
+                    }
+                    if(fechaDevolucionSQL == null){
+                        fechaDevolucionSQL = prestamo.getFechaDevolucion();
+                    }
+                    if(libroId == 0){
+                        libroId = prestamo.getLibro().getId();
+                    }
+                    if(clienteId == 0){
+                        clienteId = prestamo.getCliente().getId();
+                    }
+                    PrestamoRepositorio.modificarPrestamo(dBConnection.getConnection(), prestamoId, fechaPrestamoSQL, fechaDevolucionSQL, libroId, clienteId);
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "Se ha actualizado el prestamo con el ID: " + prestamoId);
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
+                } else {
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "El cliente o libro dados no existen");
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
                 }
                 
                 
                 
             } else{
-                out.println("Prestamo no existe");
+                request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "No se ha encontrado el prestamo con el ID: " + prestamoId);
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
             }
             
             

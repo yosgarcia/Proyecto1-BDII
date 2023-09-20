@@ -34,7 +34,7 @@ public class BorrarLibroServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int id = Integer.parseInt(request.getParameter("clienteId"));
+        int id = Integer.parseInt(request.getParameter("idLibro"));
         
         try ( PrintWriter out = response.getWriter()) {
             DBConnection dbConnection = new DBConnection();
@@ -46,9 +46,15 @@ public class BorrarLibroServlet extends HttpServlet {
                 if(numPrestamos == 0 && numResenas == 0){
                     LibroRepositorio.borrarLibro(dbConnection.getConnection(), id);
                     BitacoraLibroRepositorio.modificarUsuarioBitacora(dbConnection.getConnection(), DBConnection.getUsuario());
-                    out.println("libro borrado");
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "Se ha borrado el libro con ID: "  + id);
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
                 } else {
-                    out.println("Libro tiene prestamos o resennas");
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "El libro con el ID: "  + id +  " tiene prestamos o resennas");
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
                 }
                        
             } else{

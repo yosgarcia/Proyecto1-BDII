@@ -26,5 +26,14 @@
                 <button onclick="location.href='ConsultaPrestamo.jsp'">Consultar Prestamo</button>
             </div>
         </div>
+        <br>
+        <div class="contentBox">
+            <div id="fifth" class="buttonBox">
+                <button onclick="atras()">Atras</button>
+            </div>
+        </div>
+        <script>
+            function atras(){history.back();}
+        </script>
     </body>
 </html>

@@ -4,7 +4,19 @@
     Author     : yurgencm
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+
+<%
+    HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("usuario") == null) {
+%>
+    <jsp:forward page="index.jsp">
+        <jsp:param name="error" value="Es obligatorio identificarse!"/>
+    </jsp:forward>
+<%
+    } else {
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>

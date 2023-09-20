@@ -4,7 +4,7 @@
     Author     : yurgencm
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,5 +26,14 @@
                 <button onclick="location.href='ModificarPrestamo.jsp'">Modificar Prestamo</button>
             </div>
         </div>
+        <br>
+        <div class="contentBox">
+            <div id="fifth" class="buttonBox">
+                <button onclick="atras()">Atras</button>
+            </div>
+        </div>
+        <script>
+            function atras(){history.back();}
+        </script>
     </body>
 </html>

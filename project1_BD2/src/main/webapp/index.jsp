@@ -1,5 +1,5 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +13,13 @@
         <form action="login" method="post">
             Usuario: <input class="inpt" type="text" name="usuario" required><br>
             Contraseña: <input class="inpt" type="password" name="contrasena" required><br>
+            <p>
+                <%
+                if(request.getParameter("error") != null){
+                    out.println(request.getParameter("error"));
+                }
+                %>
+            </p>
             <input class="btn" type="submit" value="Iniciar sesión">
         </form>
         </div>

@@ -4,7 +4,7 @@
     Author     : leomo
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,6 +32,15 @@
             <div class="border"></div>
         </div>
     </div>
+    <div class="contentBox">
+    <div id="fourth" class="buttonBox">
+        <button onclick="location.href='menu.jsp'">Menu</button>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+    </div>
+</div>
 
 
 <!-- Ventana modal para mostrar clientes por ID -->
@@ -39,10 +48,15 @@
     <div class="modal-content">
         <span class="close" onclick="cerrarModalPrestamosPorId()">&times;</span>
         <h2>Mostrar Prestamos por ID</h2>
-        <form action="ConsultaClienteIdServlet" method="post">
+        <form action="ConsultaPrestamoId" method="post">
             ID del Prestamo: <input class="inpt" type="text" name="prestamoId" placeholder="Ingrese el ID del prestamo" required><br>
                 <input class="btn" type="submit" value="Mostrar">
         </form>
+        <h3>${idi}</h3>
+        <p>${prestamu}</p>
+        <p>${devolucioni}</p>
+        <p>${libru}</p>
+        <p>${clienti}</p>
     </div>
 </div>
 
@@ -75,6 +89,11 @@
     function cerrarModalTodosPrestamos() {
         var modal = document.getElementById("modalTodosPrestamos");
         modal.style.display = "none";
+    }
+    
+    var changes = '${listo}';
+    if (changes === "uno") {
+        mostrarPrestamosPorID();
     }
 </script>
     </body>

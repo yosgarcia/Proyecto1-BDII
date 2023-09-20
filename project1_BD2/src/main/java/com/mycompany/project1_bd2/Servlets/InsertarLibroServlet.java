@@ -12,6 +12,7 @@ import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
 import com.mycompany.project1_bd2.entidades.Autor;
 import com.mycompany.project1_bd2.entidades.Editorial;
 import com.mycompany.project1_bd2.entidades.Genero;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -43,14 +44,14 @@ public class InsertarLibroServlet extends HttpServlet {
         
         try ( PrintWriter out = response.getWriter()) {
             SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-            String titulo = request.getParameter("titulo");
-            int editorialId = Integer.parseInt(request.getParameter("editorialId"));
-            int generoId = Integer.parseInt(request.getParameter("generoId"));
-            int autorId = Integer.parseInt(request.getParameter("autorId"));
-            java.util.Date publicacionFecha = formatoFecha.parse(request.getParameter("anoPublicacion"));
+            String titulo = request.getParameter("nombreLibro");
+            int editorialId = Integer.parseInt(request.getParameter("Editorial"));
+            int generoId = Integer.parseInt(request.getParameter("Genero"));
+            int autorId = Integer.parseInt(request.getParameter("Autor"));
+            java.util.Date publicacionFecha = formatoFecha.parse(request.getParameter("publicacionLibro"));
             java.sql.Date publicacionFechaSQL = new java.sql.Date(publicacionFecha.getTime());
-            String isbn = request.getParameter("isbn");
-            int inventario = Integer.parseInt(request.getParameter("inventario"));
+            String isbn = request.getParameter("ISBN");
+            int inventario = Integer.parseInt(request.getParameter("inventarioLibro"));
             
             DBConnection dBConnection = new DBConnection();
             Genero genero = GeneroRepositorio.mostrarGeneroPorId(dBConnection.getConnection(), generoId);
@@ -60,13 +61,22 @@ public class InsertarLibroServlet extends HttpServlet {
             if(genero != null && autor != null && editorial != null){
                 int id = LibroRepositorio.insertarLibro(dBConnection.getConnection(), titulo, editorialId, generoId, autorId, publicacionFechaSQL, isbn, inventario);
                 if(id != -1){
-                    out.println("Prestamo insertado exitosamente con ID: " + id);
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "Se ha agregado un libro con el ID: " + id);
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
                     
                 } else{
-                    out.println("Error al insertar el prestamo en la base de datos");
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "Error al agregar el libro");
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
                 }
             } else{
-                out.println("No existe genero, autor o editorial");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "No existe el autor, genero o editorial dados");
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             }
             
             

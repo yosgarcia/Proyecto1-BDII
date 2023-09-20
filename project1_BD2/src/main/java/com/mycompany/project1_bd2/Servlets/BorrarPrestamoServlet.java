@@ -8,6 +8,7 @@ import com.mycompany.project1_bd2.DBConnection;
 import com.mycompany.project1_bd2.Repositorios.BitacoraLibroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
 import com.mycompany.project1_bd2.entidades.Prestamo;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -33,7 +34,7 @@ public class BorrarPrestamoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int id = Integer.parseInt(request.getParameter("prestamoId"));
+        int id = Integer.parseInt(request.getParameter("idPrestamo"));
         
         try ( PrintWriter out = response.getWriter()) {
             DBConnection dbConnection = new DBConnection();
@@ -41,17 +42,24 @@ public class BorrarPrestamoServlet extends HttpServlet {
             if (prestamoBorrar != null){
                 PrestamoRepositorio.borrarPrestamo(dbConnection.getConnection(),id);
                 //BitacoraLibroRepositorio.modificarUsuarioBitacora(dbConnection.getConnection(), DBConnection.getUsuario());
-                out.println("<script>");
-                out.println("   mensajeEliminado();");
-                out.println("</script>");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "Se ha borrado el prestamo con el ID: " + id);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             } else {
-                response.getWriter().println("prestamo no existe en la base de datos.");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "No se encontro el prestamo con el ID: " + id);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             }
             
             dbConnection.closeConnection();
             
         } catch (Exception e){
-            response.getWriter().println("Error al borrar prestamo.");
+            request.setAttribute("accion", "mostrar");
+            request.setAttribute("mensaje", "Error al borrar el prestamo con el ID: " + id);
+            RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+            rd.forward(request, response);
         }
     }
 

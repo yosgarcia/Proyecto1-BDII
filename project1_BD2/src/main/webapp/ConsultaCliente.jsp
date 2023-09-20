@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,15 @@
     
     <div id="fourth" class="buttonBox">
         <button onclick="mostrarTodosClientes()">Mostrar Todos</button>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+    </div>
+</div>
+<div class="contentBox">
+    <div id="fourth" class="buttonBox">
+        <button onclick="location.href='menu.jsp'">Menu</button>
         <div class="border"></div>
         <div class="border"></div>
         <div class="border"></div>
@@ -51,7 +61,7 @@
         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span>
         <h2>Mostrar Todos los Clientes</h2>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <p>Aquí­ puedes mostrar todos los clientes de la base de datos.</p>
+        <p>AquÃ­Â­ puedes mostrar todos los clientes de la base de datos.</p>
     </div>
 </div>
 

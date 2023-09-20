@@ -43,7 +43,7 @@ public class InsertarClienteServlet extends HttpServlet {
             if(id != -1){
                 
                 request.setAttribute("accion", "mostrar");
-                request.setAttribute("mensaje", "Se ha agregado un cliente con el ID " + id);
+                request.setAttribute("mensaje", "Se ha agregado un cliente con el ID: " + id);
                 RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
                 rd.forward(request, response);
             } else{

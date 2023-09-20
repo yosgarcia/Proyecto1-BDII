@@ -4,7 +4,7 @@
     Author     : leomo
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
 <body>
     <div align="center" class="login-container" >
             <h1>Eliminar Libro</h1>
-        <form action="procesar_eliminar_libro.jsp" method="post">
+        <form action="BorrarLibro" method="post">
             ID de Libro: <input class="inpt" type="text" name="idLibro" required><br>
             <input class="btn" type="submit" value="Eliminar Libro">
         </form>

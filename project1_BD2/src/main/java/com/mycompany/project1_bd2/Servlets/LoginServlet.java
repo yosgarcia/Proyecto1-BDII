@@ -10,6 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 
 
@@ -38,6 +39,8 @@ public class LoginServlet extends HttpServlet {
                 request.getSession().setAttribute("usuario", usuario);
                 DBConnection.setUsuario(usuario);
                 dbConecction.closeConnection();
+                HttpSession sesion = request.getSession();
+                sesion.setAttribute("usuario", usuario);
                 response.sendRedirect("menu.jsp");
             } else {
                 request.setAttribute("permitido", "no");

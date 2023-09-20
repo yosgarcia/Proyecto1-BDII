@@ -55,7 +55,10 @@ public class BorrarClienteServlet extends HttpServlet {
             dbConnection.closeConnection();
             
         } catch (Exception e){
-            response.getWriter().println("Error al borrar cliente.");
+            request.setAttribute("accion", "mostrar");
+            request.setAttribute("mensaje", "Error al borrar el cliente con el ID: " + id);
+            RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+            rd.forward(request, response);
         }
     }
 

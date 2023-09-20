@@ -11,13 +11,14 @@ import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
 import com.mycompany.project1_bd2.entidades.Cliente;
 import com.mycompany.project1_bd2.entidades.Libro;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -43,8 +44,8 @@ public class InsertarPrestamoServlet extends HttpServlet {
             java.sql.Date fechaPrestamoSQL = new java.sql.Date(prestamoDate.getTime());
             java.util.Date devolucionDate = formatoFecha.parse(request.getParameter("fechaDevolucion"));
             java.sql.Date fechaDevolucionSQL = new java.sql.Date(devolucionDate.getTime());
-            int libroId = Integer.parseInt(request.getParameter("libroId"));
-            int clienteId = Integer.parseInt(request.getParameter("clienteId"));
+            int libroId = Integer.parseInt(request.getParameter("idLibro"));
+            int clienteId = Integer.parseInt(request.getParameter("idCliente"));
             
                         
             DBConnection dBConnection = new DBConnection();
@@ -55,13 +56,23 @@ public class InsertarPrestamoServlet extends HttpServlet {
             if(libro != null && cliente != null){
                 int id = PrestamoRepositorio.insertarPrestamo(dBConnection.getConnection(), fechaPrestamoSQL, fechaDevolucionSQL, libroId, clienteId);
                 if(id != -1){
-                    out.println("Prestamo insertado exitosamente con ID: " + id);
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "Se ha insertado un prestamo con el ID: " + id);
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
                     
                 } else{
-                    out.println("Error al insertar el prestamo en la base de datos");
+                    request.setAttribute("accion", "mostrar");
+                    request.setAttribute("mensaje", "Error al insertar el prestamo");
+                    RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                    rd.forward(request, response);
+                    
                 }
             } else{
-                out.println("libro o cliente no existe");
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "No existe el libro o cliente dados");
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             }
                         
             dBConnection.closeConnection();

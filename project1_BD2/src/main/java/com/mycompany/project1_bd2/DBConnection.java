@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Logger;
 import oracle.jdbc.driver.OracleConnection;
 
 
@@ -14,6 +15,9 @@ public class DBConnection {
     private final String DB_USER;
     private final String DB_PASSWORD;
     private OracleConnection connection;
+    private static String usuario;
+
+    
     
     public DBConnection() {
 
@@ -51,6 +55,16 @@ public class DBConnection {
             e.printStackTrace();
         }
     }
+    
+    public static String getUsuario() {
+        return usuario;
+    }
+
+    public static void setUsuario(String usuario) {
+        DBConnection.usuario = usuario;
+    }
+    
+        
 
     public String getDB_URL() {
         return DB_URL;

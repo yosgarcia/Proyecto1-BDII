@@ -24,6 +24,14 @@
         <servlet-name>BorrarClienteServlet</servlet-name>
         <servlet-class>com.mycompany.project1_bd2.Servlets.BorrarClienteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InsertarPrestamoServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.InsertarPrestamoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultaPrestamoIdServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaPrestamoIdServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>BorrarClienteServlet</servlet-name>
         <url-pattern>/BorrarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertarPrestamoServlet</servlet-name>
+        <url-pattern>/InsertarPrestamo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaPrestamoIdServlet</servlet-name>
+        <url-pattern>/ConsultaPrestamoId</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

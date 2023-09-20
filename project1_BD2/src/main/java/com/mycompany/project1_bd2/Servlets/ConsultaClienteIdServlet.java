@@ -40,20 +40,15 @@ public class ConsultaClienteIdServlet extends HttpServlet {
             Cliente clienteABuscar = ClienteRepositorio.obtenerPorId(dbConecction.getConnection(), clienteId);
             if (clienteABuscar != null){
                 // Mostrar la información del cliente
-                datos = "Informacion del Cliente: \nID del cliente" + clienteABuscar.getId() + "\nNombre: " + clienteABuscar.getNombre() + "\n"
-                        + "Apellido: "+ clienteABuscar.getApellido() + "Correo: "+ clienteABuscar.getCorreo() + "Teléfono: "+ clienteABuscar.getTelefono();
-                System.out.println(datos);
-                request.setAttribute("idi", clienteABuscar.getId());
-                request.setAttribute("apelidi", clienteABuscar.getApellido());
+                request.setAttribute("idi", "ID: " + clienteABuscar.getId());
+                request.setAttribute("apellidi", clienteABuscar.getApellido());
                 request.setAttribute("correu", clienteABuscar.getCorreo());
                 request.setAttribute("telefonu", clienteABuscar.getTelefono());
                 request.setAttribute("nombri", clienteABuscar.getNombre());
+                request.setAttribute("listo", 1);
         
                 RequestDispatcher rd =request.getRequestDispatcher("ConsultaCliente.jsp");
                 rd.forward(request, response);
-                out.println("<script>");
-                out.println("mostrarClientesPorID();");
-                out.println("</script>");
                 dbConecction.closeConnection();
                 //response.sendRedirect("index.jsp");
             } else {

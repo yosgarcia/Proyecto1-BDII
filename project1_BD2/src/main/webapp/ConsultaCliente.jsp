@@ -75,6 +75,10 @@
         var modal = document.getElementById("modalTodosClientes");
         modal.style.display = "none";
     }
+    
+    if (${listo} == 1) {
+        mostrarClientesPorID();
+    }
 </script>
 
 </body>

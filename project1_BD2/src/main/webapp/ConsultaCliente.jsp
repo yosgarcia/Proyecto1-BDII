@@ -1,3 +1,5 @@
+<%@page import="com.mycompany.project1_bd2.entidades.Cliente"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
@@ -62,7 +64,11 @@
         <h2>Mostrar Todos los Clientes</h2>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
         <p>Aquí­ puedes mostrar todos los clientes de la base de datos.</p>
-    </div>
+        <c:forEach items="${listado}" var="objeto">
+            <tr>
+                     <td><c:out value="${objeto.nombre}"/></td>
+            </tr>
+        </c:forEach>
 </div>
 
 <script>

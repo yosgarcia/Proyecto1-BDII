@@ -38,20 +38,10 @@ public class ConsultaClientesServlet extends HttpServlet {
             DBConnection dbConecction = new DBConnection();
             List<Cliente> clientes = ClienteRepositorio.obtenerTodosClientes(dbConecction.getConnection());
             if (!clientes.isEmpty()) {
-                out.println("<html>");
-                out.println("<body>");
-                out.println("<h1>Información de Todos los Clientes:</h1>");
-                out.println("<ul>");
-
-                for (Cliente cliente : clientes) {
-                    out.println("<li>ID: " + cliente.getId() + ", Nombre: " + cliente.getNombre() +
-                                ", Apellido: " + cliente.getApellido() + ", Correo: " + cliente.getCorreo() +
-                                ", Teléfono: " + cliente.getTelefono() + "</li>");
-                }
-
-                out.println("</ul>");
-                out.println("</body>");
-                out.println("</html>");
+                request.setAttribute("listado", clientes);
+        
+                RequestDispatcher rd =request.getRequestDispatcher("ConsultaCliente.jsp");
+                rd.forward(request, response);
                 dbConecction.closeConnection();
             } else {
                 dbConecction.closeConnection();

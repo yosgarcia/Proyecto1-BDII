@@ -52,10 +52,17 @@ public class ActualizarLibroServlet extends HttpServlet {
             Integer autorId = Integer.parseInt(request.getParameter("Autor"));
             Integer generoId = Integer.parseInt(request.getParameter("Genero"));
             
-            var fechaPublicacionString = request.getParameter("publicacionLibro");
+            SimpleDateFormat formatoFechaEntrada = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat formatoFechaSalida = new SimpleDateFormat("dd/MM/yyyy");
+            
+            
+            
+            String fechaPublicacionString = request.getParameter("publicacionLibro");
             Date fechaPublicacion = null;
-            if (fechaPublicacionString != null){
-                fechaPublicacion = new Date(request.getParameter("publicacionLibro"));
+            if (!fechaPublicacionString.isEmpty()){
+                Date publicacionFecha = formatoFechaEntrada.parse(request.getParameter("publicacionLibro"));
+                String fechaFormateada = formatoFechaSalida.format(publicacionFecha);
+                fechaPublicacion = new Date(fechaFormateada);
             }
             
             

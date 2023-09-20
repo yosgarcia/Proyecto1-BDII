@@ -19,6 +19,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.Date;
 
 /**
  *
@@ -38,12 +39,17 @@ public class InsertarPrestamoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatoFechaSalida = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatoFechaEntrada = new SimpleDateFormat("yyyy-MM-dd");
         try ( PrintWriter out = response.getWriter()){
-            java.util.Date prestamoDate = formatoFecha.parse(request.getParameter("fechaPrestamo"));
-            java.sql.Date fechaPrestamoSQL = new java.sql.Date(prestamoDate.getTime());
-            java.util.Date devolucionDate = formatoFecha.parse(request.getParameter("fechaDevolucion"));
-            java.sql.Date fechaDevolucionSQL = new java.sql.Date(devolucionDate.getTime());
+            
+            Date prestamoFechaEntrada = formatoFechaEntrada.parse(request.getParameter("fechaPrestamo"));
+            String fechaPrestamoFormateada = formatoFechaSalida.format(prestamoFechaEntrada);
+            Date fechaPrestamo = new Date(fechaPrestamoFormateada);
+            
+            Date devolucionFechaEntrada = formatoFechaEntrada.parse(request.getParameter("fechaDevolucion"));
+            String fechaDevolucionFormateada = formatoFechaSalida.format(devolucionFechaEntrada);
+            Date fechaDevolucion = new Date(fechaDevolucionFormateada);
             int libroId = Integer.parseInt(request.getParameter("idLibro"));
             int clienteId = Integer.parseInt(request.getParameter("idCliente"));
             
@@ -54,7 +60,7 @@ public class InsertarPrestamoServlet extends HttpServlet {
             Cliente cliente = ClienteRepositorio.obtenerPorId(dBConnection.getConnection(), clienteId);
             
             if(libro != null && cliente != null){
-                int id = PrestamoRepositorio.insertarPrestamo(dBConnection.getConnection(), fechaPrestamoSQL, fechaDevolucionSQL, libroId, clienteId);
+                int id = PrestamoRepositorio.insertarPrestamo(dBConnection.getConnection(), fechaPrestamo, fechaDevolucion, libroId, clienteId);
                 if(id != -1){
                     request.setAttribute("accion", "mostrar");
                     request.setAttribute("mensaje", "Se ha insertado un prestamo con el ID: " + id);

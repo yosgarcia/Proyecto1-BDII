@@ -1,6 +1,6 @@
 package com.mycompany.project1_bd2.entidades;
 
-import java.sql.Date;
+import java.util.Date;
 
 
 public class Prestamo {

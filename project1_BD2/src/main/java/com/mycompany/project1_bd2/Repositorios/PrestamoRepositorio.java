@@ -4,7 +4,7 @@ import com.mycompany.project1_bd2.Queries;
 import com.mycompany.project1_bd2.entidades.*;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -97,8 +97,8 @@ public class PrestamoRepositorio {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.PRESTAMO_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, idPrestamo);
-            callableStatement.setDate(2, fechaPrestamo);
-            callableStatement.setDate(3, fechaDevolucion);
+            callableStatement.setDate(2, new java.sql.Date(fechaPrestamo.getTime()));
+            callableStatement.setDate(3, new java.sql.Date(fechaDevolucion.getTime()));
             callableStatement.setInt(4, libroId);
             callableStatement.setInt(5, clienteId);
 
@@ -113,8 +113,8 @@ public class PrestamoRepositorio {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.PRESTAMO_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, java.sql.Types.NUMERIC);
-            callableStatement.setDate(2, fechaPrestamo);
-            callableStatement.setDate(3, fechaDevolucion);
+            callableStatement.setDate(2, new java.sql.Date(fechaPrestamo.getTime()));
+            callableStatement.setDate(3, new java.sql.Date(fechaDevolucion.getTime()));
             callableStatement.setInt(4, libroId);
             callableStatement.setInt(5, clienteId);
 

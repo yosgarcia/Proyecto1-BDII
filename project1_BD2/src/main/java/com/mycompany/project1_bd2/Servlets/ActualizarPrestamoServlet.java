@@ -19,6 +19,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -38,25 +39,30 @@ public class ActualizarPrestamoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatoFechaSalida = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatoFechaEntrada = new SimpleDateFormat("yyyy-MM-dd");
         try ( PrintWriter out = response.getWriter()){
             int prestamoId = Integer.parseInt(request.getParameter("idPrestamo"));
             
-            java.sql.Date fechaPrestamoSQL;
-            java.sql.Date fechaDevolucionSQL;
-            try{
-                java.util.Date prestamoDate = formatoFecha.parse(request.getParameter("fechaPrestamo"));
-                fechaPrestamoSQL = new java.sql.Date(prestamoDate.getTime());
-            } catch (NullPointerException e){
-                fechaPrestamoSQL = null;
-            }
-            try{
-                java.util.Date devolucionDate = formatoFecha.parse(request.getParameter("fechaDevolucion"));
-                fechaDevolucionSQL = new java.sql.Date(devolucionDate.getTime());
-            } catch (NullPointerException e){
-                fechaDevolucionSQL = null;
+            
+            
+            
+            
+            String fechaPrestamoString = request.getParameter("fechaPrestamo");
+            Date fechaPrestamo = null;
+            if(!fechaPrestamoString.isEmpty()){
+                Date prestamoFechaEntrada = formatoFechaEntrada.parse(request.getParameter("fechaPrestamo"));
+                String fechaPrestamoFormateada = formatoFechaSalida.format(prestamoFechaEntrada);
+                fechaPrestamo = new Date(fechaPrestamoFormateada);
             }
             
+            String fechaDevolucionString = request.getParameter("fechaDevolucion");
+            Date fechaDevolucion = null;
+            if(!fechaDevolucionString.isEmpty()){
+                Date devolucionFechaEntrada = formatoFechaEntrada.parse(request.getParameter("fechaDevolucion"));
+                String fechaDevolucionFormateada = formatoFechaSalida.format(devolucionFechaEntrada);
+                fechaDevolucion = new Date(fechaDevolucionFormateada);
+            }
             
             Integer libroId = Integer.parseInt(request.getParameter("idCliente"));
             Integer clienteId = Integer.parseInt(request.getParameter("idLibro"));
@@ -82,11 +88,11 @@ public class ActualizarPrestamoServlet extends HttpServlet {
             }
             if(prestamo != null){
                 if (cliente != null && libro != null) {
-                    if(fechaPrestamoSQL == null){
-                        fechaPrestamoSQL = prestamo.getFechaPrestamo();
+                    if(fechaPrestamo == null){
+                        fechaPrestamo = prestamo.getFechaPrestamo();
                     }
-                    if(fechaDevolucionSQL == null){
-                        fechaDevolucionSQL = prestamo.getFechaDevolucion();
+                    if(fechaDevolucion == null){
+                        fechaDevolucion = prestamo.getFechaDevolucion();
                     }
                     if(libroId == 0){
                         libroId = prestamo.getLibro().getId();
@@ -94,7 +100,7 @@ public class ActualizarPrestamoServlet extends HttpServlet {
                     if(clienteId == 0){
                         clienteId = prestamo.getCliente().getId();
                     }
-                    PrestamoRepositorio.modificarPrestamo(dBConnection.getConnection(), prestamoId, fechaPrestamoSQL, fechaDevolucionSQL, libroId, clienteId);
+                    PrestamoRepositorio.modificarPrestamo(dBConnection.getConnection(), prestamoId, fechaPrestamo, fechaDevolucion, libroId, clienteId);
                     request.setAttribute("accion", "mostrar");
                     request.setAttribute("mensaje", "Se ha actualizado el prestamo con el ID: " + prestamoId);
                     RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");

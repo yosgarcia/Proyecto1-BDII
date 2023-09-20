@@ -32,6 +32,13 @@
         <div class="border"></div>
       </div>
       <div id="sixth" class="buttonBox">
+        <button onclick="location.href='Modificar.jsp'">Modificar</button>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+      </div>
+      <div id="sixth" class="buttonBox">
         <button onclick="location.href='Eliminar.jsp'">Eliminar</button>
         <div class="border"></div>
         <div class="border"></div>

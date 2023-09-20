@@ -169,9 +169,9 @@ button{
 }
 
 .btn {
-    margin:15px auto;
-    width:50%;
-    height:0;
+    margin:10px auto;
+    width:15%;
+    height:20px;
     background:rgba(234, 219, 203, .10);
     letter-spacing:1px;
     color: #cda882;
@@ -180,7 +180,6 @@ button{
     cursor: pointer;
     text-transform: uppercase;
     transition: .3s ease all;
-    position:absolute;
     text-transform:uppercase;
     font-weight:700;
     border:none;
@@ -191,7 +190,7 @@ button{
 }
 
 .btn:hover {
-    background-color: #dcc1a7;
+    color: #665441;
 }
 
 @media(max-width: 1200px) {

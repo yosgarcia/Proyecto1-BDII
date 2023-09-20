@@ -51,8 +51,8 @@
         <div class="modal-content">
             <h2>¡AVISO!</h2>
             <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-            <p>${mensaje}.</p>
-            <button class="btncito" onclick="cerrarModalNoPermitido()"> Cerrar </button>
+            <p>${mensaje}</p>
+            <button onclick="cerrarModalMensaje()" class="btn"> Cerrar </button>
         </div>
     </div>
 
@@ -64,7 +64,7 @@
             modal.style.display = "block";
         }
 
-        function mostrarModalMensaje() {
+        function cerrarModalMensaje() {
             var modal = document.getElementById("modalMensaje");
             modal.style.display = "none";
         }
@@ -72,6 +72,7 @@
         if (changes === "mostrar") {
             mostrarModalMensaje();
         }
+        mostrarModalMensaje();
     </script>
 </body>
 </html>

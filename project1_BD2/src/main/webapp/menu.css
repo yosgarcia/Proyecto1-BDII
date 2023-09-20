@@ -2,34 +2,35 @@
   box-sizing: border-box;
 }
 
-.modal {
-    display: none;
-    justify-content: center;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    text-align:center;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
-}
+.modal { 
+     display: none; 
+     justify-content: center; 
+     position: fixed; 
+     z-index: 1; 
+     left: 0; 
+     top: -15%; 
+     text-align:center; 
+     width: 100%; 
+     height: 200%; 
+     overflow: auto; 
+     background-color: rgba(0, 0, 0, 0.4); 
+     padding-top: 60px; 
+ }
 
-.modal-content {
-    background-color: #fefefe;
-    justify-content: center;
-    text-align:center;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 40%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+ .modal-content { 
+     background-color: #fefefe; 
+     justify-content: center; 
+     text-align:center; 
+     border-radius: 20px; 
+     margin: 5% auto; 
+     padding: 10px; 
+     border: 1px solid #888; 
+     width: 40%; 
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+ }
 
 .close {
-    color: #aaa;
+    color: #cda882;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -37,8 +38,9 @@
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #665441;
     text-decoration: none;
+    transition:all .3s ease-in-out;
     cursor: pointer;
 }
 
@@ -104,6 +106,31 @@ button{
   outline:none;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   cursor: pointer;
+}
+
+.btn {
+    margin:10px auto;
+    width:84px;
+    height:20px;
+    background:rgba(234, 219, 203, .10);
+    letter-spacing:1px;
+    color: #cda882;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease all;
+    text-transform:uppercase;
+    font-weight:700;
+    border:none;
+    font-size:15px;
+    outline:none;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    
+}
+
+.btn:hover {
+    color: #665441;
 }
 
 
@@ -379,13 +406,12 @@ button{
 
 /* NOVENO BOTON */
 
-#ninth>button{
+#ninth>buttoni{
   transition:all .5s ease-in-out;
 }
 
-#ninth:hover button{
-  background:#eadbcb;
-  color:#cda882;
+#ninth:hover buttoni{
+  color:#665441;
 }
 
 

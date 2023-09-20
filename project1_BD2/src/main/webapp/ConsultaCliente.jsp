@@ -59,7 +59,7 @@
 </var>
 
 <script>
-    var changes = '<c:out value="${listo}" scope="request" escapeXml="false"/>';
+    var changes = '${listo}';
     function mostrarClientesPorID() {
         var modal = document.getElementById("modalClientesPorID");
         modal.style.display = "block";

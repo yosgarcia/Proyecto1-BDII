@@ -5,22 +5,22 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
+import com.mycompany.project1_bd2.Repositorios.ClienteRepositorio;
 import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
 import com.mycompany.project1_bd2.entidades.Prestamo;
-import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  *
  * @author yaira
  */
-public class ConsultaPrestamoIdServlet extends HttpServlet {
+public class ConsultaPrestamosServlets extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,24 +34,19 @@ public class ConsultaPrestamoIdServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int prestamoId = Integer.parseInt(request.getParameter("prestamoId"));
-        
         try ( PrintWriter out = response.getWriter()) {
             DBConnection dbConecction = new DBConnection();
-            Prestamo prestamoABuscar = PrestamoRepositorio.mostrarPrestamoPorId(dbConecction.getConnection(), prestamoId);
-            if (prestamoABuscar != null){
-                
-                request.setAttribute("idi", "ID: " + prestamoABuscar.getId());
-                request.setAttribute("fechaPrestamo", prestamoABuscar.getFechaPrestamo());
-                request.setAttribute("fechaDevolucion", prestamoABuscar.getFechaDevolucion());
-                request.setAttribute("clienteId", prestamoABuscar.getCliente());
-                request.setAttribute("libroId", prestamoABuscar.getLibro());
-                request.setAttribute("listo", "uno");
-        
-                RequestDispatcher rd =request.getRequestDispatcher("ConsultaPrestamo.jsp");
-                rd.forward(request, response);
-                dbConecction.closeConnection();
-            }
+            List<Prestamo> clientes = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ConsultaPrestamosServlets</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ConsultaPrestamosServlets at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

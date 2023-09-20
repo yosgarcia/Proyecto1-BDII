@@ -32,6 +32,10 @@
         <servlet-name>ConsultaPrestamoIdServlet</servlet-name>
         <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaPrestamoIdServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultaPrestamosServlets</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaPrestamosServlets</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>ConsultaPrestamoIdServlet</servlet-name>
         <url-pattern>/ConsultaPrestamoId</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaPrestamosServlets</servlet-name>
+        <url-pattern>/ConsultaPrestamos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

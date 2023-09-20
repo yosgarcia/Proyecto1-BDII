@@ -23,7 +23,7 @@
     </div>
     
     <div id="fourth" class="buttonBox">
-        <button onclick="mostrarTodosClientes()">Mostrar Todos</button>
+        <button action="ConsultarLibros" onclick="mostrarTodosClientes()">Mostrar Todos</button>
         <div class="border"></div>
         <div class="border"></div>
         <div class="border"></div>

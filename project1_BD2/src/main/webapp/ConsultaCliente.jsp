@@ -96,6 +96,9 @@
     if (changes === "uno") {
         mostrarClientesPorID();
     }
+    if (changes === "dos") {
+        mostrarTodosClientes();
+    }
 </script>
 
 </body>

@@ -39,6 +39,7 @@ public class ConsultaClientesServlet extends HttpServlet {
             List<Cliente> clientes = ClienteRepositorio.obtenerTodosClientes(dbConecction.getConnection());
             if (!clientes.isEmpty()) {
                 request.setAttribute("listado", clientes);
+                request.setAttribute("listo", "dos");
         
                 RequestDispatcher rd =request.getRequestDispatcher("ConsultaCliente.jsp");
                 rd.forward(request, response);

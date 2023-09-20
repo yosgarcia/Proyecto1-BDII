@@ -72,7 +72,6 @@
         if (changes === "mostrar") {
             mostrarModalMensaje();
         }
-        mostrarModalMensaje();
     </script>
 </body>
 </html>

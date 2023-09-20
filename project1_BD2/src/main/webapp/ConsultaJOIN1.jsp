@@ -37,7 +37,8 @@
     <body>
     <h1>Sistema de Consulta de Prestamos</h1>
     <h2>Selecciona el tipo de consulta</h2>
-    <table style="align-content: center" border="1">
+    <div class="contentBox">
+        <table style="align-content: center" border="1">
             <thead>
                 <tr>
                     <th>GENERO</th>
@@ -54,6 +55,7 @@
                <%}%>  
             </tbody>
         </table>
+    </div>
 
 <script>
     function mostrarPrestamosPorID() {

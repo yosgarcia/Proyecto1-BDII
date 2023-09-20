@@ -67,9 +67,9 @@
         </form>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
         <p>Aquí­ puedes mostrar todos los clientes de la base de datos.</p>
-        <c:forEach items="${listado}" var="objeto">
+        <c:forEach items="${listado}" var="Cliente">
             <tr>
-                     <td><c:out value="${objeto.nombre}"/></td>
+                     <td><c:out value="${Cliente.nombre}"/></td>
             </tr>
         </c:forEach>
 </div>

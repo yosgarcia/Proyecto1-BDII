@@ -4,6 +4,9 @@
  */
 package com.mycompany.project1_bd2.Servlets;
 
+import com.mycompany.project1_bd2.DBConnection;
+import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
+import com.mycompany.project1_bd2.entidades.Prestamo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,7 +35,11 @@ public class ConsultaPrestamoIdServlet extends HttpServlet {
         int prestamoId = Integer.parseInt(request.getParameter("prestamoId"));
         
         try ( PrintWriter out = response.getWriter()) {
-            
+            DBConnection dbConecction = new DBConnection();
+            Prestamo prestamoABuscar = PrestamoRepositorio.mostrarPrestamoPorId(dbConecction.getConnection(), prestamoId);
+            if (prestamoABuscar != null){
+                
+            }
         }
     }
 

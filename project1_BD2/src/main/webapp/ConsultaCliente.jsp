@@ -79,11 +79,13 @@
             <tbody>
                 <c:forEach items="${listado}" var="cliente">
                     <tr>
+                        <td>
+                            hola
+                        </td>
                              <td>${cliente.getId()}</td>
                              <td>${cliente.getNombre()}</td>
                              <td>${cliente.getApellido()}</td>
                              <td>${cliente.getCorreo()}</td>
-                             <td>${cliente.getTelefono()}</td>
                     </tr>
                 </c:forEach>
             </tbody>

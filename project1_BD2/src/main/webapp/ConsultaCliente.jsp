@@ -1,6 +1,7 @@
 <%@page import="com.mycompany.project1_bd2.entidades.Cliente"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,13 +80,11 @@
             <tbody>
                 <c:forEach items="${listado}" var="cliente">
                     <tr>
-                        <td>
-                            hola
-                        </td>
                              <td>${cliente.getId()}</td>
                              <td>${cliente.getNombre()}</td>
                              <td>${cliente.getApellido()}</td>
                              <td>${cliente.getCorreo()}</td>
+                             <td>${cliente.getTelefono()}</td>
                     </tr>
                 </c:forEach>
             </tbody>

@@ -66,12 +66,28 @@
             <input class="btn" type="submit" value="Mostrar">
         </form>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <p>Aquí­ puedes mostrar todos los clientes de la base de datos.</p>
-        <c:forEach items="${listado}" var="cliente">
-            <tr>
-                     <td><c:out value="${cliente.getNombre()}"/></td>
-            </tr>
-        </c:forEach>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>CORREO</th>
+                    <th>TELEFONO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach items="${listado}" var="cliente">
+                    <tr>
+                             <td><c:out value="${cliente.getId()}"/></td>
+                             <td><c:out value="${cliente.getNombre()}"/></td>
+                             <td><c:out value="${cliente.getApellido()}"/></td>
+                             <td><c:out value="${cliente.getCorreo()}"/></td>
+                             <td><c:out value="${cliente.getTelefono()}"/></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
 </div>
 
 <script>

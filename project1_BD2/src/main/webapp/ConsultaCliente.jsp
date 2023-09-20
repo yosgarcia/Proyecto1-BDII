@@ -29,7 +29,7 @@
 </div>
 
 <%
-    String changes = request.getParameter("listo");
+    String changes = (String) request.getParameter("listo");
 %>
 
 <!-- Ventana modal para mostrar clientes por ID -->
@@ -42,8 +42,8 @@
             <input class="btn" type="submit" value="Mostrar">
         </form>
         <h3>${nombri}</h3>
-        <p>${idi}</p>
         <p>${apellidi}</p>
+        <p>${idi}</p>
         <p>${correu}</p>
         <p>${telefonu}</p>
     </div>
@@ -80,7 +80,7 @@
         modal.style.display = "none";
     }
     
-    if (listo === "uno") {
+    if (changes === "uno") {
         mostrarClientesPorID();
     }
 </script>

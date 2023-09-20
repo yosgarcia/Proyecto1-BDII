@@ -85,7 +85,6 @@ public class ClienteRepositorio {
             callableStatement.setString(5, telefono);
 
             callableStatement.execute();
-            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -112,7 +111,7 @@ public class ClienteRepositorio {
     }
     
     
-    public static void borrarCiente(OracleConnection connection, int id){
+    public static void borrarCliente(OracleConnection connection, int id){
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.CLIENTE_BORRAR_PROC_CALL);
             callableStatement.setInt(1, id);

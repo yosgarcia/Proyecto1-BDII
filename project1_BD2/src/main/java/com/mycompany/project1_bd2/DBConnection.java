@@ -67,20 +67,21 @@ public class DBConnection {
         return connection;
     }
   
-    /*
+    
     public static void main(String[] args){
         DBConnection dbConection = new DBConnection();
-        Cliente usuarioAValidar = ClienteRepositorio.obtenerPorId(dbConection.getConnection(), 2);
-        if(usuarioAValidar != null){
-            System.out.println(usuarioAValidar.getNombre());
-        }
-        else{
-            System.out.println("holaa");
+        //Cliente usuarioAValidar = ClienteRepositorio.obtenerPorId(dbConection.getConnection(), 2);
+        ClienteRepositorio.borrarCliente(dbConection.getConnection(), 3);
+        try{
+            ClienteRepositorio.borrarCliente(dbConection.getConnection(), 3);
+            System.out.println("cliente eliminado");
+        } catch(Exception e){
+            System.out.println("error");
         }
         
         dbConection.closeConnection();
         
-    }*/
+    }
     
     
 

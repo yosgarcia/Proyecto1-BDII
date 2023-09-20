@@ -93,7 +93,7 @@ CREATE TABLE Resena_p1 (
 );
 CREATE TABLE Bitacora_libro_p1 (
     id NUMBER DEFAULT seq_bitacora.NEXTVAL NOT NULL,
-    fecha VARCHAR2 NOT NULL,
+    fecha VARCHAR2(50 char) NOT NULL,
     usuario VARCHAR2(50 char),
     descripcion VARCHAR2(250 char),
     CONSTRAINT bitacora_pk PRIMARY KEY (id),
@@ -648,9 +648,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     RETURN NUMBER IS 
     n_cliente clientes_p1.id%TYPE;
     BEGIN
-        SELECT seq_clientes.NEXTVAL INTO n_cliente FROM dual;
         INSERT INTO clientes_p1 (nombre, apellido, correo, telefono) VALUES (p_nombre, p_apellido, p_correo, p_telefono);
+        SELECT seq_clientes.CURRVAL INTO n_cliente FROM dual;
+        COMMIT;
         RETURN n_cliente;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -659,9 +664,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     RETURN NUMBER IS
     n_autor autor_p1.id%TYPE;
     BEGIN
-        SELECT seq_autor.NEXTVAL INTO n_autor FROM dual;
         INSERT INTO autor_p1 (nombre, apellido, nacionalidad) VALUES (p_nombre, p_apellido, p_nacionalidad);
+        SELECT seq_autor.CURRVAL INTO n_autor FROM dual;
+        COMMIT;
         RETURN n_autor;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -669,9 +679,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     RETURN NUMBER IS
     n_editorial editorial_p1.id%TYPE;
     BEGIN
-        SELECT seq_editorial.NEXTVAL INTO n_editorial FROM dual;
         INSERT INTO editorial_p1(nombre, origen) VALUES (p_nombre, p_origen);
+        SELECT seq_editorial.CURRVAL INTO n_editorial FROM dual;
+        COMMIT;
         RETURN n_editorial;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -679,9 +694,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     RETURN NUMBER IS
     n_genero genero_p1.id%TYPE;
     BEGIN
-        SELECT seq_genero.NEXTVAL INTO n_genero FROM dual;
         INSERT INTO genero_p1(nombre) VALUES (p_nombre);
+        SELECT seq_genero.CURRVAL INTO n_genero FROM dual;
+        COMMIT;
         RETURN n_genero;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -692,10 +712,15 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     RETURN NUMBER IS
     n_libro libro_p1.id%TYPE;
     BEGIN
-        SELECT seq_libro.NEXTVAL INTO n_libro FROM dual;
         INSERT INTO libro_p1(titulo, editorial_id, genero_id, autor_id,anno_publicacion, isbn, inventario) VALUES (p_titulo, p_editorial, p_genero, p_autor,
                                     p_anno, p_isbn, p_inventario);
+        SELECT seq_libro.CURRVAL INTO n_libro FROM dual;
+        COMMIT;
         RETURN n_libro;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     FUNCTION insertar_prestamo(p_fecha_prestamo prestamos_p1.fecha_prestamo%TYPE, 
@@ -704,9 +729,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     RETURN NUMBER IS
     n_prestamos prestamos_p1.id%TYPE;
     BEGIN
-        SELECT seq_prestamos.NEXTVAL INTO n_prestamos FROM dual;
         INSERT INTO prestamos_p1(fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (p_fecha_prestamo, p_fecha_devolucion, p_libro, p_cliente);
+        SELECT seq_prestamos.CURRVAL INTO n_prestamos FROM dual;
+        COMMIT;
         RETURN n_prestamos;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -715,9 +745,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     RETURN NUMBER IS
     n_resena resena_p1.id%TYPE;
     BEGIN
-        SELECT seq_resena.NEXTVAL INTO n_resena FROM dual;
         INSERT INTO resena_p1(descripcion, calificacion, libro_id, cliente_id) VALUES (p_descripcion, p_calificacion, p_libro, p_cliente);
+        SELECT seq_resena.CURRVAL INTO n_resena FROM dual;
+        COMMIT;
         RETURN n_resena;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -726,9 +761,14 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     RETURN NUMBER IS
     n_empleado empleado_p1.id%TYPE;
     BEGIN
-        SELECT seq_empleado.NEXTVAL INTO n_empleado FROM dual;
         INSERT INTO empleado_p1(nombre, apellido) VALUES (p_nombre, p_apellido);
+        SELECT seq_empleado.CURRVAL INTO n_empleado FROM dual;
+        COMMIT;
         RETURN n_empleado;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
 	
     
@@ -740,7 +780,12 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
     BEGIN
         SELECT p_usuario INTO n_usuario FROM dual;
         INSERT INTO usuario_p1(username, contrasenna, empleado_id) VALUES (p_usuario, p_contrasenna, p_empleado);
+        COMMIT;
         RETURN n_usuario;
+        EXCEPTION
+            WHEN OTHERS THEN
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -751,8 +796,10 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         UPDATE clientes_p1
         SET nombre = p_nombre, apellido = p_apellido, correo = p_correo, telefono = p_telefono
         WHERE id = p_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
+            ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);       
     END;
     
@@ -763,9 +810,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         UPDATE autor_p1
         SET nombre = p_nombre, apellido = p_apellido, nacionalidad = p_nacionalidad
         WHERE id = p_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -775,9 +824,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         UPDATE editorial_p1
         SET nombre = p_nombre, origen = p_origen
         WHERE id = p_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -787,9 +838,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         UPDATE genero_p1
         SET nombre = p_nombre
         WHERE id = p_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -802,9 +855,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         SET titulo = p_titulo, editorial_id = p_editorial, genero_id = p_genero, autor_id = p_autor,
             anno_publicacion = p_anno_publicacion, isbn = p_isbn, inventario = p_inventario
         WHERE id = p_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -816,9 +871,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         SET fecha_prestamo = p_fecha_prestamo, fecha_devolucion = p_fecha_devolucion, 
             libro_id = p_libro, cliente_id = p_cliente
         WHERE id = p_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -830,9 +887,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         SET descripcion = p_descripcion, calificacion = p_calificacion, libro_id = p_libro,
             cliente_id = p_cliente
         WHERE id = p_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     
@@ -842,9 +901,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         UPDATE empleado_p1
         SET nombre = p_nombre, apellido = p_apellido
         WHERE id = p_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
 	
     
@@ -854,9 +915,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         UPDATE usuario_p1
         SET username = p_usuario, contrasenna = p_contrasenna, empleado_id = p_empleado
         WHERE username = p_usuario;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     PROCEDURE modificar_usuario_bitacora (p_usuario Bitacora_libro_p1.usuario%TYPE) AS
@@ -867,9 +930,11 @@ CREATE OR REPLACE PACKAGE BODY paquete_modificaciones_p1 AS
         UPDATE  Bitacora_libro_p1
         SET usuario = p_usuario
         WHERE id = v_ultimo_id;
+        COMMIT;
         EXCEPTION
             WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+            ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);  
     END;
     
     -- PROCEDIMIENTO PARA BORRAR CLIENTE
@@ -1388,10 +1453,9 @@ BEGIN
 END;
 /
 
+call paquete_modificaciones_p1.borrar_cliente(3);
+select * from clientes_p1;
 
-
-
-select * from Libro_P1;
 
 ALTER SEQUENCE seq_clientes RESTART;
 ALTER SEQUENCE seq_autor RESTART;

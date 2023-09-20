@@ -1,7 +1,13 @@
+<%@page import="com.mycompany.project1_bd2.DBConnection"%>
+<%@page import="com.mycompany.project1_bd2.Repositorios.ClienteRepositorio"%>
 <%@page import="com.mycompany.project1_bd2.entidades.Cliente"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
+<%
+ DBConnection dbConecction = new DBConnection();
+ List<Cliente> clientes = ClienteRepositorio.obtenerTodosClientes(dbConecction.getConnection());
+%>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="consulta.css">
@@ -77,15 +83,16 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${listado.rows}" var="cliente">
-                    <tr>
-                             <td>${cliente.getId()}</td>
-                             <td>${cliente.getNombre()}</td>
-                             <td>${cliente.getApellido()}</td>
-                             <td>${cliente.getCorreo()}</td>
-                             <td>${cliente.getTelefono()}</td>
-                    </tr>
-                </c:forEach>
+                <%for(Cliente cliente : clientes){
+                 ;%>
+                <tr>
+                   <td><%= cliente.getId() %></td>
+                   <td><%= cliente.getNombre() %></td>
+                   <td><%= cliente.getApellido() %></td>
+                   <td><%= cliente.getCorreo() %></td>
+                   <td><%= cliente.getTelefono() %></td>
+                </tr>
+               <%}%>  
             </tbody>
         </table>
 </div>

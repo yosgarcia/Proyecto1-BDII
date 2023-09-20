@@ -31,7 +31,6 @@ public class LibroRepositorio {
             callableStatement.setInt(8, pInventario);
 
             callableStatement.execute();
-            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -54,7 +53,6 @@ public class LibroRepositorio {
             callableStatement.setInt(8, pInventario);
 
             callableStatement.execute();
-            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }

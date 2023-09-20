@@ -20,6 +20,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -43,13 +44,15 @@ public class InsertarLibroServlet extends HttpServlet {
         
         
         try ( PrintWriter out = response.getWriter()) {
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+            
             String titulo = request.getParameter("nombreLibro");
             int editorialId = Integer.parseInt(request.getParameter("Editorial"));
             int generoId = Integer.parseInt(request.getParameter("Genero"));
             int autorId = Integer.parseInt(request.getParameter("Autor"));
-            java.util.Date publicacionFecha = formatoFecha.parse(request.getParameter("publicacionLibro"));
-            java.util.Date publicacionFechaSQL = new java.util.Date(publicacionFecha.getTime());
+            System.out.println(request.getParameter("publicacionLibro"));
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+            var publicacionFecha = new Date(formatoFecha.format(request.getParameter("publicacionLibro")));
+            System.out.println("aqui obtengo fecha");
             String isbn = request.getParameter("ISBN");
             int inventario = Integer.parseInt(request.getParameter("inventarioLibro"));
             
@@ -59,7 +62,7 @@ public class InsertarLibroServlet extends HttpServlet {
             Editorial editorial = EditorialRepositorio.mostrarEditorialPorId(dBConnection.getConnection(), editorialId);
             
             if(genero != null && autor != null && editorial != null){
-                int id = LibroRepositorio.insertarLibro(dBConnection.getConnection(), titulo, editorialId, generoId, autorId, publicacionFechaSQL, isbn, inventario);
+                int id = LibroRepositorio.insertarLibro(dBConnection.getConnection(), titulo, editorialId, generoId, autorId, publicacionFecha, isbn, inventario);
                 if(id != -1){
                     request.setAttribute("accion", "mostrar");
                     request.setAttribute("mensaje", "Se ha agregado un libro con el ID: " + id);
@@ -81,8 +84,10 @@ public class InsertarLibroServlet extends HttpServlet {
             
             
         } catch (Exception e){
+            System.out.println("aqui obtengo fecha");
             System.err.println("Error al parsear la fecha: " + e.getMessage());
-            
+            RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+            rd.forward(request, response);
         }
     }
 

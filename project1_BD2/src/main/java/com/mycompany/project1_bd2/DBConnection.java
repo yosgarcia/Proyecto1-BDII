@@ -1,12 +1,10 @@
 package com.mycompany.project1_bd2;
 
-import com.mycompany.project1_bd2.Repositorios.ClienteRepositorio;
-import com.mycompany.project1_bd2.entidades.Cliente;
+import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.Date;
 import java.util.Properties;
-import java.util.logging.Logger;
 import oracle.jdbc.driver.OracleConnection;
 
 
@@ -86,22 +84,13 @@ public class DBConnection {
     public static void main(String[] args){
         DBConnection dbConection = new DBConnection();
         //Cliente usuarioAValidar = ClienteRepositorio.obtenerPorId(dbConection.getConnection(), 2);
-        List<Cliente> clientes = ClienteRepositorio.obtenerTodosClientes(dbConection.getConnection());
-        for(Cliente client : clientes){
-            System.out.println("Nombre: " + client.getNombre());
-        }
+        int idLibro = LibroRepositorio.insertarLibro(dbConection.getConnection(), "Harry Potter", 1, 1, 1, new Date("2/02/2014"), "2020202", 23);
         
-        int num = ClienteRepositorio.verificarClientePrestamo(dbConection.getConnection(), 32);
-        if(num > 0){
-            System.out.println("cliente no se puede eliminar");
-        }else{
-            ClienteRepositorio.borrarCliente(dbConection.getConnection(), 32);
-            System.out.println("cliente eliminado");
-        }
-        
-        List<Cliente> clientesNov = ClienteRepositorio.obtenerTodosClientes(dbConection.getConnection());
-        for(Cliente client : clientesNov){
-            System.out.println("Nombre: " + client.getNombre());
+        if(idLibro != -1){
+            System.out.println("Se inserto libro con id: " + idLibro);
+            
+        } else{
+            System.out.println("error");
         }
         
         

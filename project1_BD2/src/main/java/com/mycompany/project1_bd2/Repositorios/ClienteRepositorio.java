@@ -104,7 +104,6 @@ public class ClienteRepositorio {
             callableStatement.setString(5, telefono);
 
             callableStatement.execute();
-            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }

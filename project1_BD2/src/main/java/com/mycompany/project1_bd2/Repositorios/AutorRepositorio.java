@@ -83,7 +83,6 @@ public class AutorRepositorio {
             callableStatement.setString(4, nacionalidad);
 
             callableStatement.execute();
-            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -103,7 +102,6 @@ public class AutorRepositorio {
 
 
             callableStatement.execute();
-            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }

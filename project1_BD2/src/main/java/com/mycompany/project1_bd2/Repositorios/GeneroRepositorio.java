@@ -21,7 +21,6 @@ public class GeneroRepositorio {
             callableStatement.setString(2, nombreGenero);
 
             callableStatement.execute();
-            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -37,7 +36,6 @@ public class GeneroRepositorio {
             callableStatement.setString(2, nombreGenero);
 
             callableStatement.execute();
-            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }

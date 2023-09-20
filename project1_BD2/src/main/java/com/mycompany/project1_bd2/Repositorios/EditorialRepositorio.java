@@ -76,7 +76,6 @@ public class EditorialRepositorio {
             callableStatement.setString(3, origen);
 
             callableStatement.execute();
-            connection.commit();
 
             return callableStatement.getInt(1);
 
@@ -95,7 +94,6 @@ public class EditorialRepositorio {
             callableStatement.setString(3, origen);
 
             callableStatement.execute();
-            connection.commit();
 
         } catch (Exception e) {
             e.printStackTrace();

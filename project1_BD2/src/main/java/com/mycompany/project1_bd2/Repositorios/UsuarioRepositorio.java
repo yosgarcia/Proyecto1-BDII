@@ -111,7 +111,6 @@ public class UsuarioRepositorio {
             callableStatement.setInt(4, empleadoId);
 
             callableStatement.execute();
-            connection.commit();
 
             return callableStatement.getString(1);
 
@@ -129,7 +128,6 @@ public class UsuarioRepositorio {
             callableStatement.setInt(3, empleadoId);
 
             callableStatement.execute();
-            connection.commit();
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -19,7 +19,6 @@ public class EmpleadoRepositorio {
             callableStatement.setString(3, apellido);
 
             callableStatement.execute();
-            connection.commit();
             return callableStatement.getInt(1);
 
         } catch (Exception e) {
@@ -36,7 +35,6 @@ public class EmpleadoRepositorio {
             callableStatement.setString(3, apellido);
 
             callableStatement.execute();
-            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }

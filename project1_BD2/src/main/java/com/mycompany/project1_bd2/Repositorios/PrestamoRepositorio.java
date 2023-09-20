@@ -103,7 +103,6 @@ public class PrestamoRepositorio {
             callableStatement.setInt(5, clienteId);
 
             callableStatement.execute();
-            connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -119,7 +118,6 @@ public class PrestamoRepositorio {
             callableStatement.setInt(5, clienteId);
 
             callableStatement.execute();
-            connection.commit();
 
             return callableStatement.getInt(1);
 

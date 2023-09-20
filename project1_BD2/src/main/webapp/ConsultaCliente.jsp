@@ -66,7 +66,7 @@
             <input class="btn" type="submit" value="Mostrar">
         </form>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <table border="1">
+        <table style="align-content: center" border="1">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -79,11 +79,11 @@
             <tbody>
                 <c:forEach items="${listado}" var="cliente">
                     <tr>
-                             <td><c:out value="${cliente.getId()}"/></td>
-                             <td><c:out value="${cliente.getNombre()}"/></td>
-                             <td><c:out value="${cliente.getApellido()}"/></td>
-                             <td><c:out value="${cliente.getCorreo()}"/></td>
-                             <td><c:out value="${cliente.getTelefono()}"/></td>
+                             <td>${cliente.getId()}</td>
+                             <td>${cliente.getNombre()}</td>
+                             <td>${cliente.getApellido()}</td>
+                             <td>${cliente.getCorreo()}</td>
+                             <td>${cliente.getTelefono()}</td>
                     </tr>
                 </c:forEach>
             </tbody>

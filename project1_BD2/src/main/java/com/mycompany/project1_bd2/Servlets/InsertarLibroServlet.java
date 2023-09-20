@@ -49,9 +49,17 @@ public class InsertarLibroServlet extends HttpServlet {
             int editorialId = Integer.parseInt(request.getParameter("Editorial"));
             int generoId = Integer.parseInt(request.getParameter("Genero"));
             int autorId = Integer.parseInt(request.getParameter("Autor"));
-            System.out.println(request.getParameter("publicacionLibro"));
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-            var publicacionFecha = new Date(formatoFecha.format(request.getParameter("publicacionLibro")));
+            System.out.println((request.getParameter("publicacionLibro")).getClass().getSimpleName());
+            SimpleDateFormat formatoFechaEntrada = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat formatoFechaSalida = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Date publicacionFecha = formatoFechaEntrada.parse(request.getParameter("publicacionLibro"));
+
+            // Ahora puedes formatear la fecha al formato deseado
+            String fechaFormateada = formatoFechaSalida.format(publicacionFecha);
+            
+            Date pubFecha = new Date(fechaFormateada);
+            //var publicacionFecha = new Date(request.getParameter("publicacionLibro"));
             System.out.println("aqui obtengo fecha");
             String isbn = request.getParameter("ISBN");
             int inventario = Integer.parseInt(request.getParameter("inventarioLibro"));
@@ -62,7 +70,7 @@ public class InsertarLibroServlet extends HttpServlet {
             Editorial editorial = EditorialRepositorio.mostrarEditorialPorId(dBConnection.getConnection(), editorialId);
             
             if(genero != null && autor != null && editorial != null){
-                int id = LibroRepositorio.insertarLibro(dBConnection.getConnection(), titulo, editorialId, generoId, autorId, publicacionFecha, isbn, inventario);
+                int id = LibroRepositorio.insertarLibro(dBConnection.getConnection(), titulo, editorialId, generoId, autorId, pubFecha, isbn, inventario);
                 if(id != -1){
                     request.setAttribute("accion", "mostrar");
                     request.setAttribute("mensaje", "Se ha agregado un libro con el ID: " + id);

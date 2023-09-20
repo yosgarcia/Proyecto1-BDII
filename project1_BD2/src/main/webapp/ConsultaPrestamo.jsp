@@ -10,6 +10,17 @@
 <%@page import="java.util.List"%>
 <%@page import="com.mycompany.project1_bd2.DBConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+<%
+    HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("usuario") == null) {
+%>
+    <jsp:forward page="index.jsp">
+        <jsp:param name="error" value="Es obligatorio identificarse!"/>
+    </jsp:forward>
+<%
+    } else {
+    }
+%>
 <!DOCTYPE html>
 <%
  DBConnection dbConecction = new DBConnection();
@@ -91,8 +102,8 @@
                    <td><%= cliente.getId() %></td>
                    <td><%= cliente.getFechaPrestamo() %></td>
                    <td><%= cliente.getFechaDevolucion() %></td>
-                   <td><%= cliente.getLibro() %></td>
-                   <td><%= cliente.getCliente() %></td>
+                   <td><%= cliente.getLibro().getId() %></td>
+                   <td><%= cliente.getCliente().getId() %></td>
                 </tr>
                <%}%>  
             </tbody>

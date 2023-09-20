@@ -5,6 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("usuario") == null) {
+%>
+    <jsp:forward page="index.jsp">
+        <jsp:param name="error" value="Es obligatorio identificarse!"/>
+    </jsp:forward>
+<%
+    } else {
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>

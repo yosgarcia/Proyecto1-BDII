@@ -12,6 +12,17 @@
 <%@page import="java.util.List"%>
 <%@page import="com.mycompany.project1_bd2.DBConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+<%
+    HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("usuario") == null) {
+%>
+    <jsp:forward page="index.jsp">
+        <jsp:param name="error" value="Es obligatorio identificarse!"/>
+    </jsp:forward>
+<%
+    } else {
+    }
+%>
 <!DOCTYPE html>
 <%
  DBConnection dbConecction = new DBConnection();
@@ -26,7 +37,8 @@
     <body>
     <h1>Sistema de Consulta de Prestamos</h1>
     <h2>Selecciona el tipo de consulta</h2>
-    <table style="align-content: center" border="1">
+    <div class="contentBox">
+        <table style="align-content: center" border="1">
             <thead>
                 <tr>
                     <th>GENERO</th>
@@ -43,6 +55,7 @@
                <%}%>  
             </tbody>
         </table>
+    </div>
 
 <script>
     function mostrarPrestamosPorID() {

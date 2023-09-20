@@ -17,6 +17,14 @@
     padding-top: 60px;
 }
 
+table {
+    justify-content: center;
+    background: rgba(234, 219, 203, 1);
+    text-align:center;
+    margin: 5% auto;
+    padding: 20px;
+}
+
 .inpt {
     border-radius: 5px;
     width: 50%;

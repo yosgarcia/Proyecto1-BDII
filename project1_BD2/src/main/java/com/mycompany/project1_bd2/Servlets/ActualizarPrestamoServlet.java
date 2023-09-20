@@ -13,13 +13,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
+import java.text.SimpleDateFormat;
 
 /**
  *
  * @author yaira
  */
-public class ConsultaPrestamosServlets extends HttpServlet {
+public class ActualizarPrestamoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,30 +33,62 @@ public class ConsultaPrestamosServlets extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            DBConnection dbConecction = new DBConnection();
-            List<Prestamo> prestamos = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        try ( PrintWriter out = response.getWriter()){
+            int prestamoId = Integer.parseInt(request.getParameter("prestamoId"));
             
-            if (!prestamos.isEmpty()) {
-                out.println("<html>");
-                out.println("<body>");
-                out.println("<h1>Información de Todos los Prestamos:</h1>");
-                out.println("<ul>");
-
-                for (Prestamo prestamo : prestamos) {
-                    out.println("<li>ID: " + prestamo.getId() + ", fecha Prestamo: " + prestamo.getFechaPrestamo()+
-                                ", fecha devolucion: " + prestamo.getFechaDevolucion()+ ", Cliente: " + prestamo.getCliente()+
-                                ", Libro: " + prestamo.getLibro()+ "</li>");
-                }
-
-                out.println("</ul>");
-                out.println("</body>");
-                out.println("</html>");
-                dbConecction.closeConnection();
-            } else {
-                dbConecction.closeConnection();
-                out.println("No hay Libros en la base de datos.");
+            java.sql.Date fechaPrestamoSQL;
+            java.sql.Date fechaDevolucionSQL;
+            try{
+                java.util.Date prestamoDate = formatoFecha.parse(request.getParameter("fechaPrestamo"));
+                fechaPrestamoSQL = new java.sql.Date(prestamoDate.getTime());
+            } catch (NullPointerException e){
+                fechaPrestamoSQL = null;
             }
+            try{
+                java.util.Date devolucionDate = formatoFecha.parse(request.getParameter("fechaDevolucion"));
+                fechaDevolucionSQL = new java.sql.Date(devolucionDate.getTime());
+            } catch (NullPointerException e){
+                fechaDevolucionSQL = null;
+            }
+            
+            
+            Integer libroId = Integer.parseInt(request.getParameter("libroId"));
+            Integer clienteId = Integer.parseInt(request.getParameter("clienteId"));
+            
+                        
+            DBConnection dBConnection = new DBConnection();
+            Prestamo prestamo = PrestamoRepositorio.mostrarPrestamoPorId(dBConnection.getConnection(), prestamoId);
+            //Libro libro = LibroRepositorio.mostrarLibroPorId(dBConnection.getConnection(), libroId);
+            //Cliente cliente = ClienteRepositorio.obtenerPorId(dBConnection.getConnection(), clienteId);
+            
+            // hacer bien validaciones
+            if(prestamo != null){
+                if(fechaPrestamoSQL == null){
+                    fechaPrestamoSQL = prestamo.getFechaPrestamo();
+                }
+                if(fechaDevolucionSQL == null){
+                    fechaDevolucionSQL = prestamo.getFechaDevolucion();
+                }
+                if(libroId == null){
+                    libroId = prestamo.getLibro().getId();
+                }
+                if(clienteId == null){
+                    clienteId = prestamo.getCliente().getId();
+                }
+                
+                
+                
+            } else{
+                out.println("Prestamo no existe");
+            }
+            
+            
+          
+                        
+            dBConnection.closeConnection();
+        }catch (Exception e){
+            System.err.println("Error al parsear la fecha: " + e.getMessage());
             
         }
     }

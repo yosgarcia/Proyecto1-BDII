@@ -114,5 +114,30 @@ public class EditorialRepositorio {
         }
     }
     
+     public static List<Editorial> mostrarOrigenYNumPrestamos(OracleConnection connection){
+        List<Editorial> editoriales = new ArrayList<>();
+        try {
+            CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_EDITORIAL_ORIGEN_POPULAR_PROC_CALL);
+            callableStatement.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
+            callableStatement.execute();
+
+            // Obtener el cursor de salida
+            ResultSet resultSet = (ResultSet) callableStatement.getObject(1);
+
+            // Iterar sobre los resultados y procesarlos según sea necesario
+            while (resultSet.next()) {
+                // Obtener los datos del género
+                String origen = resultSet.getString("origen_editorial");
+                int prestamos = resultSet.getInt("total_prestamos");
+                Editorial editorial = new Editorial(origen, prestamos);
+                editoriales.add(editorial);
+            }
+
+            resultSet.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return editoriales;
+    }
     
 }

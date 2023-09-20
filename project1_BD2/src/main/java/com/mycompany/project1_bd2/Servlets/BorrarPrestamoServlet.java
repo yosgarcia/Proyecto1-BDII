@@ -5,6 +5,7 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
+import com.mycompany.project1_bd2.Repositorios.BitacoraLibroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
 import com.mycompany.project1_bd2.entidades.Prestamo;
 import java.io.IOException;
@@ -13,13 +14,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  *
  * @author yaira
  */
-public class ConsultaPrestamosServlets extends HttpServlet {
+public class BorrarPrestamoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,31 +33,25 @@ public class ConsultaPrestamosServlets extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        int id = Integer.parseInt(request.getParameter("prestamoId"));
+        
         try ( PrintWriter out = response.getWriter()) {
-            DBConnection dbConecction = new DBConnection();
-            List<Prestamo> prestamos = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
-            
-            if (!prestamos.isEmpty()) {
-                out.println("<html>");
-                out.println("<body>");
-                out.println("<h1>Información de Todos los Prestamos:</h1>");
-                out.println("<ul>");
-
-                for (Prestamo prestamo : prestamos) {
-                    out.println("<li>ID: " + prestamo.getId() + ", fecha Prestamo: " + prestamo.getFechaPrestamo()+
-                                ", fecha devolucion: " + prestamo.getFechaDevolucion()+ ", Cliente: " + prestamo.getCliente()+
-                                ", Libro: " + prestamo.getLibro()+ "</li>");
-                }
-
-                out.println("</ul>");
-                out.println("</body>");
-                out.println("</html>");
-                dbConecction.closeConnection();
+            DBConnection dbConnection = new DBConnection();
+            Prestamo prestamoBorrar = PrestamoRepositorio.mostrarPrestamoPorId(dbConnection.getConnection(), id);
+            if (prestamoBorrar != null){
+                PrestamoRepositorio.borrarPrestamo(dbConnection.getConnection(),id);
+                //BitacoraLibroRepositorio.modificarUsuarioBitacora(dbConnection.getConnection(), DBConnection.getUsuario());
+                out.println("<script>");
+                out.println("   mensajeEliminado();");
+                out.println("</script>");
             } else {
-                dbConecction.closeConnection();
-                out.println("No hay Libros en la base de datos.");
+                response.getWriter().println("prestamo no existe en la base de datos.");
             }
             
+            dbConnection.closeConnection();
+            
+        } catch (Exception e){
+            response.getWriter().println("Error al borrar prestamo.");
         }
     }
 

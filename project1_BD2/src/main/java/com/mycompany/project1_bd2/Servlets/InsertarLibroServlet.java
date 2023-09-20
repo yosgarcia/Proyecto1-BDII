@@ -5,21 +5,26 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
-import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
-import com.mycompany.project1_bd2.entidades.Prestamo;
+import com.mycompany.project1_bd2.Repositorios.AutorRepositorio;
+import com.mycompany.project1_bd2.Repositorios.EditorialRepositorio;
+import com.mycompany.project1_bd2.Repositorios.GeneroRepositorio;
+import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
+import com.mycompany.project1_bd2.entidades.Autor;
+import com.mycompany.project1_bd2.entidades.Editorial;
+import com.mycompany.project1_bd2.entidades.Genero;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
+import java.text.SimpleDateFormat;
 
 /**
  *
  * @author yaira
  */
-public class ConsultaPrestamosServlets extends HttpServlet {
+public class InsertarLibroServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,30 +38,40 @@ public class ConsultaPrestamosServlets extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        
+        
         try ( PrintWriter out = response.getWriter()) {
-            DBConnection dbConecction = new DBConnection();
-            List<Prestamo> prestamos = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+            String titulo = request.getParameter("titulo");
+            int editorialId = Integer.parseInt(request.getParameter("editorialId"));
+            int generoId = Integer.parseInt(request.getParameter("generoId"));
+            int autorId = Integer.parseInt(request.getParameter("autorId"));
+            java.util.Date publicacionFecha = formatoFecha.parse(request.getParameter("anoPublicacion"));
+            java.sql.Date publicacionFechaSQL = new java.sql.Date(publicacionFecha.getTime());
+            String isbn = request.getParameter("isbn");
+            int inventario = Integer.parseInt(request.getParameter("inventario"));
             
-            if (!prestamos.isEmpty()) {
-                out.println("<html>");
-                out.println("<body>");
-                out.println("<h1>Información de Todos los Prestamos:</h1>");
-                out.println("<ul>");
-
-                for (Prestamo prestamo : prestamos) {
-                    out.println("<li>ID: " + prestamo.getId() + ", fecha Prestamo: " + prestamo.getFechaPrestamo()+
-                                ", fecha devolucion: " + prestamo.getFechaDevolucion()+ ", Cliente: " + prestamo.getCliente()+
-                                ", Libro: " + prestamo.getLibro()+ "</li>");
+            DBConnection dBConnection = new DBConnection();
+            Genero genero = GeneroRepositorio.mostrarGeneroPorId(dBConnection.getConnection(), generoId);
+            Autor autor = AutorRepositorio.obtenerPorId(dBConnection.getConnection(), autorId);
+            Editorial editorial = EditorialRepositorio.mostrarEditorialPorId(dBConnection.getConnection(), editorialId);
+            
+            if(genero != null && autor != null && editorial != null){
+                int id = LibroRepositorio.insertarLibro(dBConnection.getConnection(), titulo, editorialId, generoId, autorId, publicacionFechaSQL, isbn, inventario);
+                if(id != -1){
+                    out.println("Prestamo insertado exitosamente con ID: " + id);
+                    
+                } else{
+                    out.println("Error al insertar el prestamo en la base de datos");
                 }
-
-                out.println("</ul>");
-                out.println("</body>");
-                out.println("</html>");
-                dbConecction.closeConnection();
-            } else {
-                dbConecction.closeConnection();
-                out.println("No hay Libros en la base de datos.");
+            } else{
+                out.println("No existe genero, autor o editorial");
             }
+            
+            
+        } catch (Exception e){
+            System.err.println("Error al parsear la fecha: " + e.getMessage());
             
         }
     }

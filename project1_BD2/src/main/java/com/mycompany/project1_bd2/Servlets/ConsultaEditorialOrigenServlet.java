@@ -5,21 +5,22 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
-import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
-import com.mycompany.project1_bd2.entidades.Prestamo;
+import com.mycompany.project1_bd2.Repositorios.EditorialRepositorio;
+import com.mycompany.project1_bd2.entidades.Editorial;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
+import jakarta.servlet.RequestDispatcher; 
+import jakarta.servlet.ServletException; 
+import jakarta.servlet.http.HttpServlet; 
+import jakarta.servlet.http.HttpServletRequest; 
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
  * @author yaira
  */
-public class ConsultaPrestamosServlets extends HttpServlet {
+public class ConsultaEditorialOrigenServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,29 +36,20 @@ public class ConsultaPrestamosServlets extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             DBConnection dbConecction = new DBConnection();
-            List<Prestamo> prestamos = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
-            
-            if (!prestamos.isEmpty()) {
+            List<Editorial> editoriales = EditorialRepositorio.mostrarOrigenYNumPrestamos(dbConecction.getConnection());
+            if(!editoriales.isEmpty()){
                 out.println("<html>");
                 out.println("<body>");
-                out.println("<h1>Información de Todos los Prestamos:</h1>");
+                out.println("<h1>Numero de prestamos por Origen Editorial:</h1>");
                 out.println("<ul>");
-
-                for (Prestamo prestamo : prestamos) {
-                    out.println("<li>ID: " + prestamo.getId() + ", fecha Prestamo: " + prestamo.getFechaPrestamo()+
-                                ", fecha devolucion: " + prestamo.getFechaDevolucion()+ ", Cliente: " + prestamo.getCliente()+
-                                ", Libro: " + prestamo.getLibro()+ "</li>");
+                
+                for(Editorial editorial : editoriales){
+                    out.println("<li>Origen: " + editorial.getOrigen()+ ", Prestamos: " + editorial.getPrestamos()+ "</li>");
                 }
-
-                out.println("</ul>");
-                out.println("</body>");
-                out.println("</html>");
-                dbConecction.closeConnection();
             } else {
-                dbConecction.closeConnection();
-                out.println("No hay Libros en la base de datos.");
+                
+                out.println("No hay editoriales en la base de datos con prestamos.");
             }
-            
         }
     }
 

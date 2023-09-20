@@ -36,6 +36,42 @@
         <servlet-name>ConsultaPrestamosServlets</servlet-name>
         <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaPrestamosServlets</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BorrarPrestamoServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.BorrarPrestamoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarPrestamoServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ActualizarPrestamoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultarLibroIdServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultarLibroIdServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultarLibrosServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultarLibrosServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BorrarLibroServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.BorrarLibroServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertarLibroServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.InsertarLibroServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarLibroServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ActualizarLibroServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultaGenerosPopularesServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaGenerosPopularesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultaEditorialOrigenServlet</servlet-name>
+        <servlet-class>com.mycompany.project1_bd2.Servlets.ConsultaEditorialOrigenServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -71,6 +107,42 @@
     <servlet-mapping>
         <servlet-name>ConsultaPrestamosServlets</servlet-name>
         <url-pattern>/ConsultaPrestamos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BorrarPrestamoServlet</servlet-name>
+        <url-pattern>/BorrarPrestamo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarPrestamoServlet</servlet-name>
+        <url-pattern>/ActualizarPrestamo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultarLibroIdServlet</servlet-name>
+        <url-pattern>/ConsultarLibroId</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultarLibrosServlet</servlet-name>
+        <url-pattern>/ConsultarLibros</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BorrarLibroServlet</servlet-name>
+        <url-pattern>/BorrarLibro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertarLibroServlet</servlet-name>
+        <url-pattern>/InsertarLibro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarLibroServlet</servlet-name>
+        <url-pattern>/ActualizarLibro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaGenerosPopularesServlet</servlet-name>
+        <url-pattern>/ConsultaGenerosPopulares</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaEditorialOrigenServlet</servlet-name>
+        <url-pattern>/ConsultaEditorialOrigen</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

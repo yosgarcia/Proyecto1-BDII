@@ -9,7 +9,6 @@ import com.mycompany.project1_bd2.Repositorios.ClienteRepositorio;
 import com.mycompany.project1_bd2.entidades.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import jakarta.servlet.RequestDispatcher; 
 import jakarta.servlet.ServletException; 
 import jakarta.servlet.http.HttpServlet; 

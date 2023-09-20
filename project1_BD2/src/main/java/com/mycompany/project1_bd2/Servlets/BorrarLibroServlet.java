@@ -5,21 +5,22 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
-import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
-import com.mycompany.project1_bd2.entidades.Prestamo;
+import com.mycompany.project1_bd2.Repositorios.BitacoraLibroRepositorio;
+import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
+import com.mycompany.project1_bd2.entidades.Libro;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  *
  * @author yaira
  */
-public class ConsultaPrestamosServlets extends HttpServlet {
+public class BorrarLibroServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,29 +34,28 @@ public class ConsultaPrestamosServlets extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        int id = Integer.parseInt(request.getParameter("clienteId"));
+        
         try ( PrintWriter out = response.getWriter()) {
-            DBConnection dbConecction = new DBConnection();
-            List<Prestamo> prestamos = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
+            DBConnection dbConnection = new DBConnection();
+            Libro libroABorrar = LibroRepositorio.mostrarLibroPorId(dbConnection.getConnection(), id);
             
-            if (!prestamos.isEmpty()) {
-                out.println("<html>");
-                out.println("<body>");
-                out.println("<h1>Información de Todos los Prestamos:</h1>");
-                out.println("<ul>");
-
-                for (Prestamo prestamo : prestamos) {
-                    out.println("<li>ID: " + prestamo.getId() + ", fecha Prestamo: " + prestamo.getFechaPrestamo()+
-                                ", fecha devolucion: " + prestamo.getFechaDevolucion()+ ", Cliente: " + prestamo.getCliente()+
-                                ", Libro: " + prestamo.getLibro()+ "</li>");
+            if(libroABorrar != null){
+                int numPrestamos = LibroRepositorio.verificarLibroPrestamo(dbConnection.getConnection(), id);
+                int numResenas = LibroRepositorio.verificarLibroResena(dbConnection.getConnection(), id);
+                if(numPrestamos == 0 && numResenas == 0){
+                    LibroRepositorio.borrarLibro(dbConnection.getConnection(), id);
+                    BitacoraLibroRepositorio.modificarUsuarioBitacora(dbConnection.getConnection(), DBConnection.getUsuario());
+                    out.println("libro borrado");
+                } else {
+                    out.println("Libro tiene prestamos o resennas");
                 }
-
-                out.println("</ul>");
-                out.println("</body>");
-                out.println("</html>");
-                dbConecction.closeConnection();
-            } else {
-                dbConecction.closeConnection();
-                out.println("No hay Libros en la base de datos.");
+                       
+            } else{
+                request.setAttribute("accion", "mostrar");
+                request.setAttribute("mensaje", "No se ha encontrado el libro con el ID: " + id);
+                RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
+                rd.forward(request, response);
             }
             
         }

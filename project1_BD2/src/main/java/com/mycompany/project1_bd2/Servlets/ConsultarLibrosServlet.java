@@ -5,8 +5,9 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
-import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
-import com.mycompany.project1_bd2.entidades.Prestamo;
+import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
+import com.mycompany.project1_bd2.entidades.Cliente;
+import com.mycompany.project1_bd2.entidades.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -19,7 +20,7 @@ import java.util.List;
  *
  * @author yaira
  */
-public class ConsultaPrestamosServlets extends HttpServlet {
+public class ConsultarLibrosServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,29 +36,28 @@ public class ConsultaPrestamosServlets extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             DBConnection dbConecction = new DBConnection();
-            List<Prestamo> prestamos = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
-            
-            if (!prestamos.isEmpty()) {
+            List<Libro> libros = LibroRepositorio.mostrarTodosLibros(dbConecction.getConnection());
+            if (!libros.isEmpty()) {
                 out.println("<html>");
                 out.println("<body>");
-                out.println("<h1>Información de Todos los Prestamos:</h1>");
+                out.println("<h1>Información de Todos los Libros:</h1>");
                 out.println("<ul>");
 
-                for (Prestamo prestamo : prestamos) {
-                    out.println("<li>ID: " + prestamo.getId() + ", fecha Prestamo: " + prestamo.getFechaPrestamo()+
-                                ", fecha devolucion: " + prestamo.getFechaDevolucion()+ ", Cliente: " + prestamo.getCliente()+
-                                ", Libro: " + prestamo.getLibro()+ "</li>");
+                for (Libro libro : libros) {
+                    out.println("<li>ID: " + libro.getId() + ", Titulo: " + libro.getTitulo()+
+                                ", Editorial: " + libro.getEditorial().getId() + ", Genero: " + libro.getGenero().getId() +
+                                ", Autor: " + libro.getAutor().getId() + ", Anno publicacion: " + libro.getAnnoPublicacion() +
+                            ", ISBN: " + libro.getIsbn()+ ", Inventario: " + libro.getInventario()+ "</li>");
                 }
-
+                
                 out.println("</ul>");
                 out.println("</body>");
                 out.println("</html>");
                 dbConecction.closeConnection();
             } else {
                 dbConecction.closeConnection();
-                out.println("No hay Libros en la base de datos.");
+                out.println("No hay libros en la base de datos.");
             }
-            
         }
     }
 

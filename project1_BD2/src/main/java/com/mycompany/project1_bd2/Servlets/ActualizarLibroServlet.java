@@ -5,25 +5,31 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
+import com.mycompany.project1_bd2.Repositorios.AutorRepositorio;
 import com.mycompany.project1_bd2.Repositorios.BitacoraLibroRepositorio;
-import com.mycompany.project1_bd2.Repositorios.ClienteRepositorio;
+import com.mycompany.project1_bd2.Repositorios.EditorialRepositorio;
+import com.mycompany.project1_bd2.Repositorios.GeneroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
-import com.mycompany.project1_bd2.entidades.Cliente;
+import com.mycompany.project1_bd2.entidades.Autor;
+import com.mycompany.project1_bd2.entidades.Editorial;
+import com.mycompany.project1_bd2.entidades.Genero;
 import com.mycompany.project1_bd2.entidades.Libro;
+import com.mycompany.project1_bd2.entidades.Prestamo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.RequestDispatcher; 
+import jakarta.servlet.ServletException; 
+import jakarta.servlet.http.HttpServlet; 
+import jakarta.servlet.http.HttpServletRequest; 
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
  * @author yaira
  */
-public class InsertarPrestamoServlet extends HttpServlet {
+public class ActualizarLibroServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,39 +45,55 @@ public class InsertarPrestamoServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         try ( PrintWriter out = response.getWriter()){
-            java.util.Date prestamoDate = formatoFecha.parse(request.getParameter("fechaPrestamo"));
-            java.sql.Date fechaPrestamoSQL = new java.sql.Date(prestamoDate.getTime());
-            java.util.Date devolucionDate = formatoFecha.parse(request.getParameter("fechaDevolucion"));
-            java.sql.Date fechaDevolucionSQL = new java.sql.Date(devolucionDate.getTime());
             int libroId = Integer.parseInt(request.getParameter("libroId"));
-            int clienteId = Integer.parseInt(request.getParameter("clienteId"));
+            String titulo = request.getParameter("titulo");
+            Integer editorialId = Integer.parseInt(request.getParameter("editorialId"));
+            Integer autorId = Integer.parseInt(request.getParameter("autorId"));
+            Integer generoId = Integer.parseInt(request.getParameter("generoId"));
             
-                        
-            DBConnection dBConnection = new DBConnection();
+            java.sql.Date fechaPublicacionSQL;
+            try{
+                java.util.Date publicacionFecha = formatoFecha.parse(request.getParameter("fechaPublicacion"));
+                fechaPublicacionSQL = new java.sql.Date(publicacionFecha.getTime());
+            } catch (NullPointerException e){
+                fechaPublicacionSQL = null;
+            }
+            String isbn = request.getParameter("isbn");
+            Integer inventario = Integer.parseInt(request.getParameter("inventario"));
             
-            Libro libro = LibroRepositorio.mostrarLibroPorId(dBConnection.getConnection(), libroId);
-            Cliente cliente = ClienteRepositorio.obtenerPorId(dBConnection.getConnection(), clienteId);
+            DBConnection dbConnection = new DBConnection();
+            Libro libroActualizar = LibroRepositorio.mostrarLibroPorId(dbConnection.getConnection(), libroId);
             
-            if(libro != null && cliente != null){
-                int id = PrestamoRepositorio.insertarPrestamo(dBConnection.getConnection(), fechaPrestamoSQL, fechaDevolucionSQL, libroId, clienteId);
-                if(id != -1){
-                    out.println("Prestamo insertado exitosamente con ID: " + id);
+            
+            if (libroActualizar != null){
+                   //FALTA
+            // Validar que haga que solo se actualicen datos que se ingresen
+                Editorial editorial = EditorialRepositorio.mostrarEditorialPorId(dbConnection.getConnection(), editorialId);
+                Genero genero = GeneroRepositorio.mostrarGeneroPorId(dbConnection.getConnection(), generoId);
+                Autor autor = AutorRepositorio.obtenerPorId(dbConnection.getConnection(), autorId);
+                
+                if(editorial != null && genero != null && autor != null){
+                    
+                    LibroRepositorio.modificarLibro(dbConnection.getConnection(), libroId, titulo, editorialId, generoId,
+                            autorId, fechaPublicacionSQL, isbn, inventario);
+                    BitacoraLibroRepositorio.modificarUsuarioBitacora(dbConnection.getConnection(), DBConnection.getUsuario());
                     
                 } else{
-                    out.println("Error al insertar el prestamo en la base de datos");
+                    out.println("Editorial, genero o autor no existen");
                 }
+                
             } else{
-                out.println("libro o cliente no existe");
+                out.println("Libro a actualizar no existe");
             }
-                        
-            dBConnection.closeConnection();
+            
+            dbConnection.closeConnection();
+            
+                                
+            
         }catch (Exception e){
             System.err.println("Error al parsear la fecha: " + e.getMessage());
             
         }
-        
-        
-       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

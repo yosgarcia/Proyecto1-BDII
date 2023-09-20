@@ -134,7 +134,7 @@ INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Renata', '
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emiliano', 'Perez', 'emilianoperez@ejemplo.com', '68743216');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentino', 'Gutierrez', 'valentinogutierrez@ejemplo.com', '74563127');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carmen', 'Hernandez', 'carmenhernandez@ejemplo.com', '86451278');
-select * from  Clientes_p1;
+
 
 
 --INSERTS TABLA AUTOR
@@ -169,9 +169,9 @@ INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Jules', 'Verne', 
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Rabindranath', 'Tagore', 'India');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Honore', 'de Balzac', 'Francesa');
 INSERT INTO Autor_p1 (nombre, apellido, nacionalidad) VALUES ('Edgar', 'Allan Poe', 'Estadounidense');
-select * from Autor_p1;
 
---Inserts tabla editorial
+
+-- INSERTS TABLA EDITORIAL
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Editorial ABC', 'Espana');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Penguin Random House', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('HarperCollins Publishers', 'Estados Unidos');
@@ -203,11 +203,9 @@ INSERT INTO Editorial_p1 (nombre, origen) VALUES ('University of Chicago Press',
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Johns Hopkins University Press', 'Estados Unidos');
 INSERT INTO Editorial_p1 (nombre, origen) VALUES ('Stanford University Press', 'Estados Unidos');
 
-select * from Editorial_p1;
 
 
-
---Inserts TABLA GENERO
+-- INSERTS TABLA GENERO
 INSERT INTO Genero_p1 (nombre) VALUES ('Ficcion');
 INSERT INTO Genero_p1 (nombre) VALUES ('Realismo');
 INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia Ficcion');
@@ -238,10 +236,10 @@ INSERT INTO Genero_p1 (nombre) VALUES ('Humor');
 INSERT INTO Genero_p1 (nombre) VALUES ('Ciencia y Naturaleza');
 INSERT INTO Genero_p1 (nombre) VALUES ('Tecnologia');
 INSERT INTO Genero_p1 (nombre) VALUES ('Cocina');
-select * from Genero_p1;
 
 
---Inserts tabla libro 
+
+-- INSERTS TABLA LIBRO
 
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Harry Potter y la Piedra Filosofal', 1, 4, 1, TO_DATE('1997-06-26', 'YYYY-MM-DD'), '978-0590353427', 50);
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('100 anos de soledad', 2, 1, 2, TO_DATE('1967-05-30', 'YYYY-MM-DD'), '978-9871234567', 45);
@@ -273,9 +271,9 @@ INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacio
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Crimenes de la calle Morgue', 23, 1, 30, TO_DATE('1829-05-11', 'YYYY-MM-DD'), '978-0523873805', 40);
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Resurreccion', 21, 1, 25, TO_DATE('1899-03-15', 'YYYY-MM-DD'), '978-0565953805', 30);
 INSERT INTO Libro_p1 (titulo, editorial_id, genero_id, autor_id, anno_publicacion, isbn, inventario) VALUES ('Cuentos de Eva Luna', 5, 9, 5, TO_DATE('1989-08-23', 'YYYY-MM-DD'), '978-0143039969', 10);
-select * from Libro_p1;
 
 
+-- INSERTS TABLA EMPLEADO
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Andrea', 'Aron');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Julio', 'Flores');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Santiago', 'Urdaneta');
@@ -308,6 +306,9 @@ INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Juan', 'Aguilar');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Marco', 'Campos');
 INSERT INTO Empleado_p1 (nombre, apellido) VALUES ('Cristina', 'Cambronero');
 
+
+
+-- INSERTS TABLA USUARIO
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('andrea_aron', 'con123', 1);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('jflores', 'password456', 2);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('san.urdaneta', 'securepass', 3);
@@ -340,7 +341,7 @@ INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('j_aguilar',
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('marcampos', 'marco_pass', 30);
 INSERT INTO Usuario_p1 (username, contrasenna, empleado_id) VALUES ('cristcambro', 'cristina123', 31);
 
---Inserts tabla Prestamos
+-- INSERTS TABLA PRESTAMOS
 --Prestamos Enero
 INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-03', 'YYYY-MM-DD'), TO_DATE('2023-01-10', 'YYYY-MM-DD'), 3,7);
 INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-01-05', 'YYYY-MM-DD'), TO_DATE('2023-01-12', 'YYYY-MM-DD'), 18,15);
@@ -460,7 +461,9 @@ INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id
 INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-21', 'YYYY-MM-DD'), TO_DATE('2023-12-28', 'YYYY-MM-DD'), 2,2);
 INSERT INTO Prestamos_p1 (fecha_prestamo, fecha_devolucion, libro_id, cliente_id) VALUES (TO_DATE('2023-12-24', 'YYYY-MM-DD'), TO_DATE('2023-12-31', 'YYYY-MM-DD'), 3,6);
 
---Resennas
+
+
+-- INSERTS TABLA RESENA
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Pesimo', 1, 3, 7);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy buena', 7, 18, 15);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Puede mejorar', 3, 14, 2);
@@ -517,7 +520,6 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Decepcionante', 1, 30, 20);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Precioso y unico', 9, 8, 21);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Simple y entretenido', 6, 10, 25);
-
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Super bueno, recomendadisimo', 7, 4, 7);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy malo la verdad', 2, 3, 25);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Lo mejor que he leido en un buen tiempo', 10, 18, 1);
@@ -525,7 +527,6 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Aburrido y predecible', 3, 6, 24);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('He leido libros malos pero este fue el colmo', 1, 15, 20);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy regular, en todo sentido', 5, 19, 20);
-
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me gusto bastante, pero pudo haber sido mejor', 7, 8, 20);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una joya entre joyas', 9, 5, 1);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Muy olvidable', 3, 28, 27);
@@ -535,7 +536,6 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Me gusto mucho', 8, 14, 3);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Este libro marco una nueva etapa en mi vida', 10, 1, 2);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Estresante', 3, 12, 25);
-
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Ganas de lavarme los ojos con cloro despues de leer este libro', 1, 4, 21);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bueno pero tampoco es para tanto', 6, 1, 21);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No fue de mi gusto', 2, 10, 22);
@@ -546,7 +546,6 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Una vez esta bien, dos veces podria, ya tres como que no', 7, 11, 14);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('DE SER POR MI ME GRABARIA ESTE LIBRO EN LAS RETINAS DE LOS OJOS', 10, 10, 20);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Sin duda una buena eleccion', 8, 26, 11);
-
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me arrepiento de nada :3', 9, 21, 21);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Hmm', 6, 5, 25);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Malo', 3, 4, 18);
@@ -557,10 +556,11 @@ INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES (
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('En un basurero encuentro mejores', 2, 9, 28);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Bueno pero no taaan bueno', 6, 1, 21);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('A mi me gusto bastante', 7, 3, 3);
-
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Se que cada quien tiene sus gustos pero para mi este fue magnifico', 8, 11, 11);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('Perdida de todo', 4, 4, 2);
 INSERT INTO Resena_p1 (descripcion, calificacion, libro_id, cliente_id) VALUES ('No me convencio lo suficiente', 5, 19, 12);
+
+
 
 CREATE OR REPLACE PACKAGE paquete_modificaciones_p1 AS 
     FUNCTION insertar_cliente (p_nombre clientes_p1.nombre%TYPE, p_apellido clientes_p1.apellido%TYPE, p_correo clientes_p1.correo%TYPE,
@@ -1383,9 +1383,9 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
     BEGIN
         OPEN p_cursor FOR
             SELECT e.origen AS origen_editorial, COUNT(*) AS total_prestamos
-            FROM Prestamos_p1 p
-            INNER JOIN Libro_p1 l ON p.libro_id = l.id
-            INNER JOIN Editorial_p1 e ON l.editorial_id = e.id
+            FROM Editorial_p1 e
+            LEFT JOIN Libro_p1 l ON e.id = l.editorial_id
+            LEFT JOIN Prestamos_p1 p ON l.id = p.libro_id
             GROUP BY e.origen;
     END;
     
@@ -1450,6 +1450,9 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas_p1 AS
     
 END paquete_consultas_p1;
 /
+
+
+-- TRIGGER SOBRE TABLA LIBRO
 CREATE OR REPLACE TRIGGER cambio_libros
     AFTER INSERT OR UPDATE OR DELETE
     ON Libro_p1 FOR EACH ROW
@@ -1506,10 +1509,6 @@ BEGIN
     END IF;
 END;
 /
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('daniela', 'jimenens', 'danij@ejemplo.com', '444444');
-COMMIT;
-call paquete_modificaciones_p1.borrar_cliente(32);
-select * from clientes_p1;
 
 
 ALTER SEQUENCE seq_clientes RESTART;

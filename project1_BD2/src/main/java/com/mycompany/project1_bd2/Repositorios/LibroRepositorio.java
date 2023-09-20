@@ -18,7 +18,7 @@ import oracle.jdbc.driver.OracleConnection;
 public class LibroRepositorio {
     
     public static int insertarLibro(OracleConnection connection, String pTitulo, int pIdEditorial, int pIdGenero, int pIdAutor,
-                                    int pAnnoPublicacion, String pISBN, int pInventario) {
+                                    Date pAnnoPublicacion, String pISBN, int pInventario) {
         try{
             CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_INSERTAR_FUNC_CALL);
             callableStatement.registerOutParameter(1, Types.NUMERIC);
@@ -26,7 +26,7 @@ public class LibroRepositorio {
             callableStatement.setInt(3, pIdEditorial);
             callableStatement.setInt(4, pIdGenero);
             callableStatement.setInt(5, pIdAutor);
-            callableStatement.setInt(6, pAnnoPublicacion);
+            callableStatement.setDate(6, pAnnoPublicacion);
             callableStatement.setString(7, pISBN);
             callableStatement.setInt(8, pInventario);
 
@@ -41,7 +41,7 @@ public class LibroRepositorio {
     }
 
     public static void modificarLibro(OracleConnection connection, int pIdLibro, String pTitulo, int pIdEditorial, int pIdGenero, int pIdAutor,
-                                       int pAnnoPublicacion, String pISBN, int pInventario) {
+                                       Date pAnnoPublicacion, String pISBN, int pInventario) {
         try {
             CallableStatement callableStatement = connection.prepareCall(Queries.LIBRO_MODIFICAR_PROC_CALL);
             callableStatement.setInt(1, pIdLibro);
@@ -49,7 +49,7 @@ public class LibroRepositorio {
             callableStatement.setInt(3, pIdEditorial);
             callableStatement.setInt(4, pIdGenero);
             callableStatement.setInt(5, pIdAutor);
-            callableStatement.setInt(6, pAnnoPublicacion);
+            callableStatement.setDate(6, pAnnoPublicacion);
             callableStatement.setString(7, pISBN);
             callableStatement.setInt(8, pInventario);
 

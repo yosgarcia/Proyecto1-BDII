@@ -107,4 +107,31 @@ public class GeneroRepositorio {
         return null;
     }
     
+    
+    public static List<Genero> mostrarGeneroYNumPrestamos(OracleConnection connection){
+        List<Genero> generos = new ArrayList<>();
+        try {
+            CallableStatement callableStatement = connection.prepareCall(Queries.MOSTRAR_GENERO_POPULAR_PROC_CALL);
+            callableStatement.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
+            callableStatement.execute();
+
+            // Obtener el cursor de salida
+            ResultSet resultSet = (ResultSet) callableStatement.getObject(1);
+
+            // Iterar sobre los resultados y procesarlos según sea necesario
+            while (resultSet.next()) {
+                // Obtener los datos del género
+                String nombre = resultSet.getString("genero");
+                int prestamos = resultSet.getInt("total_prestamos");
+                Genero genero = new Genero(nombre, prestamos);
+                generos.add(genero);
+            }
+
+            resultSet.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return generos;
+    }
+    
 }

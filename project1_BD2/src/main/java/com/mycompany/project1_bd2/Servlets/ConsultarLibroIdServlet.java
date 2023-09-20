@@ -5,21 +5,22 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
-import com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio;
-import com.mycompany.project1_bd2.entidades.Prestamo;
+import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
+import com.mycompany.project1_bd2.entidades.Libro;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.RequestDispatcher; 
+import jakarta.servlet.ServletException; 
+import jakarta.servlet.http.HttpServlet; 
+import jakarta.servlet.http.HttpServletRequest; 
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  *
  * @author yaira
  */
-public class ConsultaPrestamosServlets extends HttpServlet {
+public class ConsultarLibroIdServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,31 +34,30 @@ public class ConsultaPrestamosServlets extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        int libroId = Integer.parseInt(request.getParameter("libroId"));
         try ( PrintWriter out = response.getWriter()) {
             DBConnection dbConecction = new DBConnection();
-            List<Prestamo> prestamos = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
-            
-            if (!prestamos.isEmpty()) {
-                out.println("<html>");
-                out.println("<body>");
-                out.println("<h1>Información de Todos los Prestamos:</h1>");
-                out.println("<ul>");
-
-                for (Prestamo prestamo : prestamos) {
-                    out.println("<li>ID: " + prestamo.getId() + ", fecha Prestamo: " + prestamo.getFechaPrestamo()+
-                                ", fecha devolucion: " + prestamo.getFechaDevolucion()+ ", Cliente: " + prestamo.getCliente()+
-                                ", Libro: " + prestamo.getLibro()+ "</li>");
-                }
-
-                out.println("</ul>");
-                out.println("</body>");
-                out.println("</html>");
+            Libro libroABuscar = LibroRepositorio.mostrarLibroPorId(dbConecction.getConnection(), libroId);
+            if (libroABuscar != null){
+                
+                request.setAttribute("idi", "ID: " + libroABuscar.getId());
+                request.setAttribute("titulo", libroABuscar.getTitulo());
+                request.setAttribute("editorialId", libroABuscar.getEditorial().getId());
+                request.setAttribute("generoId", libroABuscar.getEditorial().getId());
+                request.setAttribute("autorId", libroABuscar.getAutor().getId());
+                request.setAttribute("annoPublicacion", libroABuscar.getAnnoPublicacion());
+                request.setAttribute("isbn", libroABuscar.getIsbn());
+                request.setAttribute("inventario", libroABuscar.getInventario());
+                request.setAttribute("listo", "uno");
+                
+                
                 dbConecction.closeConnection();
+                RequestDispatcher rd = request.getRequestDispatcher("ConsultaLibro.jsp");
+                rd.forward(request, response);
             } else {
                 dbConecction.closeConnection();
-                out.println("No hay Libros en la base de datos.");
+                out.println("no existe");
             }
-            
         }
     }
 

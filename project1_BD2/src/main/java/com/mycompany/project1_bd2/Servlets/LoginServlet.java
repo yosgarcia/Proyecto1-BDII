@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
             Usuario usuarioAValidar = UsuarioRepositorio.obtenerUsuarioContrasena(dbConecction.getConnection(), usuario, contrasena);
             if (usuarioAValidar != null){
                 request.getSession().setAttribute("usuario", usuario);
+                DBConnection.setUsuario(usuario);
                 dbConecction.closeConnection();
                 response.sendRedirect("menu.jsp");
             } else {

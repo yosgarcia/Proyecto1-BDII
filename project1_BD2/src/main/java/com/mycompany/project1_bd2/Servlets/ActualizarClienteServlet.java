@@ -43,16 +43,16 @@ public class ActualizarClienteServlet extends HttpServlet {
             DBConnection dbConnection = new DBConnection();
             Cliente clienteModificar = ClienteRepositorio.obtenerPorId(dbConnection.getConnection(), id);
             if (clienteModificar != null){
-                if (nombre == null) {
+                if (nombre.isEmpty()) {
                     nombre = clienteModificar.getNombre();
                 }
-                if (apellido == null) {
+                if (apellido.isEmpty()) {
                     apellido = clienteModificar.getApellido();
                 }
-                if (correo == null) {
+                if (correo.isEmpty()) {
                     correo = clienteModificar.getCorreo();
                 }
-                if (telefono == null) {
+                if (telefono.isEmpty()) {
                     telefono = clienteModificar.getTelefono();
                 }
                 ClienteRepositorio.modificarCliente(dbConnection.getConnection(),id, nombre, apellido, correo, telefono);

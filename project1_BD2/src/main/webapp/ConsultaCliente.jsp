@@ -65,7 +65,7 @@
 
 <!-- Ventana modal para mostrar todos los clientes -->
 <div id="modalTodosClientes" class="modal">
-    <div class="modal-content">
+    <div class="modal-content1">
         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span>
         <h2>Mostrar Todos los Clientes</h2>
         <form action="ConsultaClientes" method="post">

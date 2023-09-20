@@ -5,7 +5,13 @@
 package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
+import com.mycompany.project1_bd2.Repositorios.AutorRepositorio;
+import com.mycompany.project1_bd2.Repositorios.EditorialRepositorio;
+import com.mycompany.project1_bd2.Repositorios.GeneroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
+import com.mycompany.project1_bd2.entidades.Autor;
+import com.mycompany.project1_bd2.entidades.Editorial;
+import com.mycompany.project1_bd2.entidades.Genero;
 import com.mycompany.project1_bd2.entidades.Libro;
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
@@ -39,12 +45,15 @@ public class ConsultarLibroIdServlet extends HttpServlet {
             DBConnection dbConecction = new DBConnection();
             Libro libroABuscar = LibroRepositorio.mostrarLibroPorId(dbConecction.getConnection(), libroId);
             if (libroABuscar != null){
+                Editorial editorial = EditorialRepositorio.mostrarEditorialPorId(dbConecction.getConnection(), libroABuscar.getEditorial().getId());
+                Autor autor = AutorRepositorio.obtenerPorId(dbConecction.getConnection(), libroABuscar.getAutor().getId());
+                Genero genero = GeneroRepositorio.mostrarGeneroPorId(dbConecction.getConnection(), libroABuscar.getGenero().getId());
                 
                 request.setAttribute("idi", "ID: " + libroABuscar.getId());
                 request.setAttribute("titulu", libroABuscar.getTitulo());
-                request.setAttribute("editoriali", libroABuscar.getEditorial().getId());
-                request.setAttribute("generu", libroABuscar.getEditorial().getId());
-                request.setAttribute("autori", "Autor ID: " + libroABuscar.getAutor().getId());
+                request.setAttribute("editoriali", "Editorial: " + editorial.getNombre());
+                request.setAttribute("generu", "Genero:" + genero.getNombre());
+                request.setAttribute("autori", "Autor: " + autor.getNombre());
                 request.setAttribute("annu", libroABuscar.getAnnoPublicacion());
                 request.setAttribute("isbni", "ISBN: " + libroABuscar.getIsbn());
                 request.setAttribute("inventariu",libroABuscar.getInventario()+" unidades");

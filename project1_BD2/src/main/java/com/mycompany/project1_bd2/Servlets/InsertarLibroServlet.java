@@ -72,6 +72,7 @@ public class InsertarLibroServlet extends HttpServlet {
                 if(id != -1){
                     request.setAttribute("accion", "mostrar");
                     request.setAttribute("mensaje", "Se ha agregado un libro con el ID: " + id);
+                    System.out.println(DBConnection.getUsuario());
                     BitacoraLibroRepositorio.modificarUsuarioBitacora(dBConnection.getConnection(), DBConnection.getUsuario());
                     RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
                     rd.forward(request, response);

@@ -1,3 +1,11 @@
+
+-- ---------------------------------------
+-- Integrantes:
+--          - Yurgen Cambronero Mora
+--          - Yosward Garcia Tellez
+--          - Leonardo Mora Chacon
+-- ---------------------------------------
+
 -- Creacion de secuencias
 CREATE SEQUENCE seq_clientes START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_empleado START WITH 1 INCREMENT BY 1;
@@ -106,7 +114,7 @@ CREATE TABLE Bitacora_libro_p1 (
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Juan', 'Perez', 'jjuanperez@gmail.com', '88563245');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lola', 'Hernandez', 'lolahernandez@gmail.com', '85648953');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yosward', 'Garcia', 'yoswigarcia@gmail.com', '88468995');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yurgen', 'Cambronero', 'yurgencitoelcabro@gmail.com', '87777953');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yurgen', 'Cambronero', 'ycam@gmail.com', '87777953');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'Gonzalez', 'carlosgonzalez@gmail.com', '74691238');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'Martinez', 'anamartinez@gmail.com', '76582349');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'Rodriguez', 'pedrorodriguez@gmail.com', '68743219');
@@ -117,7 +125,7 @@ INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Javier', '
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentina', 'Gutierrez', 'valentinagutierrez@gmail.com', '78564321');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Santiago', 'Hernandez', 'santiagohernandez@gmail.com', '74561289');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isabella', 'Gonzalez', 'isabellagonzalez@gmail.com', '86423579');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Leo', 'Mora', 'leoelpelos@gmail.com', '63547891');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Leo', 'Mora', 'leomora@gmail.com', '63547891');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucia', 'Rodriguez', 'luciarodriguez@gmail.com', '78693245');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Matias', 'Lopez', 'matiaslopez@gmail.com', '67459823');
 INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mariana', 'Sanchez', 'marianasanchez@gmail.com', '76584932');

@@ -23,7 +23,7 @@ public class Queries {
     public static final String RESENA_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_resena(?, ?, ?, ?, ?) }";
     public static final String EMPLEADO_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_empleado(?, ?, ?) }";
     public static final String USUARIO_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_usuario(?, ?, ?, ?) }";
-    public static final String BITACORA_USUARIO_MODIFICAR_PROC_CALL = "{ call paquete_modificacciones_p1.modificar_usuario_bitacora(?) }";
+    public static final String BITACORA_USUARIO_MODIFICAR_PROC_CALL = "{ call paquete_modificaciones_p1.modificar_usuario_bitacora(?) }";
     
     // Queries para borrar
     public static final String CLIENTE_BORRAR_PROC_CALL = "{ call paquete_modificaciones_p1.borrar_cliente(?) }";

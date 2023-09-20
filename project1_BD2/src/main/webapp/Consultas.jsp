@@ -29,10 +29,10 @@
         <br>
         <div class="contentBox">
             <div id="fifth" class="buttonBox">
-                <button onclick="location.href='ConsultaPrestamo.jsp'">Consultar Prestamos por Genero</button>
+                <button onclick="location.href='ConsultaJOIN1.jsp'">Consultar Prestamos por Genero</button>
             </div>
             <div id="fifth" class="buttonBox">
-                <button onclick="location.href='ConsultaPrestamo.jsp'">Consultar Prestamos por Editorial</button>
+                <button onclick="location.href='ConsultaJOIN2.jsp'">Consultar Prestamos por Editorial</button>
             </div>
         </div>
         <br>

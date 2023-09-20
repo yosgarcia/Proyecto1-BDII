@@ -4,8 +4,19 @@
     Author     : leomo
 --%>
 
+<%@page import="com.mycompany.project1_bd2.Repositorios.GeneroRepositorio"%>
+<%@page import="com.mycompany.project1_bd2.entidades.Genero"%>
+<%@page import="com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio"%>
+<%@page import="com.mycompany.project1_bd2.entidades.Prestamo"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
+<%@page import="com.mycompany.project1_bd2.DBConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
+<%
+ DBConnection dbConecction = new DBConnection();
+ List<Genero> clientes = GeneroRepositorio.mostrarGeneroYNumPrestamos(dbConecction.getConnection());
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,60 +26,23 @@
     <body>
     <h1>Sistema de Consulta de Prestamos</h1>
     <h2>Selecciona el tipo de consulta</h2>
-    <div class="contentBox">
-        <div id="fourth" class="buttonBox">
-            <button onclick="mostrarPrestamosPorID()">Mostrar por ID</button>
-            <div class="border"></div>
-            <div class="border"></div>
-            <div class="border"></div>
-            <div class="border"></div>
-        </div>
-
-        <div id="fourth" class="buttonBox">
-            <button onclick="mostrarTodosPrestamos()">Mostrar Todos</button>
-            <div class="border"></div>
-            <div class="border"></div>
-            <div class="border"></div>
-            <div class="border"></div>
-        </div>
-    </div>
-    <div class="contentBox">
-    <div id="fourth" class="buttonBox">
-        <button onclick="location.href='menu.jsp'">Menu</button>
-        <div class="border"></div>
-        <div class="border"></div>
-        <div class="border"></div>
-        <div class="border"></div>
-    </div>
-</div>
-
-
-<!-- Ventana modal para mostrar clientes por ID -->
-<div id="modalPrestamoPorID" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="cerrarModalPrestamosPorId()">&times;</span>
-        <h2>Mostrar Prestamos por ID</h2>
-        <form action="ConsultaPrestamoId" method="post">
-            ID del Prestamo: <input class="inpt" type="text" name="prestamoId" placeholder="Ingrese el ID del prestamo" required><br>
-                <input class="btn" type="submit" value="Mostrar">
-        </form>
-        <h3>${idi}</h3>
-        <p>${prestamu}</p>
-        <p>${devolucioni}</p>
-        <p>${libru}</p>
-        <p>${clienti}</p>
-    </div>
-</div>
-
-<!-- Ventana modal para mostrar todos los clientes -->
-<div id="modalTodosPrestamos" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="cerrarModalTodosPrestamos()">&times;</span>
-        <h2>Mostrar Todos los Prestamos</h2>
-        <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <p>Mostrar todos los Prestamos existentes.</p>
-    </div>
-</div>
+    <table style="align-content: center" border="1">
+            <thead>
+                <tr>
+                    <th>GENERO</th>
+                    <th>CANT_PRESTAMOS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(Genero cliente : clientes){
+                 ;%>
+                <tr>
+                   <td><%= cliente.getNombre() %></td>
+                   <td><%= cliente.getNumPrestamos() %></td>
+                </tr>
+               <%}%>  
+            </tbody>
+        </table>
 
 <script>
     function mostrarPrestamosPorID() {

@@ -1,5 +1,14 @@
+<%@page import="com.mycompany.project1_bd2.Repositorios.LibroRepositorio"%>
+<%@page import="com.mycompany.project1_bd2.Repositorios.LibroRepositorio"%>
+<%@page import="com.mycompany.project1_bd2.entidades.Libro"%>
+<%@page import="java.util.List"%>
+<%@page import="com.mycompany.project1_bd2.DBConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
+<%
+ DBConnection dbConecction = new DBConnection();
+ List<Libro> clientes = LibroRepositorio.mostrarTodosLibros(dbConecction.getConnection());
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -63,7 +72,35 @@
         <span class="close" onclick="cerrarModalTodosLibros()">&times;</span>
         <h2>Mostrar Todos los Libros</h2>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <p>Mostrar todos los libros.</p>
+        <table style="align-content: center" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TITULO</th>
+                    <th>EDITORIAL</th>
+                    <th>GENERO</th>
+                    <th>AUTOR</th>
+                    <th>ANNOPUBLICACION</th>
+                    <th>ISBN</th>
+                    <th>INVENTARIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(Libro cliente : clientes){
+                 ;%>
+                <tr>
+                   <td><%= cliente.getId() %></td>
+                   <td><%= cliente.getTitulo() %></td>
+                   <td><%= cliente.getEditorial() %></td>
+                   <td><%= cliente.getGenero() %></td>
+                   <td><%= cliente.getAutor() %></td>
+                   <td><%= cliente.getAnnoPublicacion() %></td>
+                   <td><%= cliente.getIsbn() %></td>
+                   <td><%= cliente.getInventario() %></td>
+                </tr>
+               <%}%>  
+            </tbody>
+        </table>
     </div>
 </div>
 

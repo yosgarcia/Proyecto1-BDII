@@ -4,8 +4,17 @@
     Author     : leomo
 --%>
 
+<%@page import="com.mycompany.project1_bd2.Repositorios.PrestamoRepositorio"%>
+<%@page import="com.mycompany.project1_bd2.entidades.Prestamo"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
+<%@page import="com.mycompany.project1_bd2.DBConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
+<%
+ DBConnection dbConecction = new DBConnection();
+ List<Prestamo> clientes = PrestamoRepositorio.mostrarTodosPrestamos(dbConecction.getConnection());
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,8 +74,29 @@
     <div class="modal-content">
         <span class="close" onclick="cerrarModalTodosPrestamos()">&times;</span>
         <h2>Mostrar Todos los Prestamos</h2>
-        <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <p>Mostrar todos los Prestamos existentes.</p>
+        <table style="align-content: center" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>FECHAPRESTAMO</th>
+                    <th>FECHADEVOLUCION</th>
+                    <th>LIBRO</th>
+                    <th>CLIENTE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(Prestamo cliente : clientes){
+                 ;%>
+                <tr>
+                   <td><%= cliente.getId() %></td>
+                   <td><%= cliente.getFechaPrestamo() %></td>
+                   <td><%= cliente.getFechaDevolucion() %></td>
+                   <td><%= cliente.getLibro() %></td>
+                   <td><%= cliente.getCliente() %></td>
+                </tr>
+               <%}%>  
+            </tbody>
+        </table>
     </div>
 </div>
 

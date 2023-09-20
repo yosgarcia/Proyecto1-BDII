@@ -43,16 +43,17 @@ public class ConsultaClienteIdServlet extends HttpServlet {
                 datos = "Informacion del Cliente: \nID del cliente" + clienteABuscar.getId() + "\nNombre: " + clienteABuscar.getNombre() + "\n"
                         + "Apellido: "+ clienteABuscar.getApellido() + "Correo: "+ clienteABuscar.getCorreo() + "Teléfono: "+ clienteABuscar.getTelefono();
                 System.out.println(datos);
-                request.setAttribute("info", datos);
+                request.setAttribute("idi", clienteABuscar.getId());
+                request.setAttribute("apelidi", clienteABuscar.getApellido());
+                request.setAttribute("correu", clienteABuscar.getCorreo());
+                request.setAttribute("telefonu", clienteABuscar.getTelefono());
+                request.setAttribute("nombri", clienteABuscar.getNombre());
         
-                RequestDispatcher rd =request.getRequestDispatcher("");
+                RequestDispatcher rd =request.getRequestDispatcher("ConsultaCliente.jsp");
                 rd.forward(request, response);
-                out.println("<h3>Información del Cliente:</h3>");
-                out.println("<p>ID del Cliente: " + clienteABuscar.getId() + "</p>");
-                out.println("<p>Nombre: " + clienteABuscar.getNombre() + "</p>");
-                out.println("<p>Apellido: " + clienteABuscar.getApellido() + "</p>");
-                out.println("<p>Correo: " + clienteABuscar.getCorreo() + "</p>");
-                out.println("<p>Teléfono: " + clienteABuscar.getTelefono() + "</p>");
+                out.println("<script>");
+                out.println("mostrarClientesPorID();");
+                out.println("</script>");
                 dbConecction.closeConnection();
                 //response.sendRedirect("index.jsp");
             } else {

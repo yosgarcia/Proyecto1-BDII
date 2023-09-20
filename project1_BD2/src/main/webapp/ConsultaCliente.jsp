@@ -37,9 +37,11 @@
             ID del Cliente: <input class="inpt" type="text" name="clienteId" placeholder="Ingrese el ID del cliente" required><br>
             <input class="btn" type="submit" value="Mostrar">
         </form>
-        <p>
-            ${info}
-        </p>
+        <h3>${nombri}</h3>
+        <p>${idi}</p>
+        <p>${apellidi}</p>
+        <p>${correu}</p>
+        <p>${telefonu}</p>
     </div>
 </div>
 

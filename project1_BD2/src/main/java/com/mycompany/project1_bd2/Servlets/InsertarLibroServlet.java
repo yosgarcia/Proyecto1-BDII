@@ -6,6 +6,7 @@ package com.mycompany.project1_bd2.Servlets;
 
 import com.mycompany.project1_bd2.DBConnection;
 import com.mycompany.project1_bd2.Repositorios.AutorRepositorio;
+import com.mycompany.project1_bd2.Repositorios.BitacoraLibroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.EditorialRepositorio;
 import com.mycompany.project1_bd2.Repositorios.GeneroRepositorio;
 import com.mycompany.project1_bd2.Repositorios.LibroRepositorio;
@@ -49,7 +50,6 @@ public class InsertarLibroServlet extends HttpServlet {
             int editorialId = Integer.parseInt(request.getParameter("Editorial"));
             int generoId = Integer.parseInt(request.getParameter("Genero"));
             int autorId = Integer.parseInt(request.getParameter("Autor"));
-            System.out.println((request.getParameter("publicacionLibro")).getClass().getSimpleName());
             SimpleDateFormat formatoFechaEntrada = new SimpleDateFormat("yyyy-MM-dd");
             SimpleDateFormat formatoFechaSalida = new SimpleDateFormat("dd/MM/yyyy");
             
@@ -59,8 +59,6 @@ public class InsertarLibroServlet extends HttpServlet {
             String fechaFormateada = formatoFechaSalida.format(publicacionFecha);
             
             Date pubFecha = new Date(fechaFormateada);
-            //var publicacionFecha = new Date(request.getParameter("publicacionLibro"));
-            System.out.println("aqui obtengo fecha");
             String isbn = request.getParameter("ISBN");
             int inventario = Integer.parseInt(request.getParameter("inventarioLibro"));
             
@@ -74,6 +72,7 @@ public class InsertarLibroServlet extends HttpServlet {
                 if(id != -1){
                     request.setAttribute("accion", "mostrar");
                     request.setAttribute("mensaje", "Se ha agregado un libro con el ID: " + id);
+                    BitacoraLibroRepositorio.modificarUsuarioBitacora(dBConnection.getConnection(), DBConnection.getUsuario());
                     RequestDispatcher rd =request.getRequestDispatcher("menu.jsp");
                     rd.forward(request, response);
                     

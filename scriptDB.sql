@@ -103,37 +103,37 @@ CREATE TABLE Bitacora_libro_p1 (
 
 
 --INSERTS TABLA CLIENTE 
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Juan', 'Perez', 'jjuanperez@ejemplo.com', '88563245');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lola', 'Hernandez', 'lolahernandez@ejemplo.com', '85648953');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yosward', 'Garcia', 'yoswigarcia@ejemplo.com', '88468995');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yurgen', 'Cambronero', 'yurgencitoelcabro@ejemplo.com', '87777953');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'Gonzalez', 'carlosgonzalez@ejemplo.com', '74691238');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'Martinez', 'anamartinez@ejemplo.com', '76582349');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'Rodriguez', 'pedrorodriguez@ejemplo.com', '68743219');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('María', 'Lopez', 'marialopez@ejemplo.com', '78654321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Diego', 'Sanchez', 'diegosanchez@ejemplo.com', '64758932');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Laura', 'Ramirez', 'lauraramirez@ejemplo.com', '79865432');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Javier', 'Perez', 'javierperez@ejemplo.com', '68743125');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentina', 'Gutierrez', 'valentinagutierrez@ejemplo.com', '78564321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Santiago', 'Hernandez', 'santiagohernandez@ejemplo.com', '74561289');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isabella', 'Gonzalez', 'isabellagonzalez@ejemplo.com', '86423579');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Leo', 'Mora', 'leoelpelos@ejemplo.com', '63547891');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucia', 'Rodriguez', 'luciarodriguez@ejemplo.com', '78693245');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Matias', 'Lopez', 'matiaslopez@ejemplo.com', '67459823');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mariana', 'Sanchez', 'marianasanchez@ejemplo.com', '76584932');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emilio', 'Ramirez', 'emilioramirez@ejemplo.com', '87654321');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valeria', 'Perez', 'valeriaperez@ejemplo.com', '68743215');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Felipe', 'Gutierrez', 'felipegutierrez@ejemplo.com', '74563129');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Catalina', 'Hernandez', 'catalinahernandez@ejemplo.com', '86451279');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Facundo', 'Gonzalez', 'facundogonzalez@ejemplo.com', '63547892');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Antonella', 'Martinez', 'antonellamartinez@ejemplo.com', '76549832');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucas', 'Rodriguez', 'lucasrodriguez@ejemplo.com', '78643921');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isidora', 'Lopez', 'isidoralopez@ejemplo.com', '67459832');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Benjamin', 'Sanchez', 'benjaminsanchez@ejemplo.com', '74563128');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Renata', 'Ramirez', 'renataramirez@ejemplo.com', '87654931');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emiliano', 'Perez', 'emilianoperez@ejemplo.com', '68743216');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentino', 'Gutierrez', 'valentinogutierrez@ejemplo.com', '74563127');
-INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carmen', 'Hernandez', 'carmenhernandez@ejemplo.com', '86451278');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Juan', 'Perez', 'jjuanperez@gmail.com', '88563245');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lola', 'Hernandez', 'lolahernandez@gmail.com', '85648953');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yosward', 'Garcia', 'yoswigarcia@gmail.com', '88468995');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Yurgen', 'Cambronero', 'yurgencitoelcabro@gmail.com', '87777953');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carlos', 'Gonzalez', 'carlosgonzalez@gmail.com', '74691238');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Ana', 'Martinez', 'anamartinez@gmail.com', '76582349');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Pedro', 'Rodriguez', 'pedrorodriguez@gmail.com', '68743219');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('María', 'Lopez', 'marialopez@gmail.com', '78654321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Diego', 'Sanchez', 'diegosanchez@gmail.com', '64758932');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Laura', 'Ramirez', 'lauraramirez@gmail.com', '79865432');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Javier', 'Perez', 'javierperez@gmail.com', '68743125');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentina', 'Gutierrez', 'valentinagutierrez@gmail.com', '78564321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Santiago', 'Hernandez', 'santiagohernandez@gmail.com', '74561289');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isabella', 'Gonzalez', 'isabellagonzalez@gmail.com', '86423579');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Leo', 'Mora', 'leoelpelos@gmail.com', '63547891');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucia', 'Rodriguez', 'luciarodriguez@gmail.com', '78693245');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Matias', 'Lopez', 'matiaslopez@gmail.com', '67459823');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Mariana', 'Sanchez', 'marianasanchez@gmail.com', '76584932');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emilio', 'Ramirez', 'emilioramirez@gmail.com', '87654321');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valeria', 'Perez', 'valeriaperez@gmail.com', '68743215');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Felipe', 'Gutierrez', 'felipegutierrez@gmail.com', '74563129');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Catalina', 'Hernandez', 'catalinahernandez@gmail.com', '86451279');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Facundo', 'Gonzalez', 'facundogonzalez@gmail.com', '63547892');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Antonella', 'Martinez', 'antonellamartinez@gmail.com', '76549832');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Lucas', 'Rodriguez', 'lucasrodriguez@gmail.com', '78643921');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Isidora', 'Lopez', 'isidoralopez@gmail.com', '67459832');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Benjamin', 'Sanchez', 'benjaminsanchez@gmail.com', '74563128');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Renata', 'Ramirez', 'renataramirez@gmail.com', '87654931');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Emiliano', 'Perez', 'emilianoperez@gmail.com', '68743216');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Valentino', 'Gutierrez', 'valentinogutierrez@gmail.com', '74563127');
+INSERT INTO Clientes_p1 (nombre, apellido, correo, telefono) VALUES ('Carmen', 'Hernandez', 'carmenhernandez@gmail.com', '86451278');
 
 
 

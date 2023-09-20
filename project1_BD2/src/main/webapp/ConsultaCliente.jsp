@@ -62,6 +62,9 @@
     <div class="modal-content">
         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span>
         <h2>Mostrar Todos los Clientes</h2>
+        <form action="ConsultaClientes" method="post">
+            <input class="btn" type="submit" value="Mostrar">
+        </form>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
         <p>Aquí­ puedes mostrar todos los clientes de la base de datos.</p>
         <c:forEach items="${listado}" var="objeto">

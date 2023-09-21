@@ -80,7 +80,7 @@
         <span class="close" onclick="cerrarModalTodosClientes()">&times;</span>
         <h2>Mostrar Todos los Clientes</h2>
         <!-- Contenido de la ventana modal para mostrar todos los clientes -->
-        <table style="align-content: center" border="1">
+        <table border="1">
             <thead>
                 <tr>
                     <th>ID</th>

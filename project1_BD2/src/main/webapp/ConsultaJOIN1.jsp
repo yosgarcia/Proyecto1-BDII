@@ -35,9 +35,9 @@
         <title>Ventana Modal de Prestamo</title>
     </head>
     <body>
-    <h1>Sistema de Consulta de Prestamos</h1>
-    <h2>Selecciona el tipo de consulta</h2>
-    <div class="contentBox">
+    <h1>Sistema de Consulta de Generos</h1>
+    <h2>Consulta de Genero mas Prestado</h2>
+    <div align="center" class="login-container" >
         <table style="align-content: center" border="1">
             <thead>
                 <tr>

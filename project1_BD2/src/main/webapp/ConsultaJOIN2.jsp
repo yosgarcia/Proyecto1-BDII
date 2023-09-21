@@ -37,9 +37,10 @@
         <title>Ventana Modal de Prestamo</title>
     </head>
     <body>
-    <h1>Sistema de Consulta de Prestamos</h1>
-    <h2>Selecciona el tipo de consulta</h2>
-    <table style="align-content: center" border="1">
+    <h1>Sistema de Consulta de Editorial</h1>
+    <h2>Editorial con mas prestamos por ubicacion</h2>
+    <div align="center" class="login-container" >
+        <table style="align-content: center" border="1">
             <thead>
                 <tr>
                     <th>ORIGEN</th>
@@ -57,6 +58,7 @@
                <%}%>  
             </tbody>
         </table>
+    </div>
 
 <script>
     function mostrarPrestamosPorID() {

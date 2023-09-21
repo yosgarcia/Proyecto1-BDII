@@ -100,7 +100,7 @@
                 <%for(Libro cliente : clientes){
                  ;%>
                 <tr>
-                   <td><%= cliente.getId() %></td>
+                   <td><%= cliente.getId() %></td>  
                    <td><%= cliente.getTitulo() %></td>
                    <td><%= cliente.getEditorial().getId() %></td>
                    <td><%= cliente.getGenero().getId() %></td>

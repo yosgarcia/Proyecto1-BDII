@@ -81,7 +81,6 @@ public class BitacoraLibroRepositorio {
             CallableStatement callableStatement = connection.prepareCall(Queries.BITACORA_USUARIO_MODIFICAR_PROC_CALL);
             callableStatement.setString(1, usuario);
             callableStatement.execute();
-            connection.commit();
         } catch (Exception e){
             e.printStackTrace();
         }
